@@ -12,7 +12,6 @@ features:
   - "提供高效优质的售后客服响应"
 purchase:
   label: "快速购买"
-  cloaked: true
 nodeCoverage:
   total: "60+"
   description: "节点涵盖香港、台湾、新加坡、日本、美国等多个国家及地区。"

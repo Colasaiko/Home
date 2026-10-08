@@ -5,7 +5,6 @@ order: 16
 featured: false
 purchase:
   label: 快速购买
-  cloaked: true
 seoDescription: 光速云提供59GB至900GB月流量方案、347GB不限时固定总量包及企业定制服务，主套餐采用IPLC线路并标示单节点最高2.5Gbps。本文整理2026光速云最新套餐价格、原生IP、节点地区、自研客户端及新用户AMM
   8折优惠。
 heroDescription: 光速云提供轻量年付方案、148GB至900GB常规月流量套餐、347GB不限时固定总量包及企业定制服务。主套餐当前标示全球IPLC、原生IP及单节点最高2.5Gbps，新用户可使用AMM享8折优惠。
@@ -45,26 +44,6 @@ nodeCoverage:
     - 土耳其
     - 越南
   note: 当前资料确认以上主要地区；具体节点数量与在线情况以当前订阅后台为准。
-coupon:
-  code: AMM
-  discount: 8折
-  discountPercent: 20%
-  verified: true
-  sourceType: official/current-checkout
-  eligibilityText: 新用户优惠
-  eligiblePlans:
-    - 光速云 · 极速版
-    - 光速云 · 流光版
-    - 光速云 · 量子版
-    - 光速云 · 无界版
-  eligiblePeriods:
-    - 月付
-    - 季付
-    - 半年付
-    - 年付
-    - 两年付
-    - 三年付
-  scope: 拥有月付入口的周期套餐
 temporaryCoupons: []
 resetPackages:
   - plan: 光速云 · 轻量版

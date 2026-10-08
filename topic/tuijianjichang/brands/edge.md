@@ -7,7 +7,6 @@ seoDescription: >-
 logo: 'https://r.ssrzn.com/file/rznc/2025/edge.png'
 purchase:
   label: 快速购买
-  cloaked: true
 telegram: ''
 tags:
   - IPLC专线
@@ -32,15 +31,6 @@ nodeCoverage:
     新加坡: 10
     美国: 10
     韩国: 3
-coupon:
-  code: xk808
-  discountPercent: 20%
-  discount: 8折
-  scope: 除限时体验月付小包外的全部周期套餐
-  label: 常驻 8折
-  description: 除“限时体验月付小包”外，其余全部套餐可用。
-  excludedPlans:
-    - 限时体验月付小包
 temporaryCoupons:
   - code: EG101
     discountPercent: 15%

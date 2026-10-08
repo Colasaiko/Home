@@ -58,18 +58,6 @@ nodes: "香港、台湾、新加坡、日本、美国"
 
 purchase:
   label: "快速购买"
-  cloaked: true
-
-coupon:
-  code: "firefly"
-  discount: "8折"
-  discountPercent: "20%"
-  scope: "新用户"
-  verified: true
-  sourceType: "official"
-  excludedPlans:
-    - "Firefly年付版"
-    - "Firefly不限时"
 
 temporaryCoupons:
   - id: "firefly-flymoon80-2026"

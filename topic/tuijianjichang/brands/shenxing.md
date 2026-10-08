@@ -6,7 +6,6 @@ featured: true
 
 purchase:
   label: "快速购买"
-  cloaked: true
 
 seoDescription: "神行加速2025年开始运营，采用IEPL专线与VLESS协议，提供60GB至520GB月流量方案，支持原生家宽IP、50+节点、流媒体及AI工具访问。本文整理2026神行加速套餐价格、节点分布、500Mbps官方峰值及新客sx0077 7折优惠。"
 heroDescription: "神行加速于2025年开始运营，采用IEPL专线与VLESS协议，提供原生家宽IP、50+节点、三网优化及智能负载均衡。当前新客单可使用 sx0077 享7折优惠，当前全部套餐与购买周期均已验证可使用。"
@@ -17,15 +16,6 @@ features:
   - "新客专属 sx0077 立享 7折优惠"
 
 temporaryCoupons: []
-
-coupon:
-  code: "sx0077"
-  discount: "7折"
-  discountPercent: "30%"
-  verified: true
-  sourceType: "official/current-checkout"
-  eligibilityText: "新客优惠"
-  scope: "当前全部套餐及当前全部购买周期"
 
 lineType: 
   - "IEPL"

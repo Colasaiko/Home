@@ -27,8 +27,6 @@ features:
   - 每 30 天自动刷新流量
 purchase:
   label: 快速购买
-  url: 'https://work.kuailicloud.cc/#/?code=9RhZkrkV'
-  cloaked: true
 nodeCoverage:
   total: 50+
   regions:
@@ -45,19 +43,6 @@ nodeCoverage:
     - 泰国
     - 巴西
   description: 涵盖香港、台湾、日本、新加坡、美国及多国节点，部分区域为原生IP。
-coupon:
-  code: uufly888
-  discountPercent: 20%
-  discount: 8折
-  scope: 当前实测可用；有效期及适用规则以结算页为准
-  description: 全部套餐及付款周期当前测试均可享受 20% OFF（8折）优惠。
-  eligiblePlans:
-    - 森狸年付小套餐
-    - 月狸月付小套餐
-    - 小狸基础版
-    - 灵狸标准版
-    - 夜狸强化版
-    - 天狸顶配版
 pricing:
   - name: 森狸年付小套餐
     period: 年付

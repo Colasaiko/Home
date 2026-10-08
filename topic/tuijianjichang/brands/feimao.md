@@ -44,16 +44,6 @@ streamingSupport:
   - Netflix
   - Disney+
   - TikTok
-coupon:
-  code: "flycat888"
-  discount: "8折"
-  discountPercent: "20%"
-  scope: "符合条件的飞猫套餐"
-  excludedPlans:
-    - "飞猫·学生版"
-    - "飞猫·定制套餐"
-  verified: true
-  sourceType: "official-checkout"
 pricing:
   - name: "飞猫·学生版"
     period: "年付"
@@ -138,7 +128,6 @@ pricing:
     couponEligible: false
 purchase:
   label: "快速购买"
-  cloaked: true
 
 visualData:
     - label: "学生版"
@@ -289,7 +278,6 @@ nodeSnapshot:
 
 
 ### flycat888 是几折？
-20% OFF，即 8 折。
 
 ### 飞猫定制套餐能用 flycat888 吗？
 

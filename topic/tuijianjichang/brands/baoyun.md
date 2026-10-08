@@ -6,8 +6,6 @@ featured: true
 
 purchase:
   label: "快速购买"
-  url: "https://888by.baoyundl.com/#/register?code=9thDnaCR"
-  cloaked: true
 
 
 features:
@@ -16,21 +14,6 @@ features:
   - "支持常规流媒体服务，多设备同时在线"
 
 temporaryCoupons: []
-
-coupon:
-  code: "baoyun"
-  discount: "8折"
-  discountPercent: "20%"
-  verified: true
-  sourceType: "official/current-checkout"
-  scope: "福宝、财宝、金宝全部当前周期及一次性200G-传家宝"
-  excludedPlans:
-    - "【流量包】365天500G"
-    - "【流量包】365天1000G"
-    - "年付100G-轻量特惠"
-    - "季付500G-轻量特惠"
-    - "一次性500G-传世宝"
-    - "一次性1000G-传承宝"
 
 paymentMethods:
   - "支付宝"
@@ -360,21 +343,15 @@ visualData:
 
 ## FAQ
 
-当前官方结算页面验证：baoyun，可享8折 / 20% OFF。
 
-### baoyun 是不是所有套餐都能用？
 不是。具体适用范围需要按套餐区分。
 
-### baoyun 可以用于福宝吗？
 可以。月付、季付、半年付、年付均已验证可以使用。
 
-### baoyun 可以用于财宝吗？
 可以，当前四个购买周期均可使用。
 
-### baoyun 可以用于金宝吗？
 可以，当前四个购买周期均可使用。
 
-### 传家宝200G可以用baoyun吗？
 可以。¥26 折后约为 ¥20.80。
 
 ### 传世宝500G可以用吗？

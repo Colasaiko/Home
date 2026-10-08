@@ -9,7 +9,6 @@ features:
   - "全节点解锁流媒体与AI平台"
 purchase:
   label: "快速购买"
-  cloaked: true
 
 seoDescription: "sogo云采用VLESS协议、企业级IEPL专线与三网优化，提供60GB至1050GB月流量套餐及多档不限时流量包。本文整理2026 sogo云月付、季付、半年付、年付、两年付、三年付价格，sogo10000常驻优惠及当前限时活动规则。"
 
@@ -57,16 +56,6 @@ platformSupport:
   - TikTok
 
 enterpriseCustomization: true
-
-coupon:
-  code: "sogo10000"
-  discount: "9折"
-  discountPercent: "10%"
-  scope: "除小包-年付版外的当前套餐"
-  verified: true
-  sourceType: "official/current-checkout"
-  excludedPlans:
-    - "小包-年付版"
 
 temporaryCoupons:
   - id: "sogo-double-festival-under-year-2026"

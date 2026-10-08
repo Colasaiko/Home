@@ -4,7 +4,6 @@ slug: "yifan"
 order: 20
 purchase:
   label: "快速购买"
-  cloaked: true
 lineType: "IEPL专线"
 maxBandwidth: "不限速"
 ipType: "未特别标明"
@@ -30,24 +29,6 @@ nodeCoverage:
     - "新加坡"
     - "日本"
     - "美国"
-coupon:
-  code: "1FLYYUN"
-  discountPercent: "10%"
-  discount: "9折"
-  scope: "四个常规套餐全部周期 + 三个不限时包"
-  label: "新用户专属 9折"
-  description: "适用于轻享版、舒享版、尊享版、极致版的全部现有周期，以及3个不限时包。"
-  eligiblePlans:
-    - "轻享版"
-    - "舒享版"
-    - "尊享版"
-    - "极致版"
-    - "轻享版·不限时包"
-    - "舒享版·不限时包"
-    - "尊享版·不限时包"
-  excludedPlans:
-    - "98¥·年付小包"
-    - "中秋限定·不限时包"
 resetPackages:
   - plan: "轻享版"
     price: 15

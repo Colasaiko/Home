@@ -9,7 +9,6 @@ features:
   - "支持Netflix、ChatGPT，独享定制节点"
 purchase:
   label: "快速购买"
-  cloaked: true
 
 seoDescription: "暮光加速采用 Shadowsocks 协议、BGP 多线路智能调度与专线级出口架构，提供 70GB 至 1500GB 月流量方案、不限时流量包及独享私人定制节点。本文整理 2026 暮光加速月付、季付、半年付、年付、两年付、三年付价格及 mm88 8折优惠规则。"
 
@@ -32,20 +31,6 @@ streamingSupport:
 aiSupport:
   - ChatGPT
   - Claude
-
-coupon:
-  code: "mm88"
-  discount: "8折"
-  discountPercent: "20%"
-  scope: "暮光基础版、标准版、旗舰版、至尊版当前常规周期"
-  verified: true
-  sourceType: "official/current-checkout"
-  excludedPlans:
-    - "暮光 · 年付轻量版"
-    - "暮光 · 不限时轻量包"
-    - "暮光 · 不限时标准包"
-    - "暮光 · 不限时大容量包"
-    - "独享私人定制节点"
 
 temporaryCoupons: []
 

@@ -83,19 +83,6 @@ pricing:
     couponEligible: false
     desc: "具体需求需确认"
 
-coupon:
-  code: "lingmao"
-  discount: "8折"
-  discountPercent: "20%"
-  scope: "符合条件的常规节点套餐"
-  excludedPlans:
-    - "灵猫·年付小包"
-    - "灵猫·不限时Small"
-    - "灵猫·不限时Big"
-    - "灵猫·大流量定制"
-  verified: true
-  sourceType: "official"
-
 temporaryCoupons:
   - id: "lingmao-lm80-2026-10"
     name: "灵猫限时8折活动"
@@ -129,7 +116,6 @@ platformSupport:
 
 purchase:
   label: "快速购买"
-  cloaked: true
 
 visualData:
     - label: "年付小包"

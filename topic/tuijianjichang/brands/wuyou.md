@@ -228,7 +228,6 @@ aiSupport:
 
 purchase:
   label: "快速购买"
-  cloaked: true
 
 visualData:
     - label: "MINI"

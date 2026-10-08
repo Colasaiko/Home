@@ -10,11 +10,6 @@ title: 速界机场 怎么样？2026 套餐价格与测评 | 海外机场
 featured: false
 purchase:
   label: 快速购买
-  cloaked: true
-coupon:
-  code: sujie888
-  discountPercent: 20%
-  discount: 8折
 pricing:
   - name: 限时年付
     period: 年付

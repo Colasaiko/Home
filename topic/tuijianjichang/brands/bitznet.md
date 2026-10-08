@@ -13,7 +13,6 @@ serviceIntro:
   - "BitzNet 当前更推荐官方客户端，iOS 用户也可使用 Nextin。官方同时保留 Clash 系、Surge、Shadowrocket、Quantumult X 等第三方客户端的配置方式，但部分客户端需要重新激活订阅或按新版教程重新导入，CFW、ClashX 等旧版本已停止支持。"
 purchase:
   label: "快速购买"
-  cloaked: true
 lineType:
   - "IEPL"
   - "亚洲优化线路"

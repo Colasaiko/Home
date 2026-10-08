@@ -46,18 +46,6 @@ features:
   - 支持支付宝与 USDT 结算
 purchase:
   label: 快速购买
-  cloaked: true
-coupon:
-  code: yxr888
-  discountPercent: 20%
-  discount: 8折
-  scope: 四款常规套餐专享
-  label: 常规套餐 8 折
-  eligiblePlans:
-    - 隐形人 白银纪元
-    - 隐形人 黄金序列
-    - 隐形人 铂金至臻
-    - 隐形人 钻石穹顶
 temporaryCoupons:
   - code: moon80
     discountPercent: 20%

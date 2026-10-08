@@ -41,19 +41,6 @@ aiSupport:
 
 purchase:
   label: "快速购买"
-  cloaked: true
-
-coupon:
-  code: "kuajie"
-  discount: "8折"
-  discountPercent: "20%"
-  scope: "轻云 Lite、跃云 Leap、凌云 Soar、无界 Infinity"
-  excludedPlans:
-    - "跨界年付版"
-    - "年付版"
-    - "跨界·不限时包"
-  verified: true
-  sourceType: "official-checkout"
 
 pricing:
   - name: "跨界年付版"
@@ -315,7 +302,6 @@ visualData:
 
 
 
-本文仅基于当前已验证的 `kuajie` 20% OFF 规则计算月付参考价。两年、三年的最终结算金额因本次未取得完整截图，暂不展示。
 
 ## Network Facts 线路配置
 

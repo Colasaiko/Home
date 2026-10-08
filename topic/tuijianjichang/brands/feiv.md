@@ -40,18 +40,6 @@ features:
   - 不限制在线设备数（常规套餐）
 purchase:
   label: 快速购买
-  cloaked: true
-coupon:
-  code: fly20
-  discountPercent: 20%
-  discount: 8折
-  scope: 新客专属；官方称限时优惠但未公布截止日期
-  label: 新客专属 8 折
-  eligiblePlans:
-    - FlyV 会员 - 入门方案
-    - FlyV 会员 - 进阶方案
-    - FlyV 会员 - 高端方案
-    - FlyV 会员 - 商业方案
 pricing:
   - name: FlyV 会员 - 年付标准轻量版
     period: 年付

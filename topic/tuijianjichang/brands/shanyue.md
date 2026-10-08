@@ -12,7 +12,6 @@ serviceIntro:
   - "闪跃官方套餐页面标注采用全 IPLC 专线，常规套餐所有节点均为 x1 倍率，并提供原生 IP 与流媒体使用支持。常规月流量套餐从 60GB 延伸至 1000GB，同时包含两档不限时固定总量套餐。"
 purchase:
   label: "快速购买"
-  cloaked: true
 lineType:
   - IPLC
 nodeMultiplier: "全节点 x1 倍率"
@@ -186,19 +185,6 @@ resetPackages:
     price: 130
   - plan: "闪跃不限时版（高）"
     price: 268
-
-coupon:
-  code: "shanyue"
-  discount: "8折"
-  discountPercent: "20%"
-  scope: "符合条件的常规套餐"
-  verified: true
-  sourceType: "official/current-checkout"
-  excludedPlans:
-    - "闪跃年付版"
-    - "闪跃年付版（高）"
-    - "闪跃不限时版"
-    - "闪跃不限时版（高）"
 
 temporaryCoupons:
   - id: "shanyue-fest-2026"

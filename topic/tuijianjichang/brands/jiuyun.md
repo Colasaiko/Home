@@ -6,8 +6,6 @@ featured: true
 
 purchase:
   label: "快速购买"
-  url: "https://888.jiuyundl.com/#/register?code=RvrYuabu"
-  cloaked: true
 
 
 features:
@@ -18,20 +16,6 @@ features:
   - "不同套餐支持3–5台设备同时在线"
 
 temporaryCoupons: []
-
-coupon:
-  code: "9yun"
-  discount: "8折"
-  discountPercent: "20%"
-  verified: true
-  sourceType: "official/current-checkout"
-  scope: "招财版、聚财版、旺财版全部当前周期，以及来财版和鸿运版"
-  excludedPlans:
-    - "【流量包】365天500G"
-    - "【流量包】365天1000G"
-    - "年付200G【特惠】"
-    - "季付200G【特惠】"
-    - "年付400G【特惠】"
 
 lineType: "海外中转"
 networkArchitecture:

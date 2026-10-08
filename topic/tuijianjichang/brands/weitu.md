@@ -5,7 +5,6 @@ order: 15
 featured: false
 purchase:
   label: 快速购买
-  cloaked: true
 seoDescription: 唯兔云提供45GB至1TB月流量套餐及100GB至500GB永久固定总量包，不同套餐采用IEPL或IPLC线路，主体方案使用VLESS协议。本文整理2026唯兔云最新价格、节点覆盖、流量重置规则，以及VTFEST80双节8折活动和rabbit常驻优惠适用范围。
 lineType: IEPL / IPLC（按套餐）
 protocols:
@@ -60,27 +59,6 @@ nodeCoverage:
     菲律宾: 1
     印度: 1
   note: 以上为当前官方套餐页明确列出的节点位；其他地区可咨询客服，节点可能动态调整，因此不把当前明细简单定义为固定总节点数。
-coupon:
-  code: rabbit
-  discount: 8折
-  discountPercent: 20%
-  verified: true
-  sourceType: official/current-checkout
-  scope: 常规周期套餐
-  eligiblePlans:
-    - 唯兔云 · 节假日限时开启
-    - 唯兔云 · 普通版
-    - 唯兔云 · 进阶版
-    - 唯兔云 · 专业版
-    - 唯兔云 · 至尊版
-  eligiblePeriods:
-    - 月付
-    - 季付
-    - 半年付
-    - 年付
-    - 两年付
-    - 三年付
-  eligibilityText: 常驻优惠
 temporaryCoupons:
   - name: 中秋国庆双节优惠
     code: VTFEST80

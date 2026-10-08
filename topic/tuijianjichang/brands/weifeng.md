@@ -37,13 +37,6 @@ streamingSupport:
   - Disney+
   - HBO Max
   - TikTok
-coupon:
-  code: "weifeng90"
-  discount: "7折"
-  discountPercent: "30%"
-  scope: "全场所有套餐"
-  verified: true
-  sourceType: "official-checkout"
 pricing:
   - name: "清风 Breeze"
     period: "年付"
@@ -107,7 +100,6 @@ pricing:
     couponEligible: true
 purchase:
   label: "快速购买"
-  cloaked: true
 
 serviceIntro:
   - "微风网络目前以全 IPLC 专线作为主要线路架构，并使用 VLESS 协议提供跨境网络连接。官方资料显示其套餐不限速，也不限制设备同时接入数量。"

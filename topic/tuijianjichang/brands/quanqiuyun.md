@@ -47,7 +47,6 @@ features:
   - 独享私人专线提供独立节点与独享带宽
 purchase:
   label: 快速购买
-  cloaked: true
 temporaryCoupons:
   - code: zq80
     discountPercent: 20%

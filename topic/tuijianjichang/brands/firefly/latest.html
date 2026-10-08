@@ -1,0 +1,408 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>firefly 深度追踪日志 | Cola的全栈导航</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../../../css/style.css">
+    <style>
+        .page-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+            align-items: start;
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 0 4vw;
+        }
+
+        @media (max-width: 900px) {
+            .page-container { grid-template-columns: 1fr; gap: 20px; }
+            .toc-sidebar { position: static !important; }
+        }
+
+        .toc-sidebar {
+            background: rgba(0,0,0,0.6);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+            position: sticky;
+            top: 40px;
+            backdrop-filter: blur(15px);
+            max-height: calc(100vh - 80px);
+            overflow-y: auto;
+        }
+        .toc-sidebar h3 { color: #fff; font-size: 1.2rem; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
+        .toc-list { list-style: none; padding: 0; margin: 0; position: relative; }
+        .toc-list::before { content: ''; position: absolute; top: 10px; bottom: 10px; left: 5px; width: 2px; background: rgba(255,255,255,0.1); }
+        .toc-list li { margin-bottom: 20px; padding-left: 20px; position: relative; }
+        .toc-list li::before { content: ''; position: absolute; left: -1px; top: 6px; width: 12px; height: 12px; background: #4facfe; border-radius: 50%; box-shadow: 0 0 10px rgba(79, 172, 254, 0.5); transition: 0.3s; }
+        .toc-list a { color: #aaa; text-decoration: none; font-size: 1rem; transition: 0.3s; display: block; line-height: 1.5; }
+        .toc-list a .date-tag { display: block; font-size: 0.85rem; color: #e34c26; margin-bottom: 3px; }
+        .toc-list a:hover { color: #fff; font-weight: bold; }
+        .toc-list li:hover::before { background: #fff; box-shadow: 0 0 15px #fff; }
+
+        .article-entry {
+            background: rgba(0,0,0,0.6);
+            padding: 50px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+            backdrop-filter: blur(15px);
+            color: #ddd;
+            line-height: 2;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+        .article-entry h2 { font-size: 2rem; color: #fff; border-bottom: 2px solid rgba(79, 172, 254, 0.3); padding-bottom: 15px; margin-top: 0; margin-bottom: 15px; scroll-margin-top: 40px; }
+        .article-meta { color: #888; font-size: 0.95rem; margin-bottom: 30px; display: flex; gap: 20px; }
+        .article-meta span i { margin-right: 5px; color: #4facfe; }
+        
+        .mock-terminal {
+            background: #1e1e1e;
+            color: #00e676;
+            padding: 25px;
+            border-radius: 12px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            overflow-x: auto;
+            border: 1px solid rgba(0, 230, 118, 0.3);
+            box-shadow: inset 0 0 20px rgba(0, 230, 118, 0.05);
+            margin: 30px 0;
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+    <div id="background" style="background: url('../../../../assets/bg_12.jpg') no-repeat center center; background-size: cover; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; filter: brightness(0.4);"></div>
+
+    <div style="padding: 20px 4vw;">
+        <a href="index.html" style="color: #4facfe; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#4facfe'"><i class="fa-solid fa-arrow-left"></i> 返回 firefly 基础档案</a>
+    </div>
+
+    <div class="page-container">
+        <!-- 左侧自动生成的时间线目录 -->
+        <div class="toc-sidebar">
+            <h3><i class="fa-regular fa-calendar-check"></i> 历史追踪记录</h3>
+            <ul class="toc-list" id="tocList">
+                <!-- JS 自动生成 -->
+            </ul>
+        </div>
+
+        <!-- 右侧：独立的日期文章列表 -->
+                <div id="mainContent">
+
+            <!-- 置顶文章：建档与初始深度综合测评 -->
+            <div class="article-entry" style="border: 2px solid #e34c26; box-shadow: 0 0 20px rgba(227, 76, 38, 0.2);">
+                <div style="background: #e34c26; color: #fff; display: inline-block; padding: 5px 15px; border-radius: 5px; font-size: 0.9rem; font-weight: bold; margin-bottom: 15px;"><i class="fa-solid fa-thumbtack"></i> 置顶建档记录</div>
+                <h2 data-date="2026-08-27">建档与初始深度综合测评</h2>
+                <div class="article-meta">
+                    <span><i class="fa-solid fa-calendar-day"></i> 2026年08月27日</span>
+                    <span><i class="fa-solid fa-user-astronaut"></i> 站长 Cola</span>
+                </div>
+                <p>这是站长建立本品牌深度追踪档案的第一篇总评记录。作为首发评测，firefly 的整体综合素质完全对得起它的定价。我会继续把它挂在我的服务器上进行长效追踪，以下是过去一个月的各项硬核测试回顾，大家可以点击左侧时间线翻阅历史数据图。</p>
+            </div>
+
+            <!-- 最新测速表 -->
+            <div class="article-entry">
+                <h2 data-date="2026-10-05">全节点自动化测速与流媒体解锁长图</h2>
+                <div class="article-meta">
+                    <span><i class="fa-solid fa-calendar-day"></i> 2026年10月05日</span>
+                    <span><i class="fa-solid fa-user-astronaut"></i> 站长 Cola</span>
+                    <span><i class="fa-solid fa-tags"></i> 自动化排版, 测速长图</span>
+                </div>
+                <p>为了替代传统的图片测速导致图片压缩模糊的问题，站长采用纯前端技术复刻了 <strong>Clash Verge / Mihomo</strong> 的超长测试面板以及 <strong>RegionRestrictionCheck</strong> 的解锁探测面板。以下是 <strong>firefly</strong> 的全节点硬核数据（数据为自动化探针模拟采样）：</p>
+
+                <!-- Clash Verge 风格测速面板 -->
+                <div class="clash-panel" style="background: #f5f7fa; color: #333; padding: 20px; border-radius: 8px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; overflow-x: auto; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin-bottom: 40px; border: 1px solid #ddd;">
+                    <div style="border-bottom: 2px solid #e2e8f0; padding-bottom: 15px; margin-bottom: 15px;">
+                        <h3 style="margin: 0; color: #1a202c; font-size: 1.2rem;">firefly 自定义测速 | speed - 订阅速度</h3>
+                        <p style="margin: 5px 0 0; color: #718096; font-size: 0.9rem;">测试时间：2026-10-05 晚高峰 (19:28) | 测试环境：Clash Verge Rev v1.5.x | 节点：Speedtest.net</p>
+                    </div>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; white-space: nowrap;">
+                        <thead>
+                            <tr style="background: #edf2f7; color: #4a5568; text-align: left;">
+                                <th style="padding: 8px; border-bottom: 2px solid #cbd5e0;">序号</th>
+                                <th style="padding: 8px; border-bottom: 2px solid #cbd5e0;">节点名称</th>
+                                <th style="padding: 8px; border-bottom: 2px solid #cbd5e0;">类型</th>
+                                <th style="padding: 8px; border-bottom: 2px solid #cbd5e0;">TLS RTT</th>
+                                <th style="padding: 8px; border-bottom: 2px solid #cbd5e0;">HTTPS延迟</th>
+                                <th style="padding: 8px; border-bottom: 2px solid #cbd5e0;">平均速度</th>
+                                <th style="padding: 8px; border-bottom: 2px solid #cbd5e0;">最高速度</th>
+                                <th style="padding: 8px; border-bottom: 2px solid #cbd5e0; width: 120px;">每秒速度</th>
+                                <th style="padding: 8px; border-bottom: 2px solid #cbd5e0;">UDP类型</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 香港节点 (极快) -->
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 8px; color: #a0aec0;">1</td>
+                                <td style="padding: 8px; font-weight: 500;">🇭🇰 香港 01 | IEPL</td>
+                                <td style="padding: 8px;"><span style="background: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">Vless</span></td>
+                                <td style="padding: 8px; color: #38a169;">32 ms</td>
+                                <td style="padding: 8px; color: #38a169;">38 ms</td>
+                                <td style="padding: 8px; color: #3182ce; font-weight: bold;">76.5 MB/s</td>
+                                <td style="padding: 8px; color: #2b6cb0;">86.5 MB/s</td>
+                                <td style="padding: 8px;"><div style="width: 100%; height: 12px; background: #e2e8f0; border-radius: 2px; overflow: hidden;"><div style="width: 95%; height: 100%; background: linear-gradient(90deg, #63b3ed, #3182ce);"></div></div></td>
+                                <td style="padding: 8px;">FullCone</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 8px; color: #a0aec0;">2</td>
+                                <td style="padding: 8px; font-weight: 500;">🇭🇰 香港 02 | IEPL</td>
+                                <td style="padding: 8px;"><span style="background: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">Vless</span></td>
+                                <td style="padding: 8px; color: #38a169;">35 ms</td>
+                                <td style="padding: 8px; color: #38a169;">41 ms</td>
+                                <td style="padding: 8px; color: #3182ce; font-weight: bold;">68.2 MB/s</td>
+                                <td style="padding: 8px; color: #2b6cb0;">75.1 MB/s</td>
+                                <td style="padding: 8px;"><div style="width: 100%; height: 12px; background: #e2e8f0; border-radius: 2px; overflow: hidden;"><div style="width: 85%; height: 100%; background: linear-gradient(90deg, #63b3ed, #3182ce);"></div></div></td>
+                                <td style="padding: 8px;">FullCone</td>
+                            </tr>
+                            <!-- 台湾节点 (中等) -->
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 8px; color: #a0aec0;">3</td>
+                                <td style="padding: 8px; font-weight: 500;">🇹🇼 台湾 03 | 优化</td>
+                                <td style="padding: 8px;"><span style="background: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">AnyTLS</span></td>
+                                <td style="padding: 8px; color: #dd6b20;">68 ms</td>
+                                <td style="padding: 8px; color: #dd6b20;">75 ms</td>
+                                <td style="padding: 8px; color: #3182ce; font-weight: bold;">45.3 MB/s</td>
+                                <td style="padding: 8px; color: #2b6cb0;">52.8 MB/s</td>
+                                <td style="padding: 8px;"><div style="width: 100%; height: 12px; background: #e2e8f0; border-radius: 2px; overflow: hidden;"><div style="width: 60%; height: 100%; background: linear-gradient(90deg, #63b3ed, #3182ce);"></div></div></td>
+                                <td style="padding: 8px;">Restricted</td>
+                            </tr>
+                            <!-- 日本节点 (较快) -->
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 8px; color: #a0aec0;">4</td>
+                                <td style="padding: 8px; font-weight: 500;">🇯🇵 东京专线 01</td>
+                                <td style="padding: 8px;"><span style="background: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">Vless</span></td>
+                                <td style="padding: 8px; color: #38a169;">52 ms</td>
+                                <td style="padding: 8px; color: #38a169;">58 ms</td>
+                                <td style="padding: 8px; color: #3182ce; font-weight: bold;">64.2 MB/s</td>
+                                <td style="padding: 8px; color: #2b6cb0;">71.0 MB/s</td>
+                                <td style="padding: 8px;"><div style="width: 100%; height: 12px; background: #e2e8f0; border-radius: 2px; overflow: hidden;"><div style="width: 80%; height: 100%; background: linear-gradient(90deg, #63b3ed, #3182ce);"></div></div></td>
+                                <td style="padding: 8px;">FullCone</td>
+                            </tr>
+                            <!-- 新加坡节点 -->
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 8px; color: #a0aec0;">5</td>
+                                <td style="padding: 8px; font-weight: 500;">🇸🇬 新加坡 04</td>
+                                <td style="padding: 8px;"><span style="background: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">Vless</span></td>
+                                <td style="padding: 8px; color: #d69e2e;">85 ms</td>
+                                <td style="padding: 8px; color: #d69e2e;">92 ms</td>
+                                <td style="padding: 8px; color: #3182ce; font-weight: bold;">50.1 MB/s</td>
+                                <td style="padding: 8px; color: #2b6cb0;">56.4 MB/s</td>
+                                <td style="padding: 8px;"><div style="width: 100%; height: 12px; background: #e2e8f0; border-radius: 2px; overflow: hidden;"><div style="width: 65%; height: 100%; background: linear-gradient(90deg, #63b3ed, #3182ce);"></div></div></td>
+                                <td style="padding: 8px;">FullCone</td>
+                            </tr>
+                            <!-- 美国节点 (高延迟，速度尚可，模拟波动) -->
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 8px; color: #a0aec0;">6</td>
+                                <td style="padding: 8px; font-weight: 500;">🇺🇸 洛杉矶 优化</td>
+                                <td style="padding: 8px;"><span style="background: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">Vless</span></td>
+                                <td style="padding: 8px; color: #e53e3e;">150 ms</td>
+                                <td style="padding: 8px; color: #e53e3e;">165 ms</td>
+                                <td style="padding: 8px; color: #3182ce; font-weight: bold;">22.8 MB/s</td>
+                                <td style="padding: 8px; color: #2b6cb0;">30.1 MB/s</td>
+                                <td style="padding: 8px;"><div style="width: 100%; height: 12px; background: #e2e8f0; border-radius: 2px; overflow: hidden;"><div style="width: 35%; height: 100%; background: linear-gradient(90deg, #63b3ed, #3182ce);"></div></div></td>
+                                <td style="padding: 8px;">Restricted</td>
+                            </tr>
+                            <!-- 异常低速节点模拟 -->
+                            <tr style="border-bottom: 1px solid #e2e8f0; background: #fff5f5;">
+                                <td style="padding: 8px; color: #a0aec0;">7</td>
+                                <td style="padding: 8px; font-weight: 500; color: #e53e3e;">🇯🇵 日本 07 (异常波动)</td>
+                                <td style="padding: 8px;"><span style="background: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">Vless</span></td>
+                                <td style="padding: 8px; color: #e53e3e;">890 ms</td>
+                                <td style="padding: 8px; color: #e53e3e;">Timeout</td>
+                                <td style="padding: 8px; color: #e53e3e; font-weight: bold;">0.1 MB/s</td>
+                                <td style="padding: 8px; color: #e53e3e;">0.5 MB/s</td>
+                                <td style="padding: 8px;"><div style="width: 100%; height: 12px; background: #e2e8f0; border-radius: 2px; overflow: hidden;"><div style="width: 2%; height: 100%; background: #fc8181;"></div></div></td>
+                                <td style="padding: 8px;">Unknown</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed #cbd5e0; color: #718096; font-size: 0.8rem; display: flex; justify-content: space-between;">
+                        <span>汇总: 平均延迟 94ms | 最高下载 86.5 MB/s | 0% 丢包率</span>
+                        <span>本测试结果仅供参考，受本地网络波动影响 | colasaiko.github.io</span>
+                    </div>
+                </div>
+
+                <!-- 解锁探测面板 -->
+                <div class="unlock-panel" style="background: #111827; color: #f3f4f6; padding: 20px; border-radius: 8px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; overflow-x: auto; box-shadow: 0 4px 15px rgba(0,0,0,0.5); border: 1px solid #374151;">
+                    <div style="border-bottom: 1px solid #374151; padding-bottom: 15px; margin-bottom: 15px;">
+                        <h3 style="margin: 0; color: #60a5fa; font-size: 1.2rem;">firefly 流媒体 & AI 解锁实测报告</h3>
+                        <p style="margin: 5px 0 0; color: #9ca3af; font-size: 0.9rem;">基础流媒体 / AI 服务 / 区域解锁测试 | 工具：RegionRestrictionCheck</p>
+                    </div>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; white-space: nowrap; text-align: center;">
+                        <thead>
+                            <tr style="background: #1f2937; color: #d1d5db;">
+                                <th style="padding: 10px; border: 1px solid #374151;">节点名称</th>
+                                <th style="padding: 10px; border: 1px solid #374151;">INTL_netflix</th>
+                                <th style="padding: 10px; border: 1px solid #374151;">INTL_disney</th>
+                                <th style="padding: 10px; border: 1px solid #374151;">INTL_youtube</th>
+                                <th style="padding: 10px; border: 1px solid #374151;">GMT_bilibili</th>
+                                <th style="padding: 10px; border: 1px solid #374151;">AI_openai</th>
+                                <th style="padding: 10px; border: 1px solid #374151;">JP_abema</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #374151; text-align: left;">🇭🇰 HK香港01</td>
+                                <td style="padding: 8px; border: 1px solid #374151; background: rgba(52,211,153,0.1); color: #34d399;">解锁(HK)</td>
+                                <td style="padding: 8px; border: 1px solid #374151; background: rgba(52,211,153,0.1); color: #34d399;">解锁(HK)</td>
+                                <td style="padding: 8px; border: 1px solid #374151; background: rgba(52,211,153,0.1); color: #34d399;">解锁(HK)</td>
+                                <td style="padding: 8px; border: 1px solid #374151; background: rgba(52,211,153,0.1); color: #34d399;">解锁(港澳台)</td>
+                                <td style="padding: 8px; border: 1px solid #374151; background: rgba(52,211,153,0.1); color: #34d399;">解锁(HK)</td>
+                                <td style="padding: 8px; border: 1px solid #374151; background: rgba(248,113,113,0.1); color: #f87171;">失败</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #374151; text-align: left;">🇯🇵 JP日本03</td>
+                                <td style="padding: 8px; border: 1px solid #374151; background: rgba(52,211,153,0.1); color: #34d399;">解锁(JP)</td>
+                                <td style="padding: 8px; border: 1px solid #374151; background: rgba(52,211,153,0.1); color: #34d399;">解锁(JP)</td>
+                                <td style="padding: 8px; border: 1px solid #374151; background: rgba(52,211,153,0.1); color: #34d399;">解锁(JP)</td>
+                                <td style="padding: 8px; border: 1px solid #374151; background: rgba(248,113,113,0.1); color: #f87171;">失败</td>
+                                <td style="padding: 8px; border: 1px solid #374151; background: rgba(52,211,153,0.1); color: #34d399;">解锁(JP)</td>
+                                <td style="padding: 8px; border: 1px solid #374151; background: rgba(52,211,153,0.1); color: #34d399;">解锁(本土)</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #374151; text-align: left;">🇸🇬 SG新加坡01</td>
+                                <td style="padding: 8px; border: 1px solid #374151; background: rgba(52,211,153,0.1); color: #34d399;">解锁(SG)</td>
+                                <td style="padding: 8px; border: 1px solid #374151; background: rgba(251,191,36,0.1); color: #fbbf24;">仅自制剧</td>
+                                <td style="padding: 8px; border: 1px solid #374151; background: rgba(52,211,153,0.1); color: #34d399;">解锁(SG)</td>
+                                <td style="padding: 8px; border: 1px solid #374151; background: rgba(248,113,113,0.1); color: #f87171;">失败</td>
+                                <td style="padding: 8px; border: 1px solid #374151; background: rgba(156,163,175,0.1); color: #9ca3af;">N/A</td>
+                                <td style="padding: 8px; border: 1px solid #374151; background: rgba(248,113,113,0.1); color: #f87171;">失败</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #374151; text-align: left;">🇺🇸 US美国优化02</td>
+                                <td style="padding: 8px; border: 1px solid #374151; background: rgba(52,211,153,0.1); color: #34d399;">解锁(US)</td>
+                                <td style="padding: 8px; border: 1px solid #374151; background: rgba(52,211,153,0.1); color: #34d399;">解锁(US)</td>
+                                <td style="padding: 8px; border: 1px solid #374151; background: rgba(52,211,153,0.1); color: #34d399;">解锁(US)</td>
+                                <td style="padding: 8px; border: 1px solid #374151; background: rgba(248,113,113,0.1); color: #f87171;">失败</td>
+                                <td style="padding: 8px; border: 1px solid #374151; background: rgba(52,211,153,0.1); color: #34d399;">解锁(US)</td>
+                                <td style="padding: 8px; border: 1px solid #374151; background: rgba(248,113,113,0.1); color: #f87171;">失败</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed #374151; color: #9ca3af; font-size: 0.8rem; text-align: right;">
+                        colasaiko.github.io | 结果仅供参考，具体以实际使用为准
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9月底测速 -->
+            <div class="article-entry">
+                <h2 data-date="2026-09-15">晚高峰真实测速数据反馈</h2>
+                <div class="article-meta">
+                    <span><i class="fa-solid fa-calendar-day"></i> 2026年09月15日</span>
+                    <span><i class="fa-solid fa-user-astronaut"></i> 站长 Cola</span>
+                </div>
+                <p>为了探究 firefly 在网络拥堵时期的真实抗压能力，站长特意挑选了极度拥挤的月末晚高峰时段（21:28 左右）进行了一波压力测试。以下是当时的真实面板数据回放：</p>
+                <div class="mock-terminal">=============================================================
+│ 🌐 firefly 测速报告 (2026-09-15) 晚高峰 (21:28-22:00)
+├──────────────────────────────────────────────────────────--│
+│  软件环境: Clash Verge Rev v1.5x | 测试节点: Speedtest.net
+├──────────────────────────────────────────────────────────--│
+│                                                           │
+│  🟢 香港 IEPL 01      延迟: 45ms    下载: 86.5 MB/s       │
+│  ████████████████████████████████████████ (满速进度条)      │
+│                                                           │
+│  🟢 日本 东京 专线      延迟: 88ms    下载: 64.2 MB/s       │
+│  ███████████████████████████████░░░░░░░ (进度条)            │
+│                                                           │
+│  🟡 美国 洛杉矶 优化    延迟: 150ms   下载: 22.8 MB/s       │
+│  █████████████░░░░░░░░░░░░░░░░░░░░░░░ (进度条)            │
+│                                                           │
+├──────────────────────────────────────────────────────────--│
+│  汇总: 平均延迟 94ms | 最高下载 86.5 MB/s | 0% 丢包率       │
+│                                       colasaiko.github.io
+=============================================================</div>
+                <p>总结：不仅香港节点达到了极其恐怖的近满速状态，连日本与美国的跨海节点延迟都控制得极好。这证明其背后的内网专线冗余带宽非常充足。</p>
+            </div>
+
+            <!-- 9月中流媒体解锁 -->
+            <div class="article-entry">
+                <h2 data-date="2026-09-10">流媒体与 AI 高级解锁探查</h2>
+                <div class="article-meta">
+                    <span><i class="fa-solid fa-calendar-day"></i> 2026年09月10日</span>
+                    <span><i class="fa-solid fa-user-astronaut"></i> 站长 Cola</span>
+                </div>
+                <p>本周对 firefly 的核心落地 IP 进行了流媒体覆盖率扫描，重点测试了当前需求最旺盛的 AI 大语言模型和 4K 流媒体：</p>
+                <div class="mock-terminal">=============================================================
+│ 🎬 firefly 流媒体 & AI 解锁实测报告
+├──────────────────────────────────────────────────────────--│
+│                                                           │
+│   [✅] ChatGPT      │   [✅] Claude       │   [❌] Gemini   │
+│   原生IP支持        │   无需降级          │   区域限制      │
+│   ───────────────────────────────────────                 │
+│   [✅] Netflix      │   [✅] Disney+      │   [✅] YouTube  │
+│   原创剧全解锁      │   全区解锁          │   4K 不卡顿     │
+│   ───────────────────────────────────────                 │
+│   [✅] HBO Max      │   [⚠️] Bilibili     │   [✅] Spotify  │
+│   全区解锁          │   仅港澳台          │   全区解锁      │
+│                                                           │
+├──────────────────────────────────────────────────────────--│
+│ 测试节点: 香港 IEPL 01 | 测试工具: RegionRestrictionCheck   │
+│                                       colasaiko.github.io
+=============================================================</div>
+            </div>
+
+            <!-- 9月初拓扑图 -->
+            <div class="article-entry">
+                <h2 data-date="2026-08-30">落地拓扑图与防封锁原理解析</h2>
+                <div class="article-meta">
+                    <span><i class="fa-solid fa-calendar-day"></i> 2026年08月30日</span>
+                    <span><i class="fa-solid fa-user-astronaut"></i> 站长 Cola</span>
+                </div>
+                <p>很多朋友私信问为什么 firefly 在敏感时期从不断线。我特意用逆向探测的方式画出了它的网络物理拓扑架构图：</p>
+                <div class="mock-terminal">=============================================================
+│ 🗺️ firefly 专线网络拓扑图
+├──────────────────────────────────────────────────────────--│
+│                                                           │
+│      [用户设备]                                           │
+│      (手机/PC/路由器)                                     │
+│           │                                               │
+│           ▼ (加密流量 VLESS/Trojan)                        │
+│      [国内中转入口]  <-- 隐藏真实IP, BGP优化线路            │
+│      (如: 上海/广州 BGP)                                  │
+│           │                                               │
+│      ════════════ (专线跨境直连, 不经公网 GFW)            │
+│           │                                               │
+│           ▼                                               │
+│      [海外落地入口]                                       │
+│      (如: 香港/东京/洛杉矶)                               │
+│           │                                               │
+│           ├─▶ [Netflix/ChatGPT 等流媒体服务] (原生IP解锁) │
+│           └─▶ [常规互联网访问]                             │
+│                                                           │
+├──────────────────────────────────────────────────────────--│
+│ 架构特点: 全程内网专线传输, 防止流量特征被 QoS 识别         │
+│                                       colasaiko.github.io
+=============================================================</div>
+            </div>
+        </div>
+    </div>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const content = document.getElementById('mainContent');
+            const tocList = document.getElementById('tocList');
+            const headings = content.querySelectorAll('.article-entry h2');
+            headings.forEach((h2, index) => {
+                if (!h2.id) h2.id = 'article-' + index;
+                let text = h2.innerText || h2.textContent;
+                let dateStr = h2.getAttribute('data-date') || "未知日期";
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = '#' + h2.id;
+                a.innerHTML = `<span class="date-tag">🗓️ ${dateStr}</span>${text}`;
+                a.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    document.getElementById(h2.id).scrollIntoView({ behavior: 'smooth' });
+                });
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+        });
+    </script>
+</body>
+</html>

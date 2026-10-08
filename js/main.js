@@ -82,7 +82,8 @@ document.addEventListener('mousemove', (e) => {
 function renderData() {
     if (typeof profileData !== 'undefined') {
         const welcomeTitle = document.querySelector('.welcome-title');
-        if (welcomeTitle) {
+        // Keep the title authored in HTML; use profile data only as a fallback.
+        if (welcomeTitle && !welcomeTitle.textContent.trim()) {
             welcomeTitle.innerHTML = profileData.titlePrefix + "<span>" + profileData.titleHighlight + "</span>" + profileData.titleSuffix;
         }
         

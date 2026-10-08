@@ -5,7 +5,6 @@ order: 18
 featured: false
 purchase:
   label: "快速购买"
-  cloaked: true
 lineType: "全 IPLC 专线"
 maxBandwidth: "官方标示最高2.5Gbps"
 ipType: "原生IP"
@@ -50,29 +49,6 @@ nodeCoverage:
     法国: 1
     英国: 1
     土耳其: 1
-coupon:
-  code: "JLY888"
-  discount: "8折"
-  discountPercent: "20%"
-  verified: true
-  sourceType: "official/current-checkout"
-  eligibilityText: "常驻优惠"
-  scope: "当前全部套餐与全部购买周期"
-  eligiblePlans:
-    - "限时年付套餐体验"
-    - "极连云 · 基础套餐"
-    - "极连云 · 进阶套餐"
-    - "极连云 · 旗舰套餐"
-    - "极连云 · 尊享套餐"
-    - "极连云 · 不限时套餐"
-  eligiblePeriods:
-    - "月付"
-    - "季付"
-    - "半年付"
-    - "年付"
-    - "两年付"
-    - "三年付"
-    - "一次性"
 temporaryCoupons:
   - manualActive: true
     code: "2happy80"

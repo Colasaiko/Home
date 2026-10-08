@@ -34,7 +34,6 @@ features:
   - 至尊私人定制提供独立公网 IP 与独立带宽
 purchase:
   label: 快速购买
-  cloaked: true
 temporaryCoupons:
   - code: zq88
     discountPercent: 20%

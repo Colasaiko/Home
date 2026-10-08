@@ -5,7 +5,6 @@ order: 19
 featured: false
 purchase:
   label: "快速购买"
-  cloaked: true
 seoDescription: "整理2026光年梯最新套餐价格、IPLC专线、最高2.5Gbps、原生IP、流媒体与ChatGPT支持，以及GNTHP80双节8折、GNTHP85双节85折活动和独享私人专线资料。"
 lineType: "全程 IPLC 专线"
 maxBandwidth: "官方标示最高2.5Gbps"

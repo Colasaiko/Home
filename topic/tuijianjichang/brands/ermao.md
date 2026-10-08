@@ -4,7 +4,6 @@ slug: "ermao"
 order: 21
 purchase:
   label: "快速购买"
-  cloaked: true
 heroDescription: "二猫云提供全IEPL专线与原生IP，单节点峰值达2.5Gbps，并提供智能路由解析。拥有香港、台湾、日本、新加坡等节点，支持解锁 Netflix、Disney+、ChatGPT 及 TikTok，且不限制在线设备数。当前提供 ermao888 常驻85折优惠，双节期间长周期可享 zqj80 的8折优惠。"
 lineType: "IEPL专线"
 maxBandwidth: "单节点峰值2.5Gbps"
@@ -32,17 +31,6 @@ nodeCoverage:
     台湾: 5
     日本: 10
     新加坡: 10
-coupon:
-  code: "ermao888"
-  discountPercent: "15%"
-  discount: "85折"
-  scope: "年付小包 + 白猫/橘猫/牛奶猫/黑猫全部周期"
-  label: "全场 85折"
-  description: "适用于二猫年付小包及白猫、橘猫、牛奶猫、黑猫的全部现有周期。不适用于不限时包及定制套餐。"
-  excludedPlans:
-    - "100G不限时"
-    - "200G不限时加大版"
-    - "美国家庭定制"
 temporaryCoupons:
   - code: "zqj80"
     discountPercent: "20%"
@@ -338,7 +326,6 @@ visualData:
 - **不可用套餐：** 100G不限时、200G不限时加大版、美国家庭定制。
 
 - **活动截止：** 2026-10-10 23:59:59
-- **优惠力度：** 8折 (20% OFF)
 - **适用范围：** 仅限 白猫、橘猫、牛奶猫、黑猫 的 **年付、两年付、三年付**。
 - **说明：** 系统将自动为长周期套餐匹配此 8折 优惠，短周期套餐及年付小包则继续使用 ermao888 享受 85折 优惠。
 

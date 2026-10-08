@@ -42,19 +42,6 @@ features:
   - 流媒体与 AI 工具支持（以当前实际解锁情况为准）
 purchase:
   label: 快速购买
-  url: 'https://wzjc.yuzoucloud.cc/#/?code=204ZUc9t'
-  cloaked: true
-coupon:
-  code: YUZHOU553
-  discountPercent: 20%
-  discount: 8折
-  scope: 新用户专享，仅适用于4个常规套餐全部付款周期
-  label: 新用户 8折
-  eligiblePlans:
-    - 行星基础版
-    - 恒星标准版
-    - 星系专业版
-    - 寰宇旗舰版
 pricing:
   - name: 星云年付小包
     period: 年付

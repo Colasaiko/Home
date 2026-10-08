@@ -45,18 +45,6 @@ features:
   - 定制线路提供独立公网 IP 与独占带宽
 purchase:
   label: 快速购买
-  cloaked: true
-coupon:
-  code: lw888
-  discountPercent: 20%
-  discount: 8折
-  scope: 新户专属，常规套餐专用
-  label: 新户专属 8 折
-  eligiblePlans:
-    - 浪网 入门
-    - 浪网 进阶
-    - 浪网 高端
-    - 浪网 商业
 pricing:
   - name: 浪网 年付标准
     period: 年付

@@ -33,8 +33,6 @@ features:
   - 支持支付宝与微信支付付款
 purchase:
   label: 快速购买
-  url: 'https://pin.dianping.men/auth/register?code=Cv2pH8HA'
-  cloaked: true
 pricing:
   - name: 天蝎座
     period: 月付

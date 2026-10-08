@@ -27,18 +27,6 @@ features:
   - 无设备限制：不限同时在线设备数
 purchase:
   label: 快速购买
-  cloaked: true
-coupon:
-  code: tiziyun
-  discountPercent: 20%
-  discount: 8折
-  scope: 常规套餐专用
-  label: 常规套餐 8 折
-  eligiblePlans:
-    - 初阶网络·基础视界
-    - 中阶加速·极清多线
-    - 高阶专线·全球智联
-    - 顶阶商业·全球骨干
 temporaryCoupons:
   - code: 2hy80
     discountPercent: 20%

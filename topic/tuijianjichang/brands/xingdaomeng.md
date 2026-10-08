@@ -6,8 +6,6 @@ featured: false
 
 purchase:
   label: "快速购买"
-  url: "https://kfccbb.xingdaomeng.com/#/?code=1qBePxW1"
-  cloaked: true
 
 seoDescription: "星岛梦提供60GB至1TB月流量套餐、永久固定总量包及美国原生家宽定制方案，不同套餐采用IEPL或IPLC线路。本文整理2026星岛梦最新价格、2.5Gbps官方峰值、节点覆盖，以及双节2happy80/2happy85与nmw888优惠规则。"
 heroDescription: "星岛梦提供60GB小包、150GB至1TB常规月流量套餐、永久固定总量包及美国原生家宽定制方案。当前双节活动按购买周期分别使用 2happy85 与 2happy80，活动结束后常规套餐继续使用 nmw888 9折，本文按当前官方购买页逐项整理。"
@@ -57,24 +55,6 @@ nodeCoverage:
     美国: 10
     马来西亚: 2
   note: "以上为常规主套餐当前页面列出的主要覆盖；贴心小包的节点列表存在差异，具体以对应套餐和当前后台为准。"
-
-coupon:
-  code: "nmw888"
-  discount: "9折"
-  discountPercent: "10%"
-  verified: true
-  sourceType: "official/current-checkout"
-  eligiblePlans:
-    - "星岛梦 · 超量150G"
-    - "星岛梦 · 进阶300G"
-    - "星岛梦 · 闪光500G"
-    - "星岛梦 · 旗舰1T版"
-  excludedPlans:
-    - "星岛梦 · 贴心小包"
-    - "星岛梦 · 永久不限时100"
-    - "星岛梦 · 永久不限时300"
-    - "星岛梦 · 永久不限时1TB"
-    - "星岛梦 · 美国家宽定制"
 
 temporaryCoupons:
   - code: "2happy85"
