@@ -1,4 +1,4 @@
-// 等待 DOM 加载完成
+﻿// 等待 DOM 加载完成
 document.addEventListener('DOMContentLoaded', () => {
     renderData();
     const avatar = document.getElementById('avatarImg');
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     changeBackground(true);
     setInterval(() => {
         changeBackground(true);
-    }, 10000);
+    }, 20000);
 });
 
 const desktopImages = [
@@ -53,13 +53,30 @@ function changeBackground(forceNext = false) {
         targetUrl = desktopImages[desktopIndex];
     }
 
-    bgElement.style.transition = 'background 0.8s ease';
+    bgElement.style.transition = 'background-image 0.8s ease, transform 0.1s linear';
     bgElement.style.background = targetUrl + ' no-repeat center center';
     bgElement.style.backgroundSize = 'cover'; 
 }
 
 window.addEventListener('resize', () => {
     changeBackground(false); 
+});
+
+// 鼠标跟随视差效果
+document.addEventListener('mousemove', (e) => {
+    const bgElement = document.getElementById('background');
+    if(!bgElement) return;
+    
+    // 计算鼠标距离屏幕中心的比例 (-1 到 1)
+    const x = (window.innerWidth / 2 - e.pageX) / (window.innerWidth / 2);
+    const y = (window.innerHeight / 2 - e.pageY) / (window.innerHeight / 2);
+    
+    // 控制背景移动的幅度 (比如最大偏移 20px)
+    const moveX = x * 20;
+    const moveY = y * 20;
+    
+    // 使用 scale 放大一点点背景避免漏出黑边，并加上平移
+    bgElement.style.transform = 'scale(1.05) translate(' + moveX + 'px, ' + moveY + 'px)';
 });
 
 function renderData() {
