@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>访问受限提示 - My Homepage</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        body { display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        #background { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        .warning-card { background: rgba(0,0,0,0.7); padding: 40px; border-radius: 20px; text-align: center; max-width: 500px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(15px); box-shadow: 0 15px 30px rgba(0,0,0,0.5); }
+        .warning-icon { font-size: 4rem; margin-bottom: 20px; }
+        .warning-title { font-size: 1.8rem; font-weight: bold; color: #fff; margin-bottom: 15px; }
+        .warning-desc { color: #d0d0d0; line-height: 1.6; font-size: 1.05rem; margin-bottom: 30px; }
+        .target-url { display: block; margin-top: 10px; padding: 10px; background: rgba(255,255,255,0.05); border-radius: 8px; font-family: monospace; color: #4facfe; word-break: break-all; }
+        
+        .btn-group { display: flex; flex-direction: column; gap: 15px; }
+        .btn { padding: 15px; border-radius: 30px; font-size: 1.1rem; font-weight: bold; text-decoration: none; transition: 0.3s; cursor: pointer; border: none; }
+        .btn-primary { background: #e34c26; color: #fff; box-shadow: 0 5px 15px rgba(227, 76, 38, 0.3); }
+        .btn-primary:hover { background: #ff5733; transform: translateY(-2px); }
+        .btn-secondary { background: transparent; color: #ccc; border: 1px solid rgba(255,255,255,0.2); }
+        .btn-secondary:hover { color: #fff; border-color: #fff; }
+    </style>
+</head>
+<body>
+    <div id="background"></div>
+    <div class="warning-card">
+        <div class="warning-icon">🚧</div>
+        <div class="warning-title">海外网络访问提示</div>
+        <div class="warning-desc">
+            您即将访问的站点位于海外服务器：
+            <span class="target-url" id="displayUrl">Loading...</span><br>
+            受限于国内网络环境，您必须配置<strong>网络代理（梯子）</strong>才能正常打开该网站。
+        </div>
+        
+        <div class="btn-group">
+            <a href="brands.html" class="btn btn-primary">还没有梯子？获取高速机场节点</a>
+            <button onclick="continueVisit()" class="btn btn-secondary" id="continueBtn">我已经挂好代理，继续访问</button>
+        </div>
+    </div>
+
+    <script src="./data/profile.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const target = params.get('target');
+        
+        if (target) {
+            document.getElementById('displayUrl').innerText = target;
+        } else {
+            document.getElementById('displayUrl').innerText = "未知链接";
+            document.getElementById('continueBtn').innerText = "返回上一页";
+        }
+
+        function continueVisit() {
+            if (target) {
+                window.location.href = target;
+            } else {
+                window.close(); // 或者 history.back()
+            }
+        }
+    </script>
+</body>
+</html>

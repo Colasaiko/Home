@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>在线机场节点测速 - 实时连通性与真实延迟检测工具</title>
+    <meta name="keywords" content="机场测速, 节点测速, Clash测速, 延迟测试, 连通性测试, 在线测速, 机场推荐">`n    <meta name="description" content="免费的在线机场节点测速工具。纯前端一键测试您当前 Clash/V2Ray 节点的真实延迟，检测 ChatGPT、Google、YouTube 等大厂服务的连通性与解锁状态。">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        .page-hero { text-align: center; padding: 40px 20px; background: rgba(0,0,0,0.4); border-radius: 20px; margin-bottom: 20px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+        .page-title { font-size: 2.5rem; margin-bottom: 15px; font-weight: bold; color: #fff; }
+        .page-subtitle { font-size: 1.05rem; color: #ccc; line-height: 1.5; }
+        .back-btn { color: #4facfe; text-decoration: none; display: inline-block; margin-bottom: 20px; font-weight: bold; font-size: 1.1rem; }
+        
+        .seo-article { background: rgba(0,0,0,0.3); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); color: #d0d0d0; line-height: 1.8; font-size: 1.05rem; backdrop-filter: blur(5px); }
+        .seo-article h2 { color: #fff; margin-bottom: 15px; font-size: 1.5rem; }
+        .seo-article p { margin-bottom: 15px; }
+
+        .section-header { margin-top: 30px; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); color: #4facfe; font-size: 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+        .refresh-btn { font-size: 0.9rem; padding: 5px 15px; background: transparent; border: 1px solid #4facfe; color: #4facfe; border-radius: 15px; cursor: pointer; transition: 0.3s; }
+        .refresh-btn:hover { background: #4facfe; color: #121212; }
+
+        .status-grid { display: grid; gap: 15px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+        .server-item { background: rgba(0,0,0,0.6); padding: 20px 25px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(10px); transition: 0.3s; }
+        .server-item:hover { border-color: #4facfe; box-shadow: 0 5px 15px rgba(79, 172, 254, 0.2); }
+        
+        .online-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 12px; }
+        .status-unknown { background: #f1e05a; box-shadow: 0 0 10px #f1e05a; }
+        .status-good { background: #11B04E; box-shadow: 0 0 10px #11B04E; }
+        .status-bad { background: #ff9800; box-shadow: 0 0 10px #ff9800; }
+        .status-offline { background: #e34c26; box-shadow: 0 0 10px #e34c26; }
+        
+        .server-name { font-size: 1.1rem; font-weight: bold; color: #fff; display: flex; align-items: center; }
+        .server-latency { font-family: monospace; font-size: 1.1rem; font-weight: bold; color: #ccc; }
+
+        @media (min-width: 1024px) {
+            .status-layout {
+                max-width: 1400px !important; 
+                margin: 0 auto !important; 
+                padding: 4vh 4vw !important;
+                display: grid;
+                grid-template-columns: 1fr 1.6fr;
+                gap: 40px;
+                align-items: start;
+            }
+            .left-col { position: sticky; top: 4vh; }
+        }
+    </style>
+</head>
+<body>
+    <div id="background"></div>
+    <div class="main-container status-layout">
+        
+        <!-- 左侧区域 -->
+        <div class="left-col">
+            <a href="index.html" class="back-btn">← 返回主页</a>
+            
+            <div class="page-hero">
+                <h1 class="page-title">在线机场节点测速</h1>
+                <p class="page-subtitle">📡 纯前端真实环境测速工具，一键检测您的机场节点延迟与解锁情况</p>
+            </div>
+
+            <article class="seo-article">
+                <h2>为什么需要使用在线机场节点测速？</h2>
+                <p>在挑选和使用各大海外加速服务时，最让用户头疼的问题往往是：“这个机场的节点到底好不好用？标称的专线延迟是真的吗？能不能稳定解锁 ChatGPT 或流媒体？”</p>
+                <p>为了给您提供最直观的答案，我们打造了这款<strong>纯前端无痕机场测速面板</strong>。无需下载任何第三方复杂的测速软件，只要您当前开启了代理客户端（如 Clash、V2Ray、Shadowrocket 等），您的浏览器就会自动向全球核心服务发起真实的连通性测试。通过这项<strong>机场节点测速</strong>功能，您可以瞬间识别当前线路的真实物理延迟，轻松鉴定劣质节点，筛选出真正的优质路线。</p>
+                
+                <p style="margin-bottom: 0;"><strong>测试指标说明：</strong><br>🟢 <span style="color:#11B04E;">绿色</span> 代表极速秒开 (延迟低)<br>🟠 <span style="color:#ff9800;">橙色</span> 代表网络略有拥堵<br>🔴 <span style="color:#e34c26;">红色</span> 代表无法连通 (被墙、节点失效，或目标网站自身故障)</p>
+            </article>
+        </div>
+
+        <!-- 右侧区域：真实监控面板 -->
+        <div class="right-col">
+            
+            <!-- 模块 1：全球主流服务测速 -->
+            <div class="section-header">
+                <span>🌐 全球核心服务连通性 (测试您当前的代理环境)</span>
+                <button class="refresh-btn" onclick="startPingAll()">重新测速</button>
+            </div>
+            <div class="status-grid" id="globalServicesGrid">
+                <!-- 由 JS 动态生成 -->
+            </div>
+
+            <!-- 模块 2：自有博客矩阵健康度监控 -->
+            <div class="section-header" style="margin-top: 50px;">
+                <span>🖥️ 我的博客矩阵在线健康状态</span>
+            </div>
+            <div class="status-grid" id="blogMatrixGrid">
+                <!-- 由 JS 动态生成 -->
+            </div>
+
+        </div>
+    </div>
+    
+    <script src="./data/profile.js"></script>
+    <script src="./data/communities.js"></script>
+    <script src="./data/blogs.js"></script>
+    <script src="./data/projects.js"></script>
+    <script src="./js/main.js"></script>
+
+
+
+    <script>
+        try {
+            const globalServices = [
+                { name: "Google 搜索", url: "https://www.google.com/favicon.ico" },
+                { name: "Cloudflare CDN", url: "https://www.cloudflare.com/favicon.ico" },
+                { name: "ChatGPT (OpenAI)", url: "https://chatgpt.com/favicon.ico" },
+                { name: "GitHub", url: "https://github.com/favicon.ico" },
+                { name: "YouTube", url: "https://www.youtube.com/favicon.ico" },
+                { name: "哔哩哔哩 (国内直连)", url: "https://www.bilibili.com/favicon.ico" }
+            ];
+
+            const targetBlogs = typeof blogsData !== 'undefined' ? blogsData : [];
+
+            async function measureLatency(url) {
+                const start = performance.now();
+                try {
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), 4000); 
+                    
+                    const targetUrl = url.includes('?') ? url + '&_=' + start : url + '?_=' + start;
+                    await fetch(targetUrl, { mode: 'no-cors', cache: 'no-store', signal: controller.signal });
+                    
+                    clearTimeout(timeoutId);
+                    const end = performance.now();
+                    return Math.round(end - start);
+                } catch (e) {
+                    return -1; 
+                }
+            }
+
+            function getStatusClass(ms) {
+                if (ms === -1) return 'status-offline';
+                if (ms < 500) return 'status-good';
+                if (ms < 1500) return 'status-bad';
+                return 'status-offline';
+            }
+
+            function getStatusColor(ms) {
+                if (ms === -1) return '#e34c26';
+                if (ms < 500) return '#11B04E';
+                if (ms < 1500) return '#ff9800';
+                return '#e34c26';
+            }
+
+            function getStatusText(ms) {
+                if (ms === -1) return 'Timeout / Error';
+                return ms + ' ms';
+            }
+
+            async function renderAndPing(containerId, items, isBlog = false) {
+                const container = document.getElementById(containerId);
+                if (!container) return;
+                
+                container.innerHTML = items.map((item, index) => {
+                    const tag = isBlog ? 'a' : 'div';
+                    const href = isBlog ? ' href="' + item.url + '" target="_blank" style="text-decoration:none;"' : '';
+                    return '<' + tag + href + ' class="server-item" id="item-' + containerId + '-' + index + '">' +
+                        '<div class="server-name">' +
+                            '<span class="online-dot status-unknown"></span>' + item.name + 
+                        '</div>' +
+                        '<div class="server-latency">Testing...</div>' +
+                    '</' + tag + '>';
+                }).join('');
+
+                for (let i = 0; i < items.length; i++) {
+                    const item = items[i];
+                    let testUrl = item.url;
+                    if (isBlog) {
+                        testUrl = item.url.endsWith('/') ? item.url + 'favicon.ico' : item.url + '/favicon.ico';
+                    }
+                    
+                    const ms = await measureLatency(testUrl);
+                    const dom = document.getElementById('item-' + containerId + '-' + i);
+                    if (dom) {
+                        const dot = dom.querySelector('.online-dot');
+                        const text = dom.querySelector('.server-latency');
+                        
+                        dot.className = 'online-dot ' + getStatusClass(ms);
+                        text.style.color = getStatusColor(ms);
+                        text.innerText = isBlog && ms !== -1 ? 'Healthy (' + ms + 'ms)' : getStatusText(ms);
+                    }
+                }
+            }
+
+            window.startPingAll = function() {
+                try {
+                    renderAndPing('globalServicesGrid', globalServices, false);
+                    if (targetBlogs.length > 0) {
+                        renderAndPing('blogMatrixGrid', targetBlogs, true);
+                    }
+                } catch(e) {
+                    alert("测速引擎启动失败: " + e.message);
+                }
+            };
+
+            setTimeout(() => {
+                if(typeof window.startPingAll === 'function') {
+                    window.startPingAll();
+                }
+            }, 300);
+
+        } catch (globalErr) {
+            console.error(globalErr);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,366 @@
+/* 全局重置与基础设置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* 动态背景 */
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('../assets/bg.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+    filter: brightness(0.7); /* 稍微压暗一点，确保白色字体能看清 */
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 主容器，靠左显示给背景留出空间 */
+.main-container {
+    max-width: 700px;
+    margin: 0 0 0 5vw; /* 靠左并留出 5% 的边距 */
+    padding: 40px 20px;
+}
+
+/* 头部区 */
+.profile-section {
+    text-align: left;
+    margin-bottom: 50px;
+    animation: fadeInDown 1s ease;
+}
+
+.welcome-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.welcome-title span {
+    color: #4facfe;
+    font-weight: bold;
+}
+
+.avatar-container {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(79, 172, 254, 0.4);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    cursor: pointer;
+}
+
+.avatar:hover {
+    transform: rotate(360deg) scale(1.1);
+    box-shadow: 0 0 30px rgba(79, 172, 254, 0.8);
+}
+
+.tags-container {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: inline-block;
+    text-align: left;
+}
+
+.tag-line {
+    margin: 8px 0;
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+.highlight {
+    color: #4facfe;
+    background: rgba(79, 172, 254, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.95em;
+}
+
+/* 标题样式通用 */
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    border-left: 5px solid #4facfe;
+    padding-left: 15px;
+}
+
+.section-title span {
+    color: #4facfe;
+}
+
+.section {
+    margin-bottom: 60px;
+    animation: fadeInUp 1s ease;
+}
+
+/* 社交媒体卡片 */
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.social-card {
+    flex: 1 1 calc(25% - 15px);
+    min-width: 140px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    text-decoration: none;
+    color: #fff;
+    overflow: hidden;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.social-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: var(--hover-color);
+    transition: width 0.4s ease;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.social-card:hover .social-bg {
+    width: 100%;
+}
+
+.social-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.social-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 网站合集区 */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 25px 20px;
+    border-radius: 15px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.project-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+}
+
+.star-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #ffd700;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .star-icon {
+    opacity: 1;
+}
+
+.project-card a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.project-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+.project-tag span {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* 热榜快讯区 */
+.hot-news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.hot-card {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.hot-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+}
+
+.hot-list {
+    list-style: none;
+}
+
+.hot-list li {
+    font-size: 0.95rem;
+    color: #ddd;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.hot-list li:hover {
+    color: #4facfe;
+}
+
+/* 页脚 */
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* 动画定义 */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.blog-list {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.blog-link {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.blog-link:hover {
+    background: rgba(79, 172, 254, 0.2);
+    color: #4facfe;
+    border-color: #4facfe;
+    transform: translateY(-2px);
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+    .main-container {
+        margin: 0 auto; /* 手机端恢复居中 */
+        padding: 20px 15px; /* 减少手机端左右边距 */
+    }
+
+    .profile-section {
+        text-align: center; /* 手机端头部内容居中 */
+    }
+    
+    .avatar-container, .tags-container {
+        text-align: center;
+    }
+
+    .welcome-title {
+        font-size: 1.8rem; /* 缩小标题字体 */
+    }
+
+    .avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .social-card {
+        flex: 1 1 calc(50% - 15px);
+        font-size: 0.95rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* 一排展示两个项目卡片 */
+        gap: 15px;
+    }
+    
+    .project-card {
+        padding: 15px;
+    }
+
+    .hot-news-container {
+        grid-template-columns: 1fr; /* 手机端新闻卡片单列展示 */
+    }
+}

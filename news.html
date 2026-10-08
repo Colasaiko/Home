@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>极客圈与二次元大事件 - 每日站点更新与重大发现</title>
+    <meta name="description" content="追踪全球各大极客开发工具、二次元社区、影视短剧APP及科学上网工具的最新更新动态与突发大事件。">
+    <meta name="keywords" content="科技新闻, 软件更新, 极客资讯, 二次元大事件, Steam特卖, ChatGPT更新, Clash新版本">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        .page-hero { text-align: center; padding: 40px 20px; background: rgba(0,0,0,0.4); border-radius: 20px; margin-bottom: 20px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+        .page-title { font-size: 2.5rem; margin-bottom: 15px; font-weight: bold; color: #fff; }
+        .page-subtitle { font-size: 1.05rem; color: #ccc; line-height: 1.5; }
+        .back-btn { color: #4facfe; text-decoration: none; display: inline-block; margin-bottom: 20px; font-weight: bold; font-size: 1.1rem; }
+        
+        .seo-article { background: rgba(0,0,0,0.3); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); color: #d0d0d0; line-height: 1.8; font-size: 1.05rem; backdrop-filter: blur(5px); }
+        .seo-article h2 { color: #fff; margin-bottom: 15px; font-size: 1.5rem; }
+        .seo-article p { margin-bottom: 15px; }
+
+        .timeline { position: relative; padding-left: 30px; margin-top: 20px; border-left: 2px solid rgba(79, 172, 254, 0.3); }
+        .news-card { background: rgba(0,0,0,0.6); padding: 25px; border-radius: 15px; margin-bottom: 30px; border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(10px); position: relative; transition: 0.3s; }
+        .news-card:hover { border-color: #4facfe; transform: translateX(5px); box-shadow: 0 5px 20px rgba(79, 172, 254, 0.2); }
+        
+        .news-card::before { content: ''; position: absolute; left: -39px; top: 30px; width: 16px; height: 16px; background: #4facfe; border-radius: 50%; box-shadow: 0 0 10px #4facfe; border: 3px solid #121212; }
+
+        .news-date { display: inline-block; background: rgba(79, 172, 254, 0.1); color: #4facfe; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: bold; margin-bottom: 15px; border: 1px solid rgba(79, 172, 254, 0.3); }
+        .news-title { color: #fff; font-size: 1.3rem; font-weight: bold; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; line-height: 1.4; }
+        .news-title a { color: #fff; text-decoration: none; transition: 0.3s; }
+        .news-title a:hover { color: #4facfe; }
+        .news-content { color: #aaa; line-height: 1.7; font-size: 1rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+        
+        /* 剔除 API 返回的图片，保持界面清爽 */
+        .news-content img, .news-content figure { display: none !important; }
+
+        .news-tag { padding: 3px 10px; border-radius: 5px; font-size: 0.8rem; color: #fff; white-space: nowrap; }
+        .tag-sspai { background: #d32f2f; }
+        .tag-ithome { background: #d81b60; }
+        .tag-gcores { background: #3949ab; }
+
+        .loading-text { color: #4facfe; font-size: 1.2rem; font-weight: bold; text-align: center; padding: 50px; }
+
+        @media (min-width: 1024px) {
+            .news-layout { max-width: 1400px !important; margin: 0 auto !important; padding: 4vh 4vw !important; display: grid; grid-template-columns: 1fr 1.8fr; gap: 40px; align-items: start; }
+            .left-col { position: sticky; top: 4vh; }
+        }
+    </style>
+</head>
+<body>
+    <div id="background"></div>
+    <div class="main-container news-layout">
+        
+        <div class="left-col">
+            <a href="bookmarks.html" class="back-btn">← 返回书签库</a>
+            
+            <div class="page-hero">
+                <h1 class="page-title">网站圈大事件</h1>
+                <p class="page-subtitle">🔥 全自动实时追踪极客开发、前沿数码与游戏圈子的最新动态</p>
+            </div>
+
+            <article class="seo-article">
+                <h2>前沿资讯与高速网络缺一不可</h2>
+                <p>无论您是追踪 ChatGPT 的最新迭代，还是等待 Netflix、Steam 上的最新神作，掌握全球第一手资讯是极客玩家的必修课。本页面通过纯前端技术为您实时抓取聚合了全网最新的极客、AI 与游戏大事件。</p>
+                <p><strong>⚠️ 极客提示：</strong> 绝大多数改变世界的科技大事件（如 OpenAI 发布会、外网最新开源项目）都发生在海外。如果您在阅读右侧资讯时，发现某些原链接无法打开或图片加载缓慢，说明您的网络环境受到了限制。</p>
+                <a href="brands.html" class="btn" style="display: block; text-align: center; background: #ff9800; color: #fff; padding: 12px; border-radius: 8px; font-weight: bold; text-decoration: none; margin-top: 15px; transition: 0.3s; box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);">🚀 解决网络限制？点击获取高速机场专线</a>
+            </article>
+        </div>
+
+        <div class="right-col">
+            <div class="timeline" id="newsTimeline">
+                <div class="loading-text"><i class="fa-solid fa-satellite-dish fa-beat"></i> 正在从全球服务器拉取最新情报...</div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./data/profile.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        // 核心极客与科学上网资讯源配置
+        const feeds = [
+            { name: "Clash 更新", tagClass: "tag-ithome", url: "https://github.com/clash-verge-rev/clash-verge-rev/releases.atom" },
+            { name: "v2rayN 更新", tagClass: "tag-ithome", url: "https://github.com/2dust/v2rayN/releases.atom" },
+            { name: "V2EX 极客社区", tagClass: "tag-gcores", url: "https://www.v2ex.com/index.xml" },
+            { name: "少数派软件", tagClass: "tag-sspai", url: "https://sspai.com/feed" }
+        ];
+
+        // 严格过滤器：只保留与翻墙、网络、AI、极客工具高度相关的内容
+        const allowedKeywords = ['网络', '代理', 'VPN', '宽带', 'AI', 'ChatGPT', '客户端', '隐私', '开源', 'GitHub', '节点', '规则', '分流', '翻墙', '梯子', '科学上网', 'v2ray', 'clash', '软路由', 'NAS', '服务器'];
+
+        async function fetchNews() {
+            let allNews = [];
+            
+            // 并发请求所有 RSS
+            const requests = feeds.map(async (feed) => {
+                try {
+                    const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feed.url));
+                    const data = await res.json();
+                    if(data.status === 'ok' && data.items) {
+                        // 获取最新的 15 条新闻进行严格过滤
+                        let items = data.items.slice(0, 15).filter(item => {
+                            // 如果是 GitHub 的 release (如 Clash/v2rayN)，不用过滤，肯定是刚需更新
+                            if (feed.url.includes('github.com')) return true;
+                            // 否则必须包含极客/网络相关的核心词汇
+                            const textToSearch = (item.title + ' ' + item.description).toLowerCase();
+                            return allowedKeywords.some(kw => textToSearch.includes(kw.toLowerCase()));
+                        });
+
+                        // 如果过滤后太多，只取前 4 条，保证各信源均衡
+                        items = items.slice(0, 4).map(item => ({
+                            source: feed.name,
+                            tagClass: feed.tagClass,
+                            title: item.title,
+                            link: item.link,
+                            pubDate: new Date(item.pubDate),
+                            description: item.description.replace(/<[^>]+>/g, '').trim()
+                        }));
+                        allNews = allNews.concat(items);
+                    }
+                } catch(e) {
+                    console.error("加载失败:", feed.name, e);
+                }
+            });
+
+            await Promise.all(requests);
+
+            // 按时间倒序排序
+            allNews.sort((a, b) => b.pubDate - a.pubDate);
+
+            // 渲染到页面
+            const timeline = document.getElementById('newsTimeline');
+            
+            if(allNews.length === 0) {
+                timeline.innerHTML = '<div class="loading-text" style="color:#e34c26;">情报拉取失败，请检查网络或稍后刷新重试。</div>';
+                return;
+            }
+
+            let html = '';
+            
+            // 关键词检测：如果新闻标题包含这些词，说明极可能需要翻墙
+            const vpnKeywords = ['AI', 'ChatGPT', 'OpenAI', 'Google', '谷歌', 'Netflix', 'YouTube', 'Twitter', 'X', 'Steam', '苹果', 'Apple', '海外', '外媒', '开源'];
+
+            allNews.forEach((news, index) => {
+                const month = news.pubDate.getMonth() + 1;
+                const date = news.pubDate.getDate();
+                const hours = news.pubDate.getHours().toString().padStart(2, '0');
+                const minutes = news.pubDate.getMinutes().toString().padStart(2, '0');
+                const timeStr = month + '月' + date + '日 ' + hours + ':' + minutes;
+
+                // 判断是否包含海外敏感关键词
+                let needsVpn = vpnKeywords.some(kw => news.title.includes(kw) || news.description.includes(kw));
+                let vpnBadge = '';
+                if(needsVpn) {
+                    vpnBadge = '<div style="margin-top: 15px;"><a href="brands.html" style="display:inline-block; background:rgba(255,152,0,0.1); color:#ff9800; border:1px solid #ff9800; padding:5px 15px; border-radius:15px; text-decoration:none; font-size:0.85rem; transition:0.3s;" onmouseover="this.style.background=\'#ff9800\'; this.style.color=\'#fff\'" onmouseout="this.style.background=\'rgba(255,152,0,0.1)\'; this.style.color=\'#ff9800\'">⚡ 畅享此海外服务？点此配置高速加速器 →</a></div>';
+                }
+
+                html += '<div class="news-card">' +
+                            '<div class="news-date">' + timeStr + '</div>' +
+                            '<div class="news-title">' +
+                                '<span class="news-tag ' + news.tagClass + '">' + news.source + '</span>' +
+                                '<a href="' + news.link + '" target="_blank">' + news.title + '</a>' +
+                            '</div>' +
+                            '<div class="news-content">' + news.description + '</div>' +
+                            vpnBadge + 
+                        '</div>';
+
+                // 【商业变现核心】在第 2 条和第 6 条新闻后，强行插入“广告推荐卡片”
+                if (index === 1 || index === 5) {
+                    html += '<div class="news-card" style="border-color: #ff9800; background: rgba(255, 152, 0, 0.05);">' +
+                                '<div class="news-date" style="background:#ff9800; color:#fff; border:none;">🎉 本站专属赞助推荐</div>' +
+                                '<div class="news-title" style="color:#ff9800;">' +
+                                    '<i class="fa-solid fa-plane-departure"></i> 2026年最新 IPLC 专线机场，4K 视频秒开！' +
+                                '</div>' +
+                                '<div class="news-content" style="color:#ccc;">' +
+                                    '看新闻总是加载不出来图片？想第一时间体验 ChatGPT 新功能却被墙？不要让糟糕的网络限制了你的眼界。<br><br>' +
+                                    '我们为您自费评测并筛选了目前市面上最稳定、性价比最高的科学上网服务。晚高峰不卡顿，完美解锁各大流媒体。' +
+                                '</div>' +
+                                '<div style="margin-top: 15px;">' +
+                                    '<a href="brands.html" style="display:inline-block; background:#ff9800; color:#fff; padding:10px 25px; border-radius:25px; font-weight:bold; text-decoration:none; box-shadow:0 5px 15px rgba(255,152,0,0.3); transition:0.3s;">立即查看专属测速与优惠报价 →</a>' +
+                                '</div>' +
+                            '</div>';
+                }
+            });
+
+            timeline.innerHTML = html;
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchNews);
+    </script>
+</body>
+</html>

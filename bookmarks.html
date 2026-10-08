@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>宝藏数字书签 - 全网优质开发、设计与二次元站点收集</title>
+    <meta name="description" content="精心整理的互联网高质量数字书签。包含国内外顶尖的开发者工具、设计师灵感图库、二次元ACG社区及极客摸鱼网站大全。">
+    <meta name="keywords" content="网址导航, 数字书签, 程序员工具, 设计师网站, 二次元社区, 极客网站, 少数派, 掘金, GitHub, Vercel">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        .page-hero { text-align: center; padding: 40px 20px; background: rgba(0,0,0,0.4); border-radius: 20px; margin-bottom: 20px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+        .page-title { font-size: 2.5rem; margin-bottom: 15px; font-weight: bold; color: #fff; }
+        .page-subtitle { font-size: 1.05rem; color: #ccc; line-height: 1.5; }
+        .back-btn { color: #4facfe; text-decoration: none; display: inline-block; margin-bottom: 20px; font-weight: bold; font-size: 1.1rem; }
+        
+        .seo-article { background: rgba(0,0,0,0.3); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); color: #d0d0d0; line-height: 1.8; font-size: 1.05rem; backdrop-filter: blur(5px); }
+        .seo-article h2 { color: #fff; margin-bottom: 15px; font-size: 1.5rem; }
+        .seo-article p { margin-bottom: 15px; }
+
+        .region-header { margin-top: 30px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #4facfe; color: #4facfe; font-size: 1.8rem; font-weight: bold; display: flex; align-items: center; }
+        .region-header span { margin-right: 15px; font-size: 2rem; }
+
+        .bookmark-category { background: rgba(0,0,0,0.6); padding: 25px; border-radius: 15px; margin-bottom: 25px; border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(10px); }
+        .bookmark-category h3 { color: #fff; margin-bottom: 15px; font-size: 1.3rem; border-left: 4px solid #4facfe; padding-left: 10px; }
+        .bookmark-list { display: flex; flex-wrap: wrap; gap: 12px; }
+        .bookmark-link { padding: 10px 20px; background: rgba(255,255,255,0.05); border-radius: 25px; color: #d0d0d0; text-decoration: none; transition: 0.3s; border: 1px solid rgba(255,255,255,0.1); font-size: 1rem; display: flex; align-items: center; }
+        .bookmark-link:hover { background: #4facfe; color: #121212; border-color: #4facfe; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(79, 172, 254, 0.3); font-weight: bold; }
+
+        @media (min-width: 1024px) {
+            .bookmarks-layout {
+                max-width: 1400px !important; 
+                margin: 0 auto !important; 
+                padding: 4vh 4vw !important;
+                display: grid;
+                grid-template-columns: 1fr 1.8fr;
+                gap: 40px;
+                align-items: start;
+            }
+            .left-col { position: sticky; top: 4vh; }
+        }
+    </style>
+</head>
+<body>
+    <div id="background"></div>
+    <div class="main-container bookmarks-layout">
+        
+        <div class="left-col">
+            <a href="index.html" class="back-btn">← 返回主页</a>
+            
+            <div class="page-hero">
+                <h1 class="page-title">宝藏数字书签</h1>
+                <p class="page-subtitle">🔖 探索我平时最爱逛的小众高质量网站与灵感源泉</p>
+            </div>
+
+            <article class="seo-article">
+                <h2>打破信息茧房，探索广阔天地</h2>
+                <p>在这个信息碎片化的时代，好的内容往往被埋没在算法的推荐流中。为了保存那些真正有价值、有深度的互联网资源，我建立了这个<strong>宝藏数字书签库</strong>。</p>
+                <p>这里收录了上百个我日常高频访问的<strong>国内外顶级网站</strong>。无论您是寻找编程解决思路的<strong>开发者</strong>、渴望视觉冲击的<strong>设计师</strong>，还是单纯想找个清净的地方摸鱼看番的<strong>二次元同好</strong>，都能在这里发现惊喜。</p>
+                <p style="margin-bottom: 0;">为了方便浏览，书签已被智能分类。海外站点推荐搭配本站的<a href="clients.html" style="color:#4facfe; text-decoration:underline;">代理客户端</a>食用哦！</p>
+            </article>
+            <div style="margin-top: 25px;">
+                <a href="news.html" class="btn" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: #121212; padding: 15px 30px; border-radius: 30px; font-weight: bold; font-size: 1.1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);">
+                    📰 网站圈大事件 (今日更新) →
+                </a>
+            </div>
+        </div>
+
+        <div class="right-col" id="bookmarksContainer">
+            <!-- 数据将由 JS 动态渲染 -->
+            <div style="color: #fff; text-align: center; padding: 50px;">正在加载书签库...</div>
+        </div>
+    </div>
+    
+    <script src="./data/profile.js"></script>
+    <script src="./data/communities.js"></script>
+    <script src="./data/blogs.js"></script>
+    <script src="./data/projects.js"></script>
+    <script src="./data/bookmarks.js"></script>
+    <script src="./js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('bookmarksContainer');
+            if (typeof bookmarksData === 'undefined') {
+                container.innerHTML = '<div style="color:#e34c26;">书签数据加载失败，请检查 data/bookmarks.js</div>';
+                return;
+            }
+
+            let html = '';
+            
+            bookmarksData.forEach((regionData, index) => {
+                const marginTop = index > 0 ? 'margin-top: 50px;' : '';
+                html += '<div class="region-header" style="' + marginTop + '">' + regionData.region + '</div>';
+
+                regionData.categories.forEach(cat => {
+                    html += '<div class="bookmark-category"><h3>' + cat.name + '</h3><div class="bookmark-list">';
+                    
+                    cat.links.forEach(link => {
+                        // 核心逻辑：如果是海外区域 (isGlobal: true)，自动包装成 warning.html 拦截链接
+                        const targetHref = regionData.isGlobal ? 'warning.html?target=' + encodeURIComponent(link.url) : link.url;
+                        html += '<a href="' + targetHref + '" target="_blank" class="bookmark-link">' + link.name + '</a>';
+                    });
+                    
+                    html += '</div></div>';
+                });
+            });
+
+            container.innerHTML = html;
+        });
+    </script>
+</body>
+</html>

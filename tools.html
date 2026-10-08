@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>极客工具箱 - 纯前端安全网络工具</title>
+    <meta name="description" content="提供纯前端、零日志的极客网络工具箱。支持安全的 IP 归属地精准查询、机场订阅链接 Base64 本地解析，绝对保护您的隐私与节点安全。">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        .page-hero { text-align: center; padding: 40px 20px; background: rgba(0,0,0,0.4); border-radius: 20px; margin-bottom: 20px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+        .page-title { font-size: 2.8rem; margin-bottom: 15px; font-weight: bold; color: #fff; }
+        .page-subtitle { font-size: 1.1rem; color: #11B04E; font-weight: bold; line-height: 1.5; }
+        .back-btn { color: #4facfe; text-decoration: none; display: inline-block; margin-bottom: 20px; font-weight: bold; font-size: 1.1rem; }
+        
+        .seo-article { background: rgba(0,0,0,0.3); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); color: #d0d0d0; line-height: 1.8; font-size: 1.05rem; backdrop-filter: blur(5px); }
+        .seo-article h2 { color: #fff; margin-bottom: 15px; font-size: 1.5rem; }
+        .seo-article p { margin-bottom: 15px; }
+        .seo-article ul { margin-left: 20px; margin-bottom: 15px; }
+        .seo-article li { margin-bottom: 10px; }
+
+        .tool-card { background: rgba(0,0,0,0.6); padding: 30px; border-radius: 15px; margin-bottom: 25px; border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(10px); }
+        input[type="text"], textarea { width: 100%; box-sizing: border-box; padding: 15px; margin-top: 15px; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.2); color: #fff; border-radius: 8px; font-size: 1rem; transition: 0.3s; font-family: monospace; }
+        textarea { resize: vertical; min-height: 100px; }
+        input[type="text"]:focus, textarea:focus { outline: none; border-color: #4facfe; box-shadow: 0 0 10px rgba(79,172,254,0.3); }
+        button { margin-top: 15px; padding: 12px 30px; background: #4facfe; color: #fff; border: none; border-radius: 25px; cursor: pointer; font-weight: bold; font-size: 1rem; transition: 0.3s; margin-right: 10px; }
+        button:hover { box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4); transform: translateY(-2px); }
+        
+        .result-box { margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 8px; border-left: 4px solid #4facfe; display: none; font-family: monospace; white-space: pre-wrap; word-break: break-all; line-height: 1.6; }
+        .loading { display: none; margin-top: 15px; color: #4facfe; }
+
+        @media (min-width: 1024px) {
+            .tools-layout {
+                max-width: 1400px !important; 
+                margin: 0 auto !important; 
+                padding: 4vh 4vw !important;
+                display: grid;
+                grid-template-columns: 1fr 1.5fr;
+                gap: 40px;
+                align-items: start;
+            }
+            .left-col { position: sticky; top: 4vh; }
+        }
+    </style>
+</head>
+<body>
+    <div id="background"></div>
+    <div class="main-container tools-layout">
+        
+        <!-- 左侧：返回按钮、大标题、隐私安全声明文章 -->
+        <div class="left-col">
+            <a href="index.html" class="back-btn">← 返回主页</a>
+            
+            <div class="page-hero">
+                <h1 class="page-title">极客工具箱</h1>
+                <p class="page-subtitle">🔒 化繁为简的实用网络工具箱 (纯前端实现，拒绝隐私泄露)</p>
+            </div>
+
+            <article class="seo-article">
+                <h2>为什么您可以 100% 信任极客工具箱？</h2>
+                <p>在网络安全形势日益复杂的今天，很多用户在第三方网站检测 IP 或解析机场订阅链接时，都会担忧：<strong>我的真实 IP 会不会被记录？我花钱买的机场节点订阅会不会被不良网站后台“偷偷留存”？</strong></p>
+                <p>这些顾虑非常合理！为了彻底解决这种信任危机，本页面的极客工具箱采用了极其严苛的<strong>无后端（Serverless）与零日志（Zero-Log）</strong>架构，为您提供绝对安全的网络测试环境：</p>
+                <ul>
+                    <li><strong>🛡️ 100% 纯本地前端解析：</strong> 我们的 Base64 订阅加解密工具完全依靠您自己电脑浏览器中的 JavaScript 引擎运行。所有解码与生成过程都在您的设备本地内存中瞬间完成，<strong>绝对不会</strong>向任何远端服务器发送您的节点配置和订阅密码。</li>
+                    <li><strong>🌐 隐私无痕 IP 查询：</strong> 归属地查询功能直接由您的浏览器向国际知名的公开只读数据库发起请求。我们不记录、也无法接触到您的任何访问日志，真正做到“用完即走，痕迹全无”。</li>
+                </ul>
+                <p style="margin-bottom:0; color:#4facfe;">您可以放心地在这里调试您的网络节点配置，我们致力于为您提供最纯粹的极客体验。</p>
+            </article>
+        </div>
+
+        <!-- 右侧：工具卡片 -->
+        <div class="right-col">
+            <!-- IP 查询工具 -->
+            <div class="tool-card">
+                <h2>🌐 IP 归属地精准查询</h2>
+                <p style="color:#aaa; font-size:1rem; margin-top: 10px; line-height: 1.6;">输入 IP 地址即可快速定位其物理位置、ISP 运营商、ASN 等详细网络信息。</p>
+                <input type="text" id="ipInput" placeholder="例如: 8.8.8.8 或 留空直接查询本机真实IP">
+                <button onclick="checkIP()">一键查询</button>
+                <div id="ipLoading" class="loading"><i class="fa-solid fa-spinner fa-spin"></i> 正在查询，请稍候...</div>
+                <div id="ipResult" class="result-box"></div>
+            </div>
+
+            <!-- Base64 解码工具 -->
+            <div class="tool-card">
+                <h2>🔗 订阅链接 Base64 加/解密</h2>
+                <p style="color:#aaa; font-size:1rem; margin-top: 10px; line-height: 1.6;">一键将加密的机场 Base64 订阅链接进行解码提取明文，或将明文打包为 Base64。</p>
+                <textarea id="base64Input" placeholder="在此输入 Base64 密文 或 需要加密的普通文本..."></textarea>
+                <button onclick="decodeBase64()">解锁密文 (Decode)</button>
+                <button onclick="encodeBase64()" style="background: #11B04E;">加密文本 (Encode)</button>
+                <div id="base64Result" class="result-box"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./data/profile.js"></script>
+    <script src="./data/communities.js"></script>
+    <script src="./data/blogs.js"></script>
+    <script src="./data/projects.js"></script>
+    <script src="./js/main.js"></script>
+
+    <!-- 工具箱交互逻辑 -->
+    <script>
+        async function checkIP() {
+            const input = document.getElementById('ipInput').value.trim();
+            const resultBox = document.getElementById('ipResult');
+            const loading = document.getElementById('ipLoading');
+            
+            resultBox.style.display = 'none';
+            loading.style.display = 'block';
+
+            const apiUrl = input ? 'https://ipwho.is/' + input : 'https://ipwho.is/';
+
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                
+                loading.style.display = 'none';
+                resultBox.style.display = 'block';
+
+                if (data.success) {
+                    resultBox.innerHTML = 
+                        '<strong style="color:#4facfe;">查询结果 (Success)</strong>\n' +
+                        'IP 地址: ' + data.ip + '\n' +
+                        'IP 类型: ' + data.type + '\n' +
+                        '国家/地区: ' + data.country + ' ' + (data.flag ? data.flag.emoji : '') + '\n' +
+                        '省市/州: ' + data.region + ', ' + data.city + '\n' +
+                        '运营商 (ISP): ' + data.connection.isp + '\n' +
+                        'ASN 机构: ' + data.connection.org + ' (AS' + data.connection.asn + ')';
+                } else {
+                    resultBox.innerHTML = '<strong style="color:#e34c26;">查询失败</strong>\n原因: ' + data.message;
+                }
+            } catch (error) {
+                loading.style.display = 'none';
+                resultBox.style.display = 'block';
+                resultBox.innerHTML = '<strong style="color:#e34c26;">网络请求异常</strong>\n请检查您的网络连接或稍后再试。';
+            }
+        }
+
+        function decodeBase64() {
+            const input = document.getElementById('base64Input').value.trim();
+            const resultBox = document.getElementById('base64Result');
+            
+            if (!input) {
+                resultBox.style.display = 'block';
+                resultBox.style.borderLeftColor = '#e34c26';
+                resultBox.innerHTML = '<span style="color:#e34c26;">请输入内容！</span>';
+                return;
+            }
+
+            try {
+                const decoded = decodeURIComponent(escape(atob(input)));
+                resultBox.style.display = 'block';
+                resultBox.style.borderLeftColor = '#4facfe';
+                resultBox.innerHTML = '<strong style="color:#4facfe;">解码成功：</strong>\n\n' + decoded;
+            } catch (e) {
+                resultBox.style.display = 'block';
+                resultBox.style.borderLeftColor = '#e34c26';
+                resultBox.innerHTML = '<strong style="color:#e34c26;">解码失败：</strong>\n您输入的不是标准 Base64 格式，或包含无法解析的字符。';
+            }
+        }
+
+        function encodeBase64() {
+            const input = document.getElementById('base64Input').value.trim();
+            const resultBox = document.getElementById('base64Result');
+            
+            if (!input) {
+                resultBox.style.display = 'block';
+                resultBox.style.borderLeftColor = '#e34c26';
+                resultBox.innerHTML = '<span style="color:#e34c26;">请输入内容！</span>';
+                return;
+            }
+
+            try {
+                const encoded = btoa(unescape(encodeURIComponent(input)));
+                resultBox.style.display = 'block';
+                resultBox.style.borderLeftColor = '#11B04E';
+                resultBox.innerHTML = '<strong style="color:#11B04E;">加密成功：</strong>\n\n' + encoded;
+            } catch (e) {
+                resultBox.style.display = 'block';
+                resultBox.style.borderLeftColor = '#e34c26';
+                resultBox.innerHTML = '<strong style="color:#e34c26;">加密失败：</strong>\n' + e.message;
+            }
+        }
+    </script>
+</body>
+</html>

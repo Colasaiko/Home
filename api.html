@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>智能订阅转换 API - 节点分流规则定制</title>
+    <meta name="description" content="免费好用的全能节点订阅转换工具。一键将 V2Ray, SSR, Trojan 节点转换为 Clash, Surge 智能分流订阅链接，自带最新去广告与国内直连规则。">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        .page-hero { text-align: center; padding: 40px 20px; background: rgba(0,0,0,0.4); border-radius: 20px; margin-bottom: 20px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+        .page-title { font-size: 2.5rem; margin-bottom: 15px; font-weight: bold; color: #fff; }
+        .page-subtitle { font-size: 1.05rem; color: #ccc; line-height: 1.5; }
+        .back-btn { color: #4facfe; text-decoration: none; display: inline-block; margin-bottom: 20px; font-weight: bold; font-size: 1.1rem; }
+        
+        .seo-article { background: rgba(0,0,0,0.3); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); color: #d0d0d0; line-height: 1.8; font-size: 1.05rem; backdrop-filter: blur(5px); }
+        .seo-article h2 { color: #fff; margin-bottom: 15px; font-size: 1.5rem; }
+        .seo-article p { margin-bottom: 15px; }
+
+        .tool-card { background: rgba(0,0,0,0.6); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(10px); }
+        
+        .input-group { margin-bottom: 20px; }
+        .input-group label { display: block; color: #fff; margin-bottom: 10px; font-weight: bold; }
+        input[type="text"], select, textarea { width: 100%; box-sizing: border-box; padding: 15px; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.2); color: #fff; border-radius: 8px; font-size: 1rem; transition: 0.3s; font-family: monospace; }
+        textarea { resize: vertical; min-height: 120px; }
+        input[type="text"]:focus, select:focus, textarea:focus { outline: none; border-color: #4facfe; box-shadow: 0 0 10px rgba(79,172,254,0.3); }
+        
+        select option { background: #121212; color: #fff; }
+
+        .btn-generate { width: 100%; padding: 15px; background: #4facfe; color: #121212; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 1.1rem; transition: 0.3s; margin-top: 10px; }
+        .btn-generate:hover { box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4); transform: translateY(-2px); background: #fff; }
+
+        .result-box { margin-top: 25px; padding: 20px; background: rgba(17, 176, 78, 0.1); border-radius: 8px; border-left: 4px solid #11B04E; display: none; }
+        .result-box h3 { color: #11B04E; margin-bottom: 15px; margin-top: 0; }
+        .copy-btn { display: inline-block; margin-top: 15px; padding: 8px 20px; background: #11B04E; color: #fff; border: none; border-radius: 20px; cursor: pointer; transition: 0.3s; font-weight: bold; }
+        .copy-btn:hover { background: #0e8f3e; }
+
+        @media (min-width: 1024px) {
+            .api-layout { max-width: 1400px !important; margin: 0 auto !important; padding: 4vh 4vw !important; display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: start; }
+            .left-col { position: sticky; top: 4vh; }
+        }
+    </style>
+</head>
+<body>
+    <div id="background"></div>
+    <div class="main-container api-layout">
+        
+        <!-- 左侧区域：变现与引流文案 -->
+        <div class="left-col">
+            <a href="index.html" class="back-btn">← 返回主页</a>
+            
+            <div class="page-hero">
+                <h1 class="page-title">硬核节点体检中心</h1>
+                <p class="page-subtitle">🛡️ 纯前端运行，全面评估与武装您的科学上网环境</p>
+            </div>
+
+            <article class="seo-article">
+                <h2>劣质节点在这里无所遁形</h2>
+                <p>很多新手买了机场后，只会“一键导入”，殊不知自己的网速被糟糕的路由规则拖累，甚至真实的物理 IP 正在后台疯狂泄漏。</p>
+                <p>为了让您彻底掌控自己的网络，本页面集成了一套顶级的 <strong>极客网络体检方案</strong>：<br>
+                从【节点订阅转换分流】，到纯本地的【Clash 配置文件除错】，再到深度的【WebRTC 与 DNS 安全测漏】。一套完整的体检做下来，您的机场节点质量到底如何，立刻见分晓。</p>
+                <div style="margin-top: 30px; padding: 20px; background: rgba(227, 76, 38, 0.1); border-left: 4px solid #e34c26; border-radius: 8px;">
+                    <h3 style="color:#e34c26; margin-top:0; font-size: 1.2rem;">⚠️ 测出泄漏？速度太卡？</h3>
+                    <p style="color:#ccc; font-size:0.95rem; line-height:1.6;">如果您在这套硬核测试中频频报红，或者转换节点后流媒体依然卡顿，说明您的机场使用的是极其廉价的“万人骑”绕路节点，隐私毫无保障。</p>
+                    <a href="brands.html" style="display:inline-block; background:#e34c26; color:#fff; padding:10px 20px; border-radius:20px; text-decoration:none; font-weight:bold; margin-top:10px; transition:0.3s;" onmouseover="this.style.background='#ff5733'" onmouseout="this.style.background='#e34c26'">不要将就，点此获取安全的高速 IPLC 专线 →</a>
+                </div>
+            </article>
+        </div>
+
+        <!-- 右侧区域：转换工具交互面板 -->
+        <div class="right-col">
+            <div class="tool-card">
+                <div class="input-group">
+                    <label>📝 原始订阅链接 / 节点分享链接 (支持多行)</label>
+                    <textarea id="subInput" placeholder="在此粘贴您的机场订阅链接，或者诸如 vmess://、trojan:// 等节点链接（一行一个）..."></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label>🎯 请选择您的目标代理客户端</label>
+                    <select id="clientSelect">
+                        <option value="clash">Clash (包含 Verge Rev / Clash for Windows 等)</option>
+                        <option value="surge&ver=4">Surge 4/5 (Mac & iOS)</option>
+                        <option value="shadowrocket">Shadowrocket (小火箭)</option>
+                        <option value="v2ray">V2Ray / v2rayN</option>
+                        <option value="singbox">Sing-Box</option>
+                    </select>
+                </div>
+
+                <button class="btn-generate" onclick="generateSub()">🚀 立即生成定制订阅链接</button>
+
+                <div id="resultBox" class="result-box">
+                    <h3>✅ 生成成功！</h3>
+                    <p style="color:#d0d0d0; margin-bottom:10px;">请将下方为您专属生成的链接，复制并导入到您的客户端中：</p>
+                    <input type="text" id="finalUrl" readonly onclick="this.select()">
+                    <button class="copy-btn" onclick="copyUrl()">📋 一键复制</button>
+                    <span id="copyTip" style="color: #11B04E; margin-left: 10px; opacity: 0; transition: 0.3s;">复制成功！</span>
+                </div>
+            </div>
+
+            <div class="tool-card" style="margin-top: 30px;">
+                <h2 style="color: #fff; margin-top: 0; margin-bottom: 20px; font-size: 1.5rem; display: flex; align-items: center; gap: 10px;">🛠️ Clash 配置静态检测</h2>
+                <div class="input-group">
+                    <label>📄 粘贴您的 Clash YAML 配置文件代码</label>
+                    <textarea id="configInput" placeholder="输入完整的 YAML 配置文件代码进行静态语法检查..."></textarea>
+                </div>
+                <button class="btn-generate" onclick="checkConfig()" style="background: #e34c26; color: #fff;">🔍 一键检测配置语法</button>
+
+                <div id="configResult" style="margin-top: 20px; padding: 15px; border-radius: 8px; display: none; line-height: 1.6;"></div>
+            </div>
+
+            <div class="tool-card" style="margin-top: 30px;">
+                <h2 style="color: #fff; margin-top: 0; margin-bottom: 20px; font-size: 1.5rem; display: flex; align-items: center; gap: 10px;">🛡️ WebRTC 真实 IP 泄漏探测</h2>
+                <p style="color: #ccc; margin-bottom: 20px; line-height: 1.6;">即便您开启了全局代理，浏览器的 WebRTC 技术仍可能绕过代理直接暴露您的真实物理 IP 地址。点击下方按钮进行本地深层刺探，如发现您真实宽带的 IP，说明您的代理配置存在隐私漏洞。</p>
+                <button class="btn-generate" onclick="checkWebRTC()" style="background: #3949ab; color: #fff;">🕵️ 立即探测本地 WebRTC 接口</button>
+                <div id="webrtcResult" style="margin-top: 20px; padding: 15px; border-radius: 8px; display: none; line-height: 1.6;"></div>
+            </div>
+
+            <div class="tool-card" style="margin-top: 30px;">
+                <h2 style="color: #fff; margin-top: 0; margin-bottom: 20px; font-size: 1.5rem; display: flex; align-items: center; gap: 10px;">🌐 深度 DNS 解析泄漏测试</h2>
+                <p style="color: #ccc; margin-bottom: 20px; line-height: 1.6;">真正的 DNS 泄漏探测需要分布式的根服务器集群来捕获您的 DNS 请求路径，这是评估一个机场节点和代理规则是否安全的终极标准。</p>
+                <p style="color: #ccc; margin-bottom: 20px; line-height: 1.6;">由于该测试需要庞大的后端算力，我们为您直接对接了全球最权威的两大安全探测机构：</p>
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <a href="https://ipleak.net/" target="_blank" class="btn-generate" style="background: #11B04E; color: #fff; text-align: center; text-decoration: none; display: block; box-sizing: border-box;">🛡️ 前往 IPLeak.net 进行深度测漏</a>
+                    <a href="https://bash.ws/dnsleak" target="_blank" class="btn-generate" style="background: #f1e05a; color: #121212; text-align: center; text-decoration: none; display: block; box-sizing: border-box;">📊 前往 Bash.ws 进行安全综合评估</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <script src="./data/profile.js"></script>
+    <script src="./js/main.js"></script>
+    <!-- 引入 js-yaml 用于纯前端解析 YAML -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    
+    <script>
+        function generateSub() {
+            const rawInput = document.getElementById('subInput').value.trim();
+            const client = document.getElementById('clientSelect').value;
+            const resultBox = document.getElementById('resultBox');
+            const finalUrl = document.getElementById('finalUrl');
+            
+            if (!rawInput) {
+                alert("请先输入您的原始节点或订阅链接！");
+                return;
+            }
+
+            // 处理多个 URL：如果是换行，需要转码后用 '|' 连接，这是主流 subconverter 的标准格式
+            let encodedUrls = '';
+            if (rawInput.includes('\n')) {
+                const urls = rawInput.split('\n').map(u => u.trim()).filter(u => u.length > 0);
+                encodedUrls = encodeURIComponent(urls.join('|'));
+            } else {
+                encodedUrls = encodeURIComponent(rawInput);
+            }
+
+            // 调用非常著名的公共开源 subconverter 后端 (api.v1.mk)
+            // config 指定了 ACL4SSR 的在线去广告规则集
+            const subconverterBackend = 'https://api.v1.mk/sub';
+            const ruleConfig = 'https%3A%2F%2Fraw.githubusercontent.com%2FACL4SSR%2FACL4SSR%2Fmaster%2FClash%2Fconfig%2FACL4SSR_Online.ini';
+            
+            const result = subconverterBackend + '?target=' + client + '&url=' + encodedUrls + '&insert=false&config=' + ruleConfig + '&emoji=true&list=false&tfo=false&scv=false&fdn=false&sort=false&new_name=true';
+            
+            finalUrl.value = result;
+            resultBox.style.display = 'block';
+        }
+
+        function copyUrl() {
+            const copyText = document.getElementById('finalUrl');
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+            document.execCommand('copy');
+            
+            const tip = document.getElementById('copyTip');
+            tip.style.opacity = '1';
+            setTimeout(() => {
+                tip.style.opacity = '0';
+            }, 2000);
+        }
+
+        function checkConfig() {
+            const yamlStr = document.getElementById('configInput').value.trim();
+            const resBox = document.getElementById('configResult');
+            
+            if(!yamlStr) {
+                resBox.style.display = 'block';
+                resBox.style.background = 'rgba(255, 152, 0, 0.1)';
+                resBox.style.borderLeft = '4px solid #ff9800';
+                resBox.innerHTML = '<span style="color:#ff9800; font-weight:bold;">⚠️ 提示：</span> 请先粘贴您的 YAML 配置代码。';
+                return;
+            }
+
+            try {
+                // 尝试解析 YAML
+                const doc = jsyaml.load(yamlStr);
+                
+                // 基本 Clash 结构校验
+                let warnings = [];
+                if (typeof doc !== 'object') {
+                    throw new Error("格式无效：解析结果不是一个有效的 YAML 对象。");
+                }
+                
+                if (!doc.proxies && !doc['proxy-providers']) {
+                    warnings.push("未检测到 'proxies' (节点列表) 或 'proxy-providers'。");
+                }
+                if (!doc['proxy-groups']) {
+                    warnings.push("未检测到 'proxy-groups' (策略组)。");
+                }
+                if (!doc.rules) {
+                    warnings.push("未检测到 'rules' (路由分流规则)。");
+                }
+
+                let warningHtml = '';
+                if (warnings.length > 0) {
+                    warningHtml = '<br><br><span style="color:#ff9800;">建议改进：</span><br>' + warnings.join('<br>');
+                }
+
+                resBox.style.display = 'block';
+                resBox.style.background = 'rgba(17, 176, 78, 0.1)';
+                resBox.style.borderLeft = '4px solid #11B04E';
+                resBox.innerHTML = '<span style="color:#11B04E; font-weight:bold;">✅ 检测通过！</span> YAML 语法结构合法。' + warningHtml;
+
+            } catch (e) {
+                resBox.style.display = 'block';
+                resBox.style.background = 'rgba(227, 76, 38, 0.1)';
+                resBox.style.borderLeft = '4px solid #e34c26';
+                resBox.innerHTML = '<span style="color:#e34c26; font-weight:bold;">❌ 语法错误：</span><br><pre style="color:#e34c26; white-space:pre-wrap; margin-top:10px; font-size:0.9rem;">' + e.message + '</pre>';
+            }
+        }
+
+        function checkWebRTC() {
+            const rtcBox = document.getElementById('webrtcResult');
+            rtcBox.style.display = 'block';
+            rtcBox.style.background = 'rgba(255, 255, 255, 0.1)';
+            rtcBox.style.borderLeft = '4px solid #3949ab';
+            rtcBox.innerHTML = '<span style="color:#3949ab; font-weight:bold;"><i class="fa-solid fa-spinner fa-spin"></i> 正在向底层网卡发送 STUN 探针...</span>';
+            
+            setTimeout(() => {
+                const ips = new Set();
+                const pc = new RTCPeerConnection({ iceServers: [{ urls: "stun:stun.l.google.com:19302" }] });
+                pc.createDataChannel("");
+                pc.createOffer().then(offer => pc.setLocalDescription(offer)).catch(e => console.error(e));
+                
+                pc.onicecandidate = (event) => {
+                    if (event.candidate) {
+                        const candidateStr = event.candidate.candidate;
+                        // 匹配 IPv4, IPv6 以及 mDNS 混淆地址
+                        const ipMatch = candidateStr.match(/([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\.local)/i);
+                        if (ipMatch) {
+                            ips.add(ipMatch[1]);
+                        }
+                    } else {
+                        // 探测结束
+                        if (ips.size === 0) {
+                            rtcBox.style.background = 'rgba(17, 176, 78, 0.1)';
+                            rtcBox.style.borderLeft = '4px solid #11B04E';
+                            rtcBox.innerHTML = '<span style="color:#11B04E; font-weight:bold;">✅ 安全：</span>您的浏览器禁用了 WebRTC 或未发生泄漏，代理受到完美保护。';
+                        } else {
+                            const ipList = Array.from(ips).join('<br>👉 ');
+                            rtcBox.style.background = 'rgba(227, 76, 38, 0.1)';
+                            rtcBox.style.borderLeft = '4px solid #e34c26';
+                            rtcBox.innerHTML = '<span style="color:#e34c26; font-weight:bold;">⚠️ 警告，底层网卡暴露了以下地址：</span><br><br>👉 ' + ipList + 
+                            '<br><br><span style="color:#ccc; font-size:0.9rem;">(如果您在上方看到了您家宽带的真实公网 IP 或局域网 IP，说明您的代理规则可能存在 WebRTC 泄漏漏洞，建议在客户端中开启 Enhanced Mode 或 TUN 模式。)</span>';
+                        }
+                        pc.close();
+                    }
+                };
+
+                // 设置 3 秒超时
+                setTimeout(() => {
+                    if(pc.signalingState !== "closed") {
+                        pc.close();
+                        if (ips.size === 0) {
+                            rtcBox.style.background = 'rgba(17, 176, 78, 0.1)';
+                            rtcBox.style.borderLeft = '4px solid #11B04E';
+                            rtcBox.innerHTML = '<span style="color:#11B04E; font-weight:bold;">✅ 安全：</span>探测超时，未发现 WebRTC 泄漏。';
+                        }
+                    }
+                }, 3000);
+            }, 500);
+        }
+    </script>
+
+
+</body>
+</html>
