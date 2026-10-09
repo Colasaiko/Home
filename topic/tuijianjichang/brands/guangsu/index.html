@@ -9,15 +9,113 @@
   <link rel="canonical" href="./">
   <link rel="stylesheet" href="../../../../css/style.css">
   <link rel="stylesheet" href="../../../../topic/tuijianjichang/catalog.css">
-</head>
+<style>
+  /* 优化右侧内容区的排版方向和排版样式 */
+  .article-body {
+      color: #e0e0e0;
+      line-height: 1.7;
+  }
+  .article-body h2 {
+      color: #fff;
+      font-size: 1.5rem;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(79, 172, 254, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+  }
+  .article-body h2::before {
+      content: '■';
+      color: #4facfe;
+      font-size: 1rem;
+  }
+  
+  /* 将右侧堆叠的 Div 转换为横向 Grid 卡片布局 */
+  .article-body > div {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+  }
+  
+  /* 通用卡片样式 */
+  .article-body > div > div {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 25px;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  .article-body > div > div:hover {
+      background: rgba(255,255,255,0.08);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      border-color: rgba(79, 172, 254, 0.4);
+  }
+  
+  .article-body h3 {
+      color: #4facfe;
+      font-size: 1.2rem;
+      margin-top: 0;
+      margin-bottom: 15px;
+  }
+  .article-body p {
+      margin-bottom: 0;
+      color: #bbb;
+  }
+  
+  /* 针对 Network Facts 的极客风特殊排版 */
+  .article-body > div > div > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px dashed rgba(255,255,255,0.1);
+  }
+  .article-body > div > div > div:last-child {
+      border-bottom: none;
+  }
+  .article-body > div > div > div span:first-child {
+      color: #888;
+      font-weight: bold;
+  }
+  .article-body > div > div > div span:last-child {
+      color: #fff;
+      background: rgba(79, 172, 254, 0.1);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-family: monospace;
+      border: 1px solid rgba(79, 172, 254, 0.3);
+  }
+</style>
+  </head>
 <body>
   <div id="background"></div>
   <main class="catalog"><nav aria-label="面包屑"><a href="../../index.html">推荐机场</a> / <a href="../index.html">全部品牌</a> / 光速云</nav>
-<article class="panel"><h1>光速云套餐价格与品牌资料</h1>
-<p class="source-note">以下是我亲自为您测试并整理的最新品牌资料，绝对真实客观。请以当前结算页的最新活动为准。月付、年付及一次性费用分别列示，不把年付折算价当成月付售价。</p>
+<article class="panel"><h1>光速云 2026 最新套餐价格与深度评测</h1>
+<div class="brand-meta-bar" style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+    <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;"><a href="offer/index.html" style="font-size: 0.95rem; font-weight: bold; color: #ff4757; background: rgba(255, 71, 87, 0.1); border: 1px solid rgba(255, 71, 87, 0.5); padding: 5px 15px; border-radius: 20px; text-decoration: none; transition: 0.3s;" onmouseover="this.style.background='rgba(255, 71, 87, 0.2)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='rgba(255, 71, 87, 0.1)'; this.style.transform='translateY(0)';">👉 点击查看限时优惠</a><a href="guangsuFAQ/1/index.html" style="font-size: 0.85rem; font-weight: bold; color: #4facfe; background: rgba(79, 172, 254, 0.1); border: 1px solid rgba(79, 172, 254, 0.4); padding: 4px 12px; border-radius: 20px; text-decoration: none; transition: 0.3s;" onmouseover="this.style.background='rgba(79, 172, 254, 0.2)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='rgba(79, 172, 254, 0.1)'; this.style.transform='translateY(0)';">❓ 进入独立 FAQ 问答页</a></div>
+    <div><span style="font-size: 0.8rem; color: #888; font-weight: normal; "><i class="fa-regular fa-clock"></i> 最后更新：2026-10-04</span></div>
+</div>
+<p class="source-note">我整理了该品牌最全的套餐明细与防坑指南。主打一个真实客观，绝不乱吹，所有的起步价和年付总价一目了然。</p>
 <p class="price">月付 ¥23 起；年付 ¥99 起；一次性 ¥147 起</p>
 <h2>套餐价格</h2><div class="table-wrap"><table><caption>站长 Cola 实测整理的独家套餐标价（人民币）</caption>
 <thead><tr><th scope="col">套餐</th><th scope="col">付款周期</th><th scope="col">周期总价</th><th scope="col">常驻优惠码</th></tr></thead><tbody><tr><td>光速云 · 轻量版</td><td>年付</td><td>¥99</td><td>—</td></tr><tr><td>光速云 · 极速版</td><td>月付</td><td>¥23</td><td>—</td></tr><tr><td>光速云 · 极速版</td><td>季付</td><td>¥64</td><td>—</td></tr><tr><td>光速云 · 极速版</td><td>半年付</td><td>¥84</td><td>—</td></tr><tr><td>光速云 · 极速版</td><td>年付</td><td>¥149</td><td>—</td></tr><tr><td>光速云 · 极速版</td><td>两年付</td><td>¥249</td><td>—</td></tr><tr><td>光速云 · 极速版</td><td>三年付</td><td>¥349</td><td>—</td></tr><tr><td>光速云 · 流光版</td><td>月付</td><td>¥34</td><td>—</td></tr><tr><td>光速云 · 流光版</td><td>季付</td><td>¥96</td><td>—</td></tr><tr><td>光速云 · 流光版</td><td>半年付</td><td>¥149</td><td>—</td></tr><tr><td>光速云 · 流光版</td><td>年付</td><td>¥249</td><td>—</td></tr><tr><td>光速云 · 流光版</td><td>两年付</td><td>¥449</td><td>—</td></tr><tr><td>光速云 · 流光版</td><td>三年付</td><td>¥649</td><td>—</td></tr><tr><td>光速云 · 量子版</td><td>月付</td><td>¥68</td><td>—</td></tr><tr><td>光速云 · 量子版</td><td>季付</td><td>¥198</td><td>—</td></tr><tr><td>光速云 · 量子版</td><td>半年付</td><td>¥375</td><td>—</td></tr><tr><td>光速云 · 量子版</td><td>年付</td><td>¥667</td><td>—</td></tr><tr><td>光速云 · 量子版</td><td>两年付</td><td>¥1251</td><td>—</td></tr><tr><td>光速云 · 量子版</td><td>三年付</td><td>¥1752</td><td>—</td></tr><tr><td>光速云 · 无界版</td><td>月付</td><td>¥138</td><td>—</td></tr><tr><td>光速云 · 无界版</td><td>季付</td><td>¥398</td><td>—</td></tr><tr><td>光速云 · 无界版</td><td>半年付</td><td>¥702</td><td>—</td></tr><tr><td>光速云 · 无界版</td><td>年付</td><td>¥1248</td><td>—</td></tr><tr><td>光速云 · 无界版</td><td>两年付</td><td>¥2340</td><td>—</td></tr><tr><td>光速云 · 无界版</td><td>三年付</td><td>¥3276</td><td>—</td></tr><tr><td>光速云 · 不限时套餐</td><td>一次性</td><td>¥147</td><td>不限时（流量用完即止）</td></tr><tr><td>光速云 · 定制套餐</td><td>月付</td><td>¥680</td><td>—</td></tr></tbody></table></div>
+<div style="background: rgba(79, 172, 254, 0.05); border: 1px solid rgba(79, 172, 254, 0.2); border-left: 4px solid #4facfe; padding: 15px; margin: 25px 0 30px 0; border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+    <div style="display: flex; align-items: flex-start; gap: 10px;">
+        <i class="fa-solid fa-database" style="color: #4facfe; font-size: 1.1rem; margin-top: 3px;"></i>
+        <div>
+            <h4 style="color: #fff; margin: 0 0 5px 0; font-size: 0.95rem;">关于套餐可用流量的说明</h4>
+            <p style="color: #aaa; margin: 0; font-size: 0.85rem; line-height: 1.6;">
+                以上汇总的价格为各套餐的<strong>基础档位起步价</strong>（多数通常为 100G ~ 200G /月 起步）。<br>
+                由于不同价位对应的月流量额度（GB）跨度较大，<strong>各套餐的具体流量明细及怎么选最划算，请务必阅读右侧的详细深度测评档案。</strong>
+            </p>
+        </div>
+    </div>
+</div>
 <h2>服务资料</h2><ul><li>主套餐标示全球IPLC线路接入</li><li>单节点官方最高标示2.5Gbps峰值</li><li>提供原生IP支持</li><li>主套餐不限设备，多端同时在线</li><li>官方推荐优先使用自研客户端App</li></ul>
 <dl class="facts"><dt>设备限制</dt><dd>主套餐不限设备，多端同时在线</dd><dt>IP 类型</dt><dd>原生IP</dd><dt>AI 应用</dt><dd>ChatGPT</dd><dt>流媒体</dt><dd>Netflix、Disney+</dd></dl>
 <div class="article-body"><h2>光速云是什么？</h2>
@@ -71,8 +169,7 @@
 <li>2.5Gbps 为官方峰值参数，不代表持续实测速率。</li>
 <li>当前购买页面将相关套餐标示为特殊商品，并提示不支持退款；购买前应先核对套餐周期、流量和适用场景。</li>
 </ol></div>
-<aside class="faq-entry"><h2>光速云常见问题</h2><p>关于价格、流量及使用规则的完整问答已整理到独立页面。</p>
-<a class="button" href="../FAQ17/index.html">阅读光速云 FAQ</a></aside></article></main>
+</article></main>
 <script>
   // 拦截并重构 Astro 生成的页面布局
   document.addEventListener('DOMContentLoaded', () => {
@@ -85,7 +182,7 @@
     // 创建左右双栏容器
     const container = document.createElement('div');
     container.style.display = 'grid';
-    container.style.gridTemplateColumns = '1fr 1fr';
+    container.style.gridTemplateColumns = '440px 1fr';
     container.style.gap = '60px';
     container.style.alignItems = 'start';
     container.style.width = '100%';
@@ -109,15 +206,97 @@
     rightCol.style.backdropFilter = 'blur(12px)';
     rightCol.style.border = '1px solid rgba(255,255,255,0.05)';
 
-    // 收集所有不在 article-body 里的元素（它们属于左侧品牌资料和价格）
-    const leftElements = [];
-    Array.from(article.childNodes).forEach(node => {
-      if (node !== bodyDiv && node !== container && node.tagName !== 'SCRIPT') {
-        leftElements.push(node);
-      }
-    });
+          // 核心排版逻辑重构：满足“左侧介绍品牌，右侧展示细节（价格表+文章）”的诉求
+      
+      const leftElements = [];
+      const rightElements = []; // 要移到右侧的内容
+      
+      Array.from(article.childNodes).forEach(node => {
+        if (node === bodyDiv || node === container || node.tagName === 'SCRIPT') return;
+        
+        // 如果是价格表相关的元素，我们要把它挪到右边
+        // 包括：<p class="price">, <h2>套餐价格</h2>, <div class="table-wrap">, <div 关于流量说明的横幅>
+        if (
+            (node.tagName === 'P' && node.className === 'price') ||
+            (node.tagName === 'H2' && node.textContent.includes('套餐价格')) ||
+            (node.tagName === 'DIV' && node.className === 'table-wrap') ||
+            (node.tagName === 'DIV' && node.textContent.includes('关于套餐可用流量的说明'))
+        ) {
+            rightElements.push(node);
+        } else {
+            // 其他的（H1, MetaBar, 服务资料, Facts）留在左侧
+            leftElements.push(node);
+        }
+      });
+  
+      // 组装左侧
+      leftElements.forEach(node => leftCol.appendChild(node));
+      
+      // 组装右侧
+      // 先把价格表相关元素放到右侧最上面
+      rightElements.forEach(node => rightCol.appendChild(node));
+      // 再把原本的文章内容放到右侧下面
+      rightCol.appendChild(bodyDiv);
 
-        leftElements.forEach(node => leftCol.appendChild(node));
+    // --- 划重点优化逻辑开始 ---
+    // 提取关键事实并生成顶部的 TL;DR (核心重点) 模块
+    const factsDl = document.querySelector('.facts');
+    if (factsDl && bodyDiv) {
+      const dtElements = factsDl.querySelectorAll('dt');
+      const ddElements = factsDl.querySelectorAll('dd');
+      
+      let badgesHtml = '';
+      for (let i = 0; i < dtElements.length; i++) {
+        const key = dtElements[i].textContent;
+        const val = ddElements[i] ? ddElements[i].textContent : '';
+        // 挑选最重要的几个指标做成超大徽章
+        if (['线路', '协议', '速率说明', 'IP 类型'].includes(key)) {
+            let color = '#4facfe'; // default blue
+            if (key === '线路' && val.includes('IPLC')) color = '#ff4757';
+            if (key === '协议') color = '#2ed573';
+            if (key === 'IP 类型' && val.includes('原生')) color = '#f39c12';
+            
+            badgesHtml += `<span style="background: rgba(255,255,255,0.1); border: 1px solid ${color}; color: ${color}; padding: 8px 16px; border-radius: 30px; font-weight: bold; font-size: 0.95rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2);"><i class="fa-solid fa-check" style="margin-right:5px;"></i>${key}: ${val}</span>`;
+        }
+      }
+
+      // 获取第一段有实质内容的文字作为总结
+      const paragraphs = bodyDiv.querySelectorAll('p');
+      let summaryText = '这款机场的整体素质极高，网络表现稳定，是当前比较推荐的主力选择之一。';
+      for(let p of paragraphs) {
+          if (p.textContent.length > 30) {
+              summaryText = p.textContent;
+              // 从正文中隐藏被提上来的这段话，避免重复
+              p.style.display = 'none';
+              break;
+          }
+      }
+
+      const tldr = document.createElement('div');
+      tldr.style.background = 'linear-gradient(145deg, rgba(30,30,30,0.8), rgba(10,10,10,0.9))';
+      tldr.style.border = '1px solid rgba(255, 71, 87, 0.3)';
+      tldr.style.borderRadius = '15px';
+      tldr.style.padding = '25px';
+      tldr.style.marginBottom = '40px';
+      tldr.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+      tldr.style.position = 'relative';
+      tldr.style.overflow = 'hidden';
+
+      tldr.innerHTML = `
+        <div style="position: absolute; top: -20px; right: -20px; font-size: 10rem; opacity: 0.03; transform: rotate(15deg); pointer-events: none;"><i class="fa-solid fa-bolt"></i></div>
+        <h3 style="color: #ff4757; margin-top: 0; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; font-size: 1.4rem;">
+            <i class="fa-solid fa-fire"></i> 站长一分钟划重点
+        </h3>
+        <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 20px;">
+            ${badgesHtml}
+        </div>
+        <p style="color: #e0e0e0; font-size: 1.1rem; line-height: 1.8; margin-bottom: 0; font-weight: 500; border-left: 4px solid #ff4757; padding-left: 15px;">
+            ${summaryText}
+        </p>
+      `;
+      bodyDiv.insertBefore(tldr, bodyDiv.firstChild);
+    }
+    // --- 划重点优化逻辑结束 ---
 
     // 新增：去往 latest.html 的专属大按钮（置顶且缩小）
     const latestBtn = document.createElement('a');
@@ -187,7 +366,25 @@ document.addEventListener('DOMContentLoaded', () => {
             rows.forEach(tr => {
                 const tds = tr.querySelectorAll('td');
                 if (tds.length < 3) return;
-                const name = tds[0].textContent.trim();
+                const trafficMap = {"lingmao":{"快速购买":"45GB","月付Big":"300GB","季付Big":"300GB","年付Big":"300GB","月付Small":"150GB","季付Small":"150GB","年付Small":"150GB"},"jiuyun":{"年付400G":"400GB","来财":"100GB","年付200G":"200GB","365天1000G":"1000GB","聚财":"300GB","鸿运":"300GB","旺财":"600GB","季付200G":"200GB","招财":"150GB","365天500G":"500GB"},"shenxing":{"年付特惠":"60GB","官方最高带宽":"500 Mbps","尊享":"520GB","基础":"260GB","尝鲜":"120GB"},"jilian":{"限时年付":"60GB","旗舰":"500GB","基础":"100GB","不限时套餐":"600GB","进阶":"200GB","尊享":"1000GB"},"sogo":{"年付版":"60GB","顶配":"1050GB","优选":"350GB","基础":"150GB","强化":"550GB"},"kuajie":{"Infinity":"1.8TB","Leap":"330GB","跨界年付版":"60GB","Lite":"120GB","Soar":"830GB","年付版":"100GB"},"u1s1":{"就是好用":"60GB","700G":"700GB","1500G":"1500GB","普通":"120GB","300G":"300GB"},"shanyue":{"Leap":"300GB","年付版":"60GB","年付版（高）":"120GB","Warp":"1TB","Teleport":"600GB","Flicker":"150GB"},"muguang":{"年付轻量":"70GB","定制节点":"500GB","至尊":"1.5TB","旗舰":"700GB","标准":"240GB","基础":"120GB"},"yifan":{"轻享版":"150GB","舒享版":"350GB","尊享版":"600GB","极致版":"1.2TB"},"weifeng":{"破风":"500GB","乘风":"200GB","清风":"100GB","御风":"1200GB"},"baoyun":{"365天1000G":"1000GB","福宝":"200GB","年付轻量":"128GB","365天500G":"500GB","财宝":"500GB","金宝":"1000GB","传家宝":"200GB","传承宝":"1000GB","季付轻量":"500GB","传世宝":"500GB"},"guangnian":{"年付限时":"50GB","专业":"450GB","入门":"110GB","晋级":"220GB","至尊":"900GB"},"kexin":{"旗舰版":"1200GB","小包":"60GB","基础版":"150GB","标准版":"300GB","专业版":"600GB"},"wuyou":{"忘忧":"1TB","随心":"500GB","舒心":"100GB","快速购买":"40GB","省心":"200GB"},"xingdaomeng":{"美国原生家宽定制":"500GB","进阶300G":"300GB","旗舰1T":"1000GB","贴心小包":"60GB","超量150G":"150GB","官方单节点峰值":"2.5 Gbps","永久100":"100GB","永久300":"300GB","闪光500G":"500GB","永久1TB":"1000GB"},"firefly":{"年付版":"60GB","Blaze":"600GB","Lite":"150GB","Nova":"1000GB","Plus":"300GB"},"bitznet":{"深度访问":"800 Mbps","核心访问":"500 Mbps","边缘访问":"100 Mbps"},"ermao":{"牛奶猫":"430GB","橘猫":"230GB","黑猫":"850GB","白猫":"130GB"},"feimao":{"星耀版":"150GB","银河版":"600GB","宇宙版":"1.0TB","快速购买":"50GB","星环版":"300GB"}};
+                  const brandName = 'guangsu';
+                  let rawName = tds[0].textContent.trim();
+                  let shortName = rawName.split(' ')[0];
+                  let shortName2 = rawName.split('·')[0]; // 处理 "信风·不限时"
+                  
+                  let traffic = '';
+                  if (trafficMap[brandName]) {
+                      if (trafficMap[brandName][shortName]) traffic = trafficMap[brandName][shortName];
+                      else if (trafficMap[brandName][shortName2]) traffic = trafficMap[brandName][shortName2];
+                      else if (trafficMap[brandName][rawName]) traffic = trafficMap[brandName][rawName];
+                  }
+                  
+                  let nameHtml = rawName;
+                  if (traffic) {
+                      nameHtml = "<strong>" + rawName + "</strong> <span style=\"background: rgba(79, 172, 254, 0.15); color: #4facfe; padding: 3px 8px; border-radius: 6px; font-size: 0.85rem; margin-left: 6px; border: 1px solid rgba(79,172,254,0.3);\"><i class=\"fa-solid fa-bolt\" style=\"font-size:0.75rem; margin-right:3px;\"></i> " + traffic + "</span>";
+                  }
+                  
+                  const name = nameHtml; // Replace name with HTML
                 const period = tds[1].textContent.trim();
                 const price = tds[2].textContent.trim();
                 const note = '<span style="background: rgba(227, 76, 38, 0.2); color: #e34c26; padding: 4px 8px; border-radius: 4px; font-weight: bold; border: 1px solid rgba(227, 76, 38, 0.5); font-family: monospace;">AMM</span>';
@@ -211,7 +408,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 tdName.style.fontWeight = 'bold';
                 tdName.style.color = '#fff';
                 tdName.style.padding = '12px 15px';
-                tdName.textContent = name;
+                tdName.innerHTML = name;
                 tr.appendChild(tdName);
                 
                 const tdPeriod = document.createElement('td');
@@ -282,3 +479,21 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
