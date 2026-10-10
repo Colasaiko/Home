@@ -111,7 +111,7 @@ function renderData() {
     }
 
     if (typeof projectsData !== 'undefined' && typeof blogsData !== 'undefined') {
-        const projectsGrid = document.querySelector('.projects-grid');
+        const projectsGrid = document.querySelector('[data-projects-grid]') || document.querySelector('.projects-grid');
         if (projectsGrid) {
             const blogLinksHtml = blogsData.map(b => '<a href="' + b.url + '" target="_blank" class="blog-link">' + b.name + '</a>').join('');
             

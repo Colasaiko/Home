@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>翻墙协议大乱斗与 GFW 攻防录 | Cola 站长</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../tuijianjichang/catalog.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+      .protocol-list { list-style: none; padding: 0; }
+      .protocol-item { background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-bottom: 15px; transition: 0.3s; }
+      .protocol-item:hover { background: rgba(79,172,254,0.1); border-color: rgba(79,172,254,0.5); transform: translateX(10px); }
+      .protocol-link { display: block; padding: 20px; text-decoration: none; color: #fff; font-size: 1.1rem; font-weight: bold; }
+      .protocol-link i { color: #4facfe; margin-right: 15px; font-size: 1.2rem; width: 25px; text-align: center; }
+      .protocol-desc { display: block; color: #aaa; font-size: 0.9rem; font-weight: normal; margin-top: 10px; margin-left: 45px; }
+  </style>
+<!-- Contextual reading assets -->
+<link rel="stylesheet" href="../../css/content-paths.css?v=20261010-3">
+<!-- End contextual reading assets -->
+<!-- Shared floating navigation assets -->
+<link rel="stylesheet" href="../../css/floating-navigation.css?v=20261010-rings" data-floating-navigation>
+<script src="../../js/floating-navigation-pages.js?v=20261010-rings" defer data-floating-navigation></script>
+<script src="../../js/floating-navigation.js?v=20261010-rings" defer data-floating-navigation></script>
+<!-- End shared floating navigation assets -->
+
+<!-- Mobile reading assets -->
+<link rel="stylesheet" href="../../css/mobile-reading.css?v=20261010-1">
+<script src="../../js/mobile-reading.js?v=20261010-1" defer></script>
+<!-- End mobile reading assets -->
+</head>
+<body>
+  <div id="background"></div>
+  <main class="catalog">
+    <nav aria-label="面包屑"><a href="index.html">返回安全研究</a></nav>
+    <section class="panel">
+        <h1><i class="fa-solid fa-bolt"></i> 翻墙协议大乱斗与 GFW 攻防录</h1>
+        <p>站长 Cola 呕心沥血整理的 10 篇网络安全与协议科普硬核长文。无论你是小白还是极客，读完这些你将彻底告别盲目翻墙。</p>
+        
+        <ul class="protocol-list">            <li class="protocol-item">
+                <a href="protocols/1.html" class="protocol-link">
+                    <i class="fa-solid fa-file-shield"></i> 第 1 章：Shadowsocks 的前世今生与 GFW 主动探测机制
+                    <span class="protocol-desc"> 1. 梦开始的地方：Shadowsocks 的诞生  Shadowsocks（简称 SS）由 clowwindy 创立，最初采用了极其轻量的 SOCKS5 代...</span>
+                </a>
+            </li>            <li class="protocol-item">
+                <a href="protocols/2.html" class="protocol-link">
+                    <i class="fa-solid fa-file-shield"></i> 第 2 章：Trojan 协议：大隐隐于市的 HTTPS 伪装艺术
+                    <span class="protocol-desc"> 1. 伪装思路的根本转变  面对 GFW 对随机加密流量的无差别封锁，Trojan 团队提出了一个截然不同的思路：与其费尽心思隐藏流量特征，不如把流量伪装成互...</span>
+                </a>
+            </li>            <li class="protocol-item">
+                <a href="protocols/3.html" class="protocol-link">
+                    <i class="fa-solid fa-file-shield"></i> 第 3 章：VLESS 与 XTLS：去掉冗余加密的性能狂欢
+                    <span class="protocol-desc"> 1. VMess 的历史局限性  VMess 作为 V2Ray 的核心协议，曾在很长一段时间内统治了翻墙圈。但 VMess 的设计包含了复杂的防重放和加密机制...</span>
+                </a>
+            </li>            <li class="protocol-item">
+                <a href="protocols/4.html" class="protocol-link">
+                    <i class="fa-solid fa-file-shield"></i> 第 4 章：VLESS Reality：无需域名的终极伪装方案
+                    <span class="protocol-desc"> 1. 传统伪装的痛点：域名与证书  无论是 V2Ray 的 TLS 还是 Trojan，都存在一个致命痛点：你必须自己购买一个域名，解析到 VPS，并且申请真...</span>
+                </a>
+            </li>            <li class="protocol-item">
+                <a href="protocols/5.html" class="protocol-link">
+                    <i class="fa-solid fa-file-shield"></i> 第 5 章：IPLC/IEPL 专线：线路形态、共享套餐与选购验证
+                    <span class="protocol-desc">专线产品与机场共享套餐如何区分？核对线路环节、计费、协议兼容与同条件测试。</span>
+                </a>
+            </li>            <li class="protocol-item">
+                <a href="protocols/6.html" class="protocol-link">
+                    <i class="fa-solid fa-file-shield"></i> 第 6 章：Hysteria & TUIC：UDP 协议带来的暴力加速
+                    <span class="protocol-desc"> 1. TCP 协议的先天不足  在跨国网络传输中，TCP 协议面临着严重的延迟和丢包问题。TCP 的『拥塞控制』机制在发现丢包时，会剧烈降低传输速度，导致看 ...</span>
+                </a>
+            </li>            <li class="protocol-item">
+                <a href="protocols/7.html" class="protocol-link">
+                    <i class="fa-solid fa-file-shield"></i> 第 7 章：SNI 阻断与 TLS 指纹识别：隐形的战争
+                    <span class="protocol-desc"> 1. 什么是 SNI 阻断？  当我们在浏览器输入网址访问 HTTPS 网站时，由于 TLS 握手的最初始阶段（ClientHello）是明文传输的，里面包含...</span>
+                </a>
+            </li>            <li class="protocol-item">
+                <a href="protocols/8.html" class="protocol-link">
+                    <i class="fa-solid fa-file-shield"></i> 第 8 章：机场审计规则揭秘：为什么不让你看某功？
+                    <span class="protocol-desc"> 1. 为什么会有机场审计？  很多小白发现，使用机场节点无法下载 BT 种子，或者无法访问某些特定的政治敏感网站（如轮子功）、或者挖矿池。这并不是因为机场主有...</span>
+                </a>
+            </li>            <li class="protocol-item">
+                <a href="protocols/9.html" class="protocol-link">
+                    <i class="fa-solid fa-file-shield"></i> 第 9 章：DNS 污染与 DoH 技术：保护冲浪第一步
+                    <span class="protocol-desc">DoH 加密的是解析请求。按 DNS、规则与应用路由逐步检查，不把解析设置当作全部隐私保证。</span>
+                </a>
+            </li>            <li class="protocol-item">
+                <a href="protocols/10.html" class="protocol-link">
+                    <i class="fa-solid fa-file-shield"></i> 第 10 章：中转节点 vs 直连节点：速度、安全与成本的权衡
+                    <span class="protocol-desc"> 1. 直连节点的宿命  直连节点（如普通 VPS）是指你的电脑直接将加密流量发往国外的服务器。它的优点是成本极低，且你的流量不用经过国内第三方中转服务器，隐私...</span>
+                </a>
+            </li>        </ul>
+    </section>
+  <!-- Contextual reading path -->
+<section class="content-paths" id="continue-reading" data-reading-profile="protocol" aria-labelledby="continue-reading-title"><p class="content-path-kicker">把这个问题与下一步接起来</p><h2 id="continue-reading-title">从协议原理走到配置与实际选购</h2><p>理解协议以后，要核对客户端版本、传输条件和品牌提供的实际订阅；协议名称不是可用性保证。</p><div class="content-path-grid"><div class="content-path-card"><a href="../../FAQ/WhatIsHysteria2.html">Hysteria2 是什么，如何检查兼容 →</a><p>用 Hysteria2 的例子理解协议支持与 UDP 网络条件。</p></div><div class="content-path-card"><a href="../../api.html">检查配置与测试结果 →</a><p>核对配置字段和格式，解析通过后再看客户端日志。</p></div><div class="content-path-card"><a href="gfw-monitor.html">区分封锁、节点故障与本地问题 →</a><p>出现超时后用网络对照定位，不凭协议名字推断是否被封锁。</p></div><div class="content-path-card"><a href="../tuijianjichang/index.html">按用途比较主推品牌 →</a><p>带着协议、设备与线路需求回到主推品牌资料，逐项核对。</p></div></div></section>
+<!-- End contextual reading path -->
+</main>
+<!-- Shared floating navigation -->
+<nav class="site-floating-nav" aria-label="快捷导航">
+  <div class="site-floating-menu" id="site-floating-menu" hidden>
+    <p class="site-floating-title">快速导航</p>
+    <a href="../../index.html">返回首页</a><a href="../tuijianjichang/index.html">站长精选机场推荐</a><a href="../tuijianjichang/brands/index.html">机场品牌总库</a><a href="../tuijianjichang/comparison.html">品牌对比</a><a href="../tuijianjichang/faq/index.html">FAQ 知识库</a><a href="privacy.html">隐私与防泄漏</a><a href="gfw-monitor.html">GFW 与节点故障判断</a>
+  </div>
+  <div class="site-floating-controls">
+    <button type="button" class="site-floating-action" data-floating-back data-home="../../index.html" aria-label="返回上一页" title="返回上一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button>
+    <a class="site-floating-action" href="../../index.html" aria-label="返回首页" title="返回首页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></a>
+    <button type="button" class="site-floating-toggle" data-floating-toggle aria-controls="site-floating-menu" aria-expanded="false" aria-label="打开快捷导航" title="快捷导航"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+  </div>
+</nav>
+<!-- End shared floating navigation -->
+</body>
+</html>

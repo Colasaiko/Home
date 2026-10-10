@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,31 @@
     <!-- 引入 FontAwesome 图标 (CDN) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
+<style>
+.hot-news-container > .hot-card { min-width: 0; }
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+<!-- Shared floating navigation assets -->
+<link rel="stylesheet" href="css/floating-navigation.css?v=20261010-rings" data-floating-navigation>
+<script src="js/floating-navigation-pages.js?v=20261010-rings" defer data-floating-navigation></script>
+<script src="js/floating-navigation.js?v=20261010-rings" defer data-floating-navigation></script>
+<!-- End shared floating navigation assets -->
+
+<!-- Mobile reading assets -->
+<link rel="stylesheet" href="css/mobile-reading.css?v=20261010-1">
+<script src="js/mobile-reading.js?v=20261010-1" defer></script>
+<!-- End mobile reading assets -->
 </head>
 <body>
     <!-- 动态背景特效层 -->
@@ -38,22 +63,22 @@
                 <a href="./topic/tuijianjichang/index.html" class="project-card" style="text-decoration:none; display:block; border-top: 4px solid #e34c26;">
                     <i class="fa-solid fa-plane-departure star-icon" style="color: #e34c26;"></i>
                     <h3 style="color:#fff; font-size:1.2rem; margin-bottom:10px;">推荐机场主推榜</h3>
-                    <p style="color:#aaa; font-size:0.95rem; margin-bottom:15px; line-height:1.5;">全网顶级服务商纯净测评、节点延迟解析与技术内幕分析。</p>
+                    <p style="color:#aaa; font-size:0.95rem; margin-bottom:15px; line-height:1.5;">按套餐、线路与用途比较主推品牌，购买后继续核对客户端和隐私设置。</p>
                     <div class="project-tag"><span style="background: #e34c26;">🌟 站长主推</span></div>
                 </a>
                 
-                <a href="#" class="project-card" style="text-decoration:none; display:block; border-top: 4px solid #3572A5; opacity: 0.7;">
+                <a href="./topic/cybersecurity/index.html" class="project-card" style="text-decoration:none; display:block; border-top: 4px solid #3572A5;">
                     <i class="fa-solid fa-shield-virus star-icon" style="color: #3572A5;"></i>
-                    <h3 style="color:#fff; font-size:1.2rem; margin-bottom:10px;">网络安全防封指南</h3>
-                    <p style="color:#aaa; font-size:0.95rem; margin-bottom:15px; line-height:1.5;">深度拆解 GFW 封锁原理，TLS 握手特征与最前沿的防封锁策略。</p>
-                    <div class="project-tag"><span style="background: #3572A5;">即将上线</span></div>
+                    <h3 style="color:#fff; font-size:1.2rem; margin-bottom:10px;">协议、隐私与故障排查</h3>
+                    <p style="color:#aaa; font-size:0.95rem; margin-bottom:15px; line-height:1.5;">理解线路和协议的区别，检查订阅隐私，按证据定位连接问题。</p>
+                    <div class="project-tag"><span style="background: #3572A5;">安全与排查</span></div>
                 </a>
                 
-                <a href="#" class="project-card" style="text-decoration:none; display:block; border-top: 4px solid #9b59b6; opacity: 0.7;">
+                <a href="./topic/ai/index.html" class="project-card" style="text-decoration:none; display:block; border-top: 4px solid #9b59b6;">
                     <i class="fa-solid fa-microchip star-icon" style="color: #9b59b6;"></i>
-                    <h3 style="color:#fff; font-size:1.2rem; margin-bottom:10px;">AI 大模型实战集</h3>
-                    <p style="color:#aaa; font-size:0.95rem; margin-bottom:15px; line-height:1.5;">ChatGPT、Claude 注册防风控技巧与底层 Prompt 提问逻辑拆解。</p>
-                    <div class="project-tag"><span style="background: #9b59b6;">即将上线</span></div>
+                    <h3 style="color:#fff; font-size:1.2rem; margin-bottom:10px;">AI 使用指南</h3>
+                    <p style="color:#aaa; font-size:0.95rem; margin-bottom:15px; line-height:1.5;">按需求学习提问、生成图片，遇到访问问题时继续查 FAQ 和网络连接。</p>
+                    <div class="project-tag"><span style="background: #9b59b6;">按用途阅读</span></div>
                 </a>
             </div>
         </section>
@@ -108,7 +133,7 @@
         <!-- 网站合集/项目卡片展示区 (由 main.js 动态渲染) -->
         <section class="section">
             <h2 class="section-title"><span>工具</span>矩阵</h2>
-            <div class="projects-grid">
+            <div class="projects-grid" data-projects-grid>
                 <!-- 这里的项目卡片将由 js/main.js 根据 data/projects.js 动态生成 -->
             </div>
         </section>
@@ -163,9 +188,25 @@
     <script src="./data/profile.js"></script>
     <script src="./data/communities.js"></script>
     <script src="./data/blogs.js"></script>
-    <script src="./data/projects.js"></script>
+    <script src="./data/projects.js?v=20261010-topic"></script>
     
     <!-- 主渲染脚本 -->
-    <script src="./js/main.js"></script>
+    <script src="./js/main.js?v=20261010-topic"></script>
+
+
+
+<!-- Shared floating navigation -->
+<nav class="site-floating-nav" aria-label="快捷导航">
+  <div class="site-floating-menu" id="site-floating-menu" hidden>
+    <p class="site-floating-title">快速导航</p>
+    <a href="index.html">返回首页</a><a href="topic/tuijianjichang/index.html">站长精选机场推荐</a><a href="topic/tuijianjichang/brands/index.html">机场品牌总库</a><a href="topic/tuijianjichang/comparison.html">品牌对比</a><a href="topic/tuijianjichang/faq/index.html">FAQ 知识库</a><a href="topic/cybersecurity/privacy.html">隐私与防泄漏</a><a href="topic/cybersecurity/gfw-monitor.html">GFW 与节点故障判断</a>
+  </div>
+  <div class="site-floating-controls">
+    <button type="button" class="site-floating-action" data-floating-back data-home="index.html" aria-label="返回上一页" title="返回上一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button>
+    <a class="site-floating-action" href="index.html" aria-label="返回首页" title="返回首页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></a>
+    <button type="button" class="site-floating-toggle" data-floating-toggle aria-controls="site-floating-menu" aria-expanded="false" aria-label="打开快捷导航" title="快捷导航"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+  </div>
+</nav>
+<!-- End shared floating navigation -->
 </body>
 </html>

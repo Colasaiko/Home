@@ -231,6 +231,9 @@ def page(title, description, content, depth, canonical='./', noindex=False):
 
 
 def write(path, text):
+    if path.suffix.lower() == '.html':
+        from site_navigation import add_navigation
+        text = add_navigation(text, path)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text, encoding='utf-8')
 

@@ -1,0 +1,33 @@
+/* Reflow content instead of hiding horizontal overflow on small screens. */
+@media(max-width:700px){
+ body{overflow-wrap:anywhere}
+ main,.main-container,.page-container,article,section,.panel,.article-entry,.article-content,.toc-sidebar,#mainContent{min-width:0;max-width:100%;box-sizing:border-box}
+ main img,article img,main video,article video,main iframe,article iframe{max-width:100%;height:auto}
+ main div,article div{min-width:0}
+ main pre,article pre,.mock-terminal{white-space:pre-wrap!important;overflow-wrap:anywhere;word-break:break-word;max-width:100%;overflow-x:visible!important}
+ main code,article code{overflow-wrap:anywhere;word-break:break-word}
+ main input:not([type="checkbox"]):not([type="radio"]),main textarea,main select{max-width:100%;min-width:0;box-sizing:border-box}
+ .hot-list li{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere}
+ .main-container{width:100%;margin-left:0;margin-right:0}
+ .page-container{grid-template-columns:minmax(0,1fr)!important;gap:20px;padding:0 16px;margin:24px auto}
+ .page-container .toc-sidebar{position:static!important;padding:20px;max-height:none}
+ .article-entry{padding:20px;margin-bottom:24px}
+ .article-entry h2{font-size:1.5rem}
+ .article-meta{flex-wrap:wrap;gap:8px 16px}
+ .article-content{padding:18px!important}
+ main [style*="grid-template-columns"],article [style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr)!important;gap:18px!important}
+ main [style*="display: flex"],article [style*="display: flex"]{flex-wrap:wrap}
+ main [style*="position: sticky"],article [style*="position: sticky"]{position:static!important;max-height:none!important}
+ .clash-panel{padding:12px!important;overflow-x:visible!important}
+ .table-wrap,.table-scroll{max-width:100%;overflow-x:visible!important}
+ table.mobile-reading-table{display:block;width:100%!important;min-width:0!important;max-width:100%;white-space:normal!important;border:0!important}
+ .mobile-reading-table caption{display:block;width:100%;margin-bottom:12px}
+ .mobile-reading-table thead{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);clip-path:inset(50%);white-space:nowrap}
+ .mobile-reading-table tbody,.mobile-reading-table tfoot{display:block;width:100%}
+ .mobile-reading-table tbody>tr,.mobile-reading-table tfoot>tr{display:block;width:100%;margin:0 0 18px;padding:8px;border:1px solid #71839b;border-radius:10px}
+ .mobile-reading-table tr[hidden]{display:none!important}
+ .mobile-reading-table tbody>tr>td,.mobile-reading-table tbody>tr>th,.mobile-reading-table tfoot>tr>td{display:block;width:100%!important;min-width:0!important;max-width:100%;box-sizing:border-box;white-space:normal!important;padding:10px 8px!important;border:0!important;text-align:left!important;overflow-wrap:anywhere}
+ .mobile-reading-table [data-mobile-label]::before{content:attr(data-mobile-label);display:block;color:inherit;opacity:.85;font-size:.82rem;font-weight:700;margin-bottom:4px}
+ .mobile-reading-table td>*{max-width:100%;min-width:0}
+ .comparison-toolbar{position:static}
+}

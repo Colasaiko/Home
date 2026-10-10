@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mac 开启 Clash TUN 后没网怎么办？ | 原因与解决步骤 | Cola FAQ</title>
+  <meta name="description" content="先关闭 TUN 做可恢复的对照，确认节点和系统代理是否可用，再分别检查服务状态、DNS、路由冲突与具体日志，最后逐项重新启用验证。">
+  <link rel="canonical" href="ClashMacTunNoInternet.html">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../topic/tuijianjichang/catalog.css">
+  <link rel="stylesheet" href="../topic/tuijianjichang/faq/faq-article.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Mac 开启 Clash TUN 后没网怎么办？", "description": "先关闭 TUN 做可恢复的对照，确认节点和系统代理是否可用，再分别检查服务状态、DNS、路由冲突与具体日志，最后逐项重新启用验证。", "inLanguage": "zh-CN", "dateModified": "2026-10-10"}</script>
+<!-- Contextual reading assets -->
+<link rel="stylesheet" href="../css/content-paths.css?v=20261010-3">
+<!-- End contextual reading assets -->
+<!-- Shared floating navigation assets -->
+<link rel="stylesheet" href="../css/floating-navigation.css?v=20261010-rings" data-floating-navigation>
+<script src="../js/floating-navigation-pages.js?v=20261010-rings" defer data-floating-navigation></script>
+<script src="../js/floating-navigation.js?v=20261010-rings" defer data-floating-navigation></script>
+<!-- End shared floating navigation assets -->
+
+<!-- Mobile reading assets -->
+<link rel="stylesheet" href="../css/mobile-reading.css?v=20261010-1">
+<script src="../js/mobile-reading.js?v=20261010-1" defer></script>
+<!-- End mobile reading assets -->
+</head>
+<body>
+<div id="background"></div>
+<main class="catalog faq-page">
+  <nav aria-label="面包屑"><a href="../topic/tuijianjichang/index.html">推荐机场</a> / <a href="../topic/tuijianjichang/faq/index.html">FAQ 知识库</a></nav>
+  <article class="panel">
+    <header class="faq-heading"><h1>Mac 开启 Clash TUN 后没网怎么办？</h1><p class="faq-meta">更新：2026-10-10 · 原因说明与 6 个讲解与处理环节</p></header>
+    <div class="faq-layout">
+      <aside class="faq-directory"><details open><summary>文章目录</summary><nav aria-label="文章目录"><ul><li><a href="#why">为什么要了解这个问题</a></li><li><a href="#how">如何处理这个问题</a></li><li class="toc-step"><a href="#step-1">步骤 1：保存现象并恢复基础连接</a></li><li class="toc-step"><a href="#step-2">步骤 2：验证节点本身可用</a></li><li class="toc-step"><a href="#step-3">步骤 3：检查后台服务与权限</a></li><li class="toc-step"><a href="#step-4">步骤 4：检查 DNS 与网络切换</a></li><li class="toc-step"><a href="#step-5">步骤 5：排除其他路由接管</a></li><li class="toc-step"><a href="#step-6">步骤 6：重新启用并验证恢复</a></li><li><a href="#result">完成后怎么判断</a></li><li><a href="#sources">官方资料与进一步核对</a></li></ul></nav></details></aside>
+      <div class="article-content faq-body">
+        <section id="why"><h2>为什么要了解这个问题？</h2><p>TUN 会改变流量进入客户端的方式。开启后没网可能来自服务权限、DNS、默认路由或配置，直接删掉全部网络设置容易让恢复更困难。</p>
+        <div class="faq-answer"><strong>直接回答</strong><p>先关闭 TUN 做可恢复的对照，确认节点和系统代理是否可用，再分别检查服务状态、DNS、路由冲突与具体日志，最后逐项重新启用验证。</p></div></section>
+        <section id="how"><h2>如何处理这个问题？</h2><p>按下面的顺序操作，每完成一步再进入下一步；已经确认的条件可以直接通过目录跳到对应环节。</p><section id="step-1" class="faq-step"><h3>步骤 1：保存现象并恢复基础连接</h3><p>记录报错、版本、当前配置和网络。正常关闭 TUN，观察普通网页与系统代理是否恢复；如果关闭后仍没网，先排查本地 Wi-Fi 或其他 VPN，而不是继续改 TUN 参数。</p></section><section id="step-2" class="faq-step"><h3>步骤 2：验证节点本身可用</h3><p>用同一节点和配置测试系统代理模式。系统代理也失败时，回到订阅、认证或节点排查；只有基础连接正常，才继续检查 TUN 路径。</p></section><section id="step-3" class="faq-step"><h3>步骤 3：检查后台服务与权限</h3><p>查看客户端服务状态及启动日志，确认当前版本要求的服务可以运行。管理员或受管设备限制应通过正常授权处理，不绕过管理策略或关闭保护软件来碰运气。</p></section><section id="step-4" class="faq-step"><h3>步骤 4：检查 DNS 与网络切换</h3><p>记录开启前后的 DNS 与接口状态，用日志分辨解析失败还是连接失败。Mac 客户端可能在 TUN 启停时调整 DNS；切换 Wi-Fi、热点后重新测试，不能照搬旧版 DNS 参数。</p></section><section id="step-5" class="faq-step"><h3>步骤 5：排除其他路由接管</h3><p>正常退出另一款 VPN 或代理后重试，检查企业网络工具是否占用路由。每次只改变一个条件，分别测试浏览器与受影响应用；保留对照结果便于服务方定位。</p></section><section id="step-6" class="faq-step"><h3>步骤 6：重新启用并验证恢复</h3><p>在修正已定位的问题后开启 TUN，测试目标请求、局域网和退出后的网络恢复。仍失败时提交去掉订阅令牌的日志与版本，恢复到已验证可用的模式。</p></section><aside class="faq-brand-context" aria-label="结合品牌资料继续核对"><p>恢复连接后再比较服务配置，可以从 <a href="../topic/tuijianjichang/brands/firefly/index.html">Firefly</a> 的协议说明与 <a href="../topic/tuijianjichang/brands/wuyou/index.html">无忧</a> 的客户端资料核对兼容条件。更换品牌不能直接修复本机 DNS 或路由问题，先完成上述对照再决定。</p><p class="faq-brand-hub"><a href="../topic/tuijianjichang/index.html">查看站长精选主推榜，继续比较其他品牌 →</a></p></aside></section>
+        <section id="result"><h2>完成后怎么判断？</h2><p>TUN 开启时目标应用可用，正常关闭后 DNS 与网络可以恢复，日志不再重复相同错误。</p><div class="faq-note"><strong>容易忽略的地方</strong><p>不要把关闭全部防火墙、删除所有网络接口或跳过证书验证当成通用修复。</p></div></section>
+        <section id="sources"><h2>官方资料与进一步核对</h2><p>客户端菜单与平台条件可能变化，操作前核对对应开发者或平台说明。</p><ul><li><a href="https://www.clashverge.dev/faq/macos.html" target="_blank" rel="noopener noreferrer">Clash Verge Rev macOS 常见问题</a></li><li><a href="https://sing-box.sagernet.org/configuration/inbound/tun/" target="_blank" rel="noopener noreferrer">sing-box TUN 入站配置</a></li></ul></section>
+        <!-- Contextual reading path -->
+<section class="content-paths" id="continue-reading" data-reading-profile="connection" aria-labelledby="continue-reading-title"><p class="content-path-kicker">把这个问题与下一步接起来</p><h2 id="continue-reading-title">从连接问题继续定位到网络层和配置层</h2><p>先保留报错与日志，再做同节点、不同网络或不同应用的对照；一次只改变一个条件。</p><div class="content-path-grid"><div class="content-path-card"><a href="../status.html">对照浏览器连通性与请求耗时 →</a><p>记录目标请求是否完成与耗时，作为对照证据，而不是解锁结论。</p></div><div class="content-path-card"><a href="../topic/cybersecurity/gfw-monitor.html">区分封锁、节点故障与本地问题 →</a><p>判断是否只有特定网络、协议或时段失败，避免把全部超时直接归因于封锁。</p></div><div class="content-path-card"><a href="../api.html">检查配置与测试结果 →</a><p>核对配置结构与订阅格式，区分配置没有加载和节点无法建立连接。</p></div></div></section>
+<!-- End contextual reading path -->
+<section class="faq-reading"><h2>与这个问题相关的文章</h2><ul><li><a href="ClashForMac.html">Mac 用什么 Clash 客户端？Clash for Mac 怎么选？</a><p>核对 Mac 客户端与系统条件。</p></li><li><a href="SingBoxTunNoInternet.html">sing-box 开启 TUN 后不能上网怎么办？</a><p>了解 TUN 无网络的通用排查方法。</p></li><li><a href="ClashTimeoutButCanBrowse.html">Clash 显示 timeout 但能上网，为什么？</a><p>分辨测试失败与实际访问失败。</p></li></ul><p><a href="../topic/tuijianjichang/faq/index.html">返回全部 FAQ 问题</a></p></section>
+      </div>
+    </div>
+    <nav class="faq-pagination" aria-label="文章翻页"><a href="InstallClashOnMac.html"><small>上一篇</small><span>Mac 怎么安装 Clash Verge Rev 并导入机场订阅？</span></a><a href="ClashVergeTimeout.html"><small>下一篇</small><span>Clash Verge 显示 timeout 或节点超时怎么办？</span></a></nav>
+  </article>
+</main>
+<script src="../topic/tuijianjichang/faq/faq-article.js" defer></script>
+<!-- Shared floating navigation -->
+<nav class="site-floating-nav" aria-label="快捷导航">
+  <div class="site-floating-menu" id="site-floating-menu" hidden>
+    <p class="site-floating-title">快速导航</p>
+    <a href="../index.html">返回首页</a><a href="../topic/tuijianjichang/index.html">站长精选机场推荐</a><a href="../topic/tuijianjichang/brands/index.html">机场品牌总库</a><a href="../topic/tuijianjichang/comparison.html">品牌对比</a><a href="../topic/tuijianjichang/faq/index.html">FAQ 知识库</a><a href="../topic/cybersecurity/privacy.html">隐私与防泄漏</a><a href="../topic/cybersecurity/gfw-monitor.html">GFW 与节点故障判断</a>
+  </div>
+  <div class="site-floating-controls">
+    <button type="button" class="site-floating-action" data-floating-back data-home="../index.html" aria-label="返回上一页" title="返回上一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button>
+    <a class="site-floating-action" href="../index.html" aria-label="返回首页" title="返回首页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></a>
+    <button type="button" class="site-floating-toggle" data-floating-toggle aria-controls="site-floating-menu" aria-expanded="false" aria-label="打开快捷导航" title="快捷导航"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+  </div>
+</nav>
+<!-- End shared floating navigation -->
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clash 导入订阅后没有节点、代理列表空白怎么办？ | 原因与解决步骤 | Cola FAQ</title>
+  <meta name="description" content="确认 URL 是匹配格式的有效订阅，更新后查看解析结果，激活对应配置并核对节点、代理提供者和策略组。账号登录页或空配置不能生成可用列表。">
+  <link rel="canonical" href="ClashSubscriptionEmpty.html">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../topic/tuijianjichang/catalog.css">
+  <link rel="stylesheet" href="../topic/tuijianjichang/faq/faq-article.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Clash 导入订阅后没有节点、代理列表空白怎么办？", "description": "确认 URL 是匹配格式的有效订阅，更新后查看解析结果，激活对应配置并核对节点、代理提供者和策略组。账号登录页或空配置不能生成可用列表。", "inLanguage": "zh-CN", "dateModified": "2026-10-10"}</script>
+<!-- Contextual reading assets -->
+<link rel="stylesheet" href="../css/content-paths.css?v=20261010-3">
+<!-- End contextual reading assets -->
+<!-- Shared floating navigation assets -->
+<link rel="stylesheet" href="../css/floating-navigation.css?v=20261010-rings" data-floating-navigation>
+<script src="../js/floating-navigation-pages.js?v=20261010-rings" defer data-floating-navigation></script>
+<script src="../js/floating-navigation.js?v=20261010-rings" defer data-floating-navigation></script>
+<!-- End shared floating navigation assets -->
+
+<!-- Mobile reading assets -->
+<link rel="stylesheet" href="../css/mobile-reading.css?v=20261010-1">
+<script src="../js/mobile-reading.js?v=20261010-1" defer></script>
+<!-- End mobile reading assets -->
+</head>
+<body>
+<div id="background"></div>
+<main class="catalog faq-page">
+  <nav aria-label="面包屑"><a href="../topic/tuijianjichang/index.html">推荐机场</a> / <a href="../topic/tuijianjichang/faq/index.html">FAQ 知识库</a></nav>
+  <article class="panel">
+    <header class="faq-heading"><h1>Clash 导入订阅后没有节点、代理列表空白怎么办？</h1><p class="faq-meta">更新：2026-10-10 · 原因说明与 5 个讲解与处理环节</p></header>
+    <div class="faq-layout">
+      <aside class="faq-directory"><details open><summary>文章目录</summary><nav aria-label="文章目录"><ul><li><a href="#why">为什么要了解这个问题</a></li><li><a href="#how">如何处理这个问题</a></li><li class="toc-step"><a href="#step-1">步骤 1：确认粘贴的是订阅地址</a></li><li class="toc-step"><a href="#step-2">步骤 2：检查下载是否成功</a></li><li class="toc-step"><a href="#step-3">步骤 3：查看解析与协议错误</a></li><li class="toc-step"><a href="#step-4">步骤 4：激活配置并更新提供者</a></li><li class="toc-step"><a href="#step-5">步骤 5：核对策略组与真实连接</a></li><li><a href="#result">完成后怎么判断</a></li><li><a href="#sources">官方资料与进一步核对</a></li></ul></nav></details></aside>
+      <div class="article-content faq-body">
+        <section id="why"><h2>为什么要了解这个问题？</h2><p>列表为空通常应先检查配置下载、解析与激活，而不是直接进行节点测速。分开看每个环节，能避免不断重复导入同一份错误内容。</p>
+        <div class="faq-answer"><strong>直接回答</strong><p>确认 URL 是匹配格式的有效订阅，更新后查看解析结果，激活对应配置并核对节点、代理提供者和策略组。账号登录页或空配置不能生成可用列表。</p></div></section>
+        <section id="how"><h2>如何处理这个问题？</h2><p>按下面的顺序操作，每完成一步再进入下一步；已经确认的条件可以直接通过目录跳到对应环节。</p><section id="step-1" class="faq-step"><h3>步骤 1：确认粘贴的是订阅地址</h3><p>从本人后台复制 Clash / Mihomo 格式 URL，检查完整性与有效期。不要贴官网首页、登录地址或含多余空格的截断文本，截图时隐藏令牌。</p></section><section id="step-2" class="faq-step"><h3>步骤 2：检查下载是否成功</h3><p>查看更新时间与下载错误。访问拿到 HTML 登录页、错误响应或空内容时，应回到后台确认入口与账号，不能用导入成功的提示推断内容正确。</p></section><section id="step-3" class="faq-step"><h3>步骤 3：查看解析与协议错误</h3><p>核对当前内核支持的配置格式和节点类型。解析失败先修对应字段，保留原配置；不把其他客户端配置直接改个文件名当作 YAML 使用。</p></section><section id="step-4" class="faq-step"><h3>步骤 4：激活配置并更新提供者</h3><p>确认刚导入的配置已选中；使用远程代理提供者时检查它的更新结果。配置存在但未激活，或提供者下载失败，都可能使当前列表为空。</p></section><section id="step-5" class="faq-step"><h3>步骤 5：核对策略组与真实连接</h3><p>检查组内是否包含可用节点，选定后测试目标请求。仍空白时提供版本、解析错误和脱敏配置片段给服务方，保留自己账号与订阅机密。</p></section><aside class="faq-brand-context" aria-label="结合品牌资料继续核对"><p>恢复列表后，可阅读 <a href="../topic/tuijianjichang/brands/firefly/index.html">Firefly</a> 的协议资料与 <a href="../topic/tuijianjichang/brands/weifeng/index.html">微风网络</a> 的服务介绍，核对候选配置入口。先解决下载与解析环节，再判断服务是否适合。</p><p class="faq-brand-hub"><a href="../topic/tuijianjichang/index.html">查看站长精选主推榜，继续比较其他品牌 →</a></p></aside></section>
+        <section id="result"><h2>完成后怎么判断？</h2><p>当前激活配置有可选节点，目标请求走到预期出口，而非只有一个订阅条目。</p><div class="faq-note"><strong>容易忽略的地方</strong><p>不要公开完整订阅或账号页面来寻求帮助；先截取脱敏的错误信息。</p></div></section>
+        <section id="sources"><h2>官方资料与进一步核对</h2><p>客户端菜单与平台条件可能变化，操作前核对对应开发者或平台说明。</p><ul><li><a href="https://www.clashverge.dev/faq/windows.html" target="_blank" rel="noopener noreferrer">Clash Verge Rev Windows 常见问题</a></li><li><a href="https://www.clashverge.dev/guide/quickstart.html" target="_blank" rel="noopener noreferrer">Clash Verge Rev 快速入门</a></li></ul></section>
+        <!-- Contextual reading path -->
+<section class="content-paths" id="continue-reading" data-reading-profile="client" aria-labelledby="continue-reading-title"><p class="content-path-kicker">把这个问题与下一步接起来</p><h2 id="continue-reading-title">软件装好之后，继续核对配置、分流和隐私</h2><p>客户端安装成功不代表订阅能够解析，也不代表所有应用已经经过代理。</p><div class="content-path-grid"><div class="content-path-card"><a href="../api.html">检查配置与测试结果 →</a><p>用配置检查区分 YAML 结构错误与运行时连接失败。</p></div><div class="content-path-card"><a href="ClashRulesVsGlobal.html">规则模式与全局模式怎么选择 →</a><p>先理解规则与全局模式，按应用任务验证实际出口。</p></div><div class="content-path-card"><a href="../topic/cybersecurity/privacy.html">理解订阅、DNS 与浏览器隐私 →</a><p>系统代理和 TUN 的覆盖范围不同，要结合 DNS 与浏览器实测。</p></div><div class="content-path-card"><a href="../topic/tuijianjichang/index.html">按用途比较主推品牌 →</a><p>客户端不是节点服务；需要订阅时按格式与用途核对品牌资料。</p></div></div></section>
+<!-- End contextual reading path -->
+<section class="faq-reading"><h2>与这个问题相关的文章</h2><ul><li><a href="../topic/tuijianjichang/faq/jichang-dingyue-lianjie-zenme-daoru-clash.html">机场订阅链接怎么导入 Clash？</a><p>对照正确的订阅导入流程。</p></li><li><a href="../topic/tuijianjichang/faq/clashdaoru-dingyue-shibai-zenme.html">Clash 导入订阅失败怎么办？</a><p>进一步区分下载失败与配置解析失败。</p></li><li><a href="ClashVergeAllTimeout.html">Clash Verge 全部 timeout、所有节点超时怎么办？</a><p>列表正常但全部连接失败时继续排查。</p></li></ul><p><a href="../topic/tuijianjichang/faq/index.html">返回全部 FAQ 问题</a></p></section>
+      </div>
+    </div>
+    <nav class="faq-pagination" aria-label="文章翻页"><a href="WeifengNetworkReview.html"><small>上一篇</small><span>微风网络怎么样？套餐、线路和客户端怎么核对？</span></a><a href="ClashDNSFailed.html"><small>下一篇</small><span>Clash 节点正常但网页打不开，是 DNS 问题吗？</span></a></nav>
+  </article>
+</main>
+<script src="../topic/tuijianjichang/faq/faq-article.js" defer></script>
+<!-- Shared floating navigation -->
+<nav class="site-floating-nav" aria-label="快捷导航">
+  <div class="site-floating-menu" id="site-floating-menu" hidden>
+    <p class="site-floating-title">快速导航</p>
+    <a href="../index.html">返回首页</a><a href="../topic/tuijianjichang/index.html">站长精选机场推荐</a><a href="../topic/tuijianjichang/brands/index.html">机场品牌总库</a><a href="../topic/tuijianjichang/comparison.html">品牌对比</a><a href="../topic/tuijianjichang/faq/index.html">FAQ 知识库</a><a href="../topic/cybersecurity/privacy.html">隐私与防泄漏</a><a href="../topic/cybersecurity/gfw-monitor.html">GFW 与节点故障判断</a>
+  </div>
+  <div class="site-floating-controls">
+    <button type="button" class="site-floating-action" data-floating-back data-home="../index.html" aria-label="返回上一页" title="返回上一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button>
+    <a class="site-floating-action" href="../index.html" aria-label="返回首页" title="返回首页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></a>
+    <button type="button" class="site-floating-toggle" data-floating-toggle aria-controls="site-floating-menu" aria-expanded="false" aria-label="打开快捷导航" title="快捷导航"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+  </div>
+</nav>
+<!-- End shared floating navigation -->
+</body>
+</html>

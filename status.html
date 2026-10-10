@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>在线机场节点测速 - 实时连通性与真实延迟检测工具</title>
-    <meta name="keywords" content="机场测速, 节点测速, Clash测速, 延迟测试, 连通性测试, 在线测速, 机场推荐">`n    <meta name="description" content="免费的在线机场节点测速工具。纯前端一键测试您当前 Clash/V2Ray 节点的真实延迟，检测 ChatGPT、Google、YouTube 等大厂服务的连通性与解锁状态。">
+    <title>浏览器连通性与请求耗时 - 请求结果与网络对照</title>
+    <meta name="keywords" content="机场测速, 节点测速, Clash测速, 延迟测试, 连通性测试, 在线测速, 机场推荐">`n    <meta name="description" content="浏览器连通性与请求耗时检查，结合网络对照和实际应用定位问题。">
     <link rel="stylesheet" href="./css/style.css">
     <style>
         .page-hero { text-align: center; padding: 40px 20px; background: rgba(0,0,0,0.4); border-radius: 20px; margin-bottom: 20px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
@@ -45,6 +45,20 @@
             .left-col { position: sticky; top: 4vh; }
         }
     </style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Contextual reading assets -->
+<link rel="stylesheet" href="css/content-paths.css?v=20261010-3">
+<!-- End contextual reading assets -->
+<!-- Shared floating navigation assets -->
+<link rel="stylesheet" href="css/floating-navigation.css?v=20261010-rings" data-floating-navigation>
+<script src="js/floating-navigation-pages.js?v=20261010-rings" defer data-floating-navigation></script>
+<script src="js/floating-navigation.js?v=20261010-rings" defer data-floating-navigation></script>
+<!-- End shared floating navigation assets -->
+
+<!-- Mobile reading assets -->
+<link rel="stylesheet" href="css/mobile-reading.css?v=20261010-1">
+<script src="js/mobile-reading.js?v=20261010-1" defer></script>
+<!-- End mobile reading assets -->
 </head>
 <body>
     <div id="background"></div>
@@ -55,17 +69,14 @@
             <a href="index.html" class="back-btn">← 返回主页</a>
             
             <div class="page-hero">
-                <h1 class="page-title">在线机场节点测速</h1>
-                <p class="page-subtitle">📡 纯前端真实环境测速工具，一键检测您的机场节点延迟与解锁情况</p>
+                <h1 class="page-title">浏览器连通性与请求耗时</h1>
+                <p class="page-subtitle">记录请求结果，结合客户端与实际任务判断</p>
             </div>
 
-            <article class="seo-article">
-                <h2>为什么需要使用在线机场节点测速？</h2>
-                <p>在挑选和使用各大海外加速服务时，最让用户头疼的问题往往是：“这个机场的节点到底好不好用？标称的专线延迟是真的吗？能不能稳定解锁 ChatGPT 或流媒体？”</p>
-                <p>为了给您提供最直观的答案，我们打造了这款<strong>纯前端无痕机场测速面板</strong>。无需下载任何第三方复杂的测速软件，只要您当前开启了代理客户端（如 Clash、V2Ray、Shadowrocket 等），您的浏览器就会自动向全球核心服务发起真实的连通性测试。通过这项<strong>机场节点测速</strong>功能，您可以瞬间识别当前线路的真实物理延迟，轻松鉴定劣质节点，筛选出真正的优质路线。</p>
-                
-                <p style="margin-bottom: 0;"><strong>测试指标说明：</strong><br>🟢 <span style="color:#11B04E;">绿色</span> 代表极速秒开 (延迟低)<br>🟠 <span style="color:#ff9800;">橙色</span> 代表网络略有拥堵<br>🔴 <span style="color:#e34c26;">红色</span> 代表无法连通 (被墙、节点失效，或目标网站自身故障)</p>
-            </article>
+            <article class="seo-article reading-guide"><h2>这个测试可以说明什么？</h2><p>面板记录浏览器发出请求到完成或失败的时间，受 DNS、握手、代理、目标服务与浏览器环境共同影响。它不是 ICMP ping、带宽测速或账户解锁证明。</p><p>请求使用 <code>no-cors</code>，无法读取跨域响应内容和 HTTP 状态。绿色表示请求在较短时间内完成；红色表示请求未完成，需要继续定位。</p><ol><li>记录时间、节点和目标，使用同设备做前后对照。</li><li>失败时继续看 <a href="topic/cybersecurity/gfw-monitor.html">DNS、网络与节点排查</a>。</li><li>请求完成后回到实际应用；AI 报错可参考 <a href="FAQ/GrokNotOpening.html">AI 访问 FAQ</a>。</li><li>比较 <a href="topic/tuijianjichang/index.html">主推品牌</a>时保持任务与时段一致，避免直接按一次耗时排名。</li></ol><!-- Contextual reading path -->
+<section class="content-paths" id="continue-reading" data-reading-profile="status" aria-labelledby="continue-reading-title"><p class="content-path-kicker">把这个问题与下一步接起来</p><h2 id="continue-reading-title">把请求结果放回实际使用场景</h2><p>这里的耗时属于浏览器请求，不是线路带宽、ICMP 延迟或账户解锁证明；需要结合目标应用复测。</p><div class="content-path-grid"><div class="content-path-card"><a href="topic/cybersecurity/gfw-monitor.html">区分封锁、节点故障与本地问题 →</a><p>失败时区分本地网络、目标服务与访问限制。</p></div><div class="content-path-card"><a href="FAQ/GrokNotOpening.html">AI 网站打不开怎么判断原因 →</a><p>网页能够请求但 AI 仍不能使用时，继续检查平台报错与账号条件。</p></div><div class="content-path-card"><a href="topic/tuijianjichang/index.html">按用途比较主推品牌 →</a><p>比较品牌时保存同时间、同设备、同任务的测试结果。</p></div></div></section>
+<!-- End contextual reading path -->
+</article>
         </div>
 
         <!-- 右侧区域：真实监控面板 -->
@@ -204,5 +215,18 @@
             console.error(globalErr);
         }
     </script>
+<!-- Shared floating navigation -->
+<nav class="site-floating-nav" aria-label="快捷导航">
+  <div class="site-floating-menu" id="site-floating-menu" hidden>
+    <p class="site-floating-title">快速导航</p>
+    <a href="index.html">返回首页</a><a href="topic/tuijianjichang/index.html">站长精选机场推荐</a><a href="topic/tuijianjichang/brands/index.html">机场品牌总库</a><a href="topic/tuijianjichang/comparison.html">品牌对比</a><a href="topic/tuijianjichang/faq/index.html">FAQ 知识库</a><a href="topic/cybersecurity/privacy.html">隐私与防泄漏</a><a href="topic/cybersecurity/gfw-monitor.html">GFW 与节点故障判断</a>
+  </div>
+  <div class="site-floating-controls">
+    <button type="button" class="site-floating-action" data-floating-back data-home="index.html" aria-label="返回上一页" title="返回上一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button>
+    <a class="site-floating-action" href="index.html" aria-label="返回首页" title="返回首页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></a>
+    <button type="button" class="site-floating-toggle" data-floating-toggle aria-controls="site-floating-menu" aria-expanded="false" aria-label="打开快捷导航" title="快捷导航"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+  </div>
+</nav>
+<!-- End shared floating navigation -->
 </body>
 </html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clash Verge 显示 timeout 或节点超时怎么办？ | 原因与解决步骤 | Cola FAQ</title>
+  <meta name="description" content="先确认实际访问和超时范围，再核对测试地址、订阅、节点日志与网络环境。只处理单节点故障时不必重置全部配置；全部失败则优先检查共同条件。">
+  <link rel="canonical" href="ClashVergeTimeout.html">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../topic/tuijianjichang/catalog.css">
+  <link rel="stylesheet" href="../topic/tuijianjichang/faq/faq-article.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Clash Verge 显示 timeout 或节点超时怎么办？", "description": "先确认实际访问和超时范围，再核对测试地址、订阅、节点日志与网络环境。只处理单节点故障时不必重置全部配置；全部失败则优先检查共同条件。", "inLanguage": "zh-CN", "dateModified": "2026-10-10"}</script>
+<!-- Contextual reading assets -->
+<link rel="stylesheet" href="../css/content-paths.css?v=20261010-3">
+<!-- End contextual reading assets -->
+<!-- Shared floating navigation assets -->
+<link rel="stylesheet" href="../css/floating-navigation.css?v=20261010-rings" data-floating-navigation>
+<script src="../js/floating-navigation-pages.js?v=20261010-rings" defer data-floating-navigation></script>
+<script src="../js/floating-navigation.js?v=20261010-rings" defer data-floating-navigation></script>
+<!-- End shared floating navigation assets -->
+
+<!-- Mobile reading assets -->
+<link rel="stylesheet" href="../css/mobile-reading.css?v=20261010-1">
+<script src="../js/mobile-reading.js?v=20261010-1" defer></script>
+<!-- End mobile reading assets -->
+</head>
+<body>
+<div id="background"></div>
+<main class="catalog faq-page">
+  <nav aria-label="面包屑"><a href="../topic/tuijianjichang/index.html">推荐机场</a> / <a href="../topic/tuijianjichang/faq/index.html">FAQ 知识库</a></nav>
+  <article class="panel">
+    <header class="faq-heading"><h1>Clash Verge 显示 timeout 或节点超时怎么办？</h1><p class="faq-meta">更新：2026-10-10 · 原因说明与 6 个讲解与处理环节</p></header>
+    <div class="faq-layout">
+      <aside class="faq-directory"><details open><summary>文章目录</summary><nav aria-label="文章目录"><ul><li><a href="#why">为什么要了解这个问题</a></li><li><a href="#how">如何处理这个问题</a></li><li class="toc-step"><a href="#step-1">步骤 1：记录超时范围</a></li><li class="toc-step"><a href="#step-2">步骤 2：测试真实目标请求</a></li><li class="toc-step"><a href="#step-3">步骤 3：核对订阅与套餐状态</a></li><li class="toc-step"><a href="#step-4">步骤 4：对照其他节点和网络</a></li><li class="toc-step"><a href="#step-5">步骤 5：从日志定位错误类型</a></li><li class="toc-step"><a href="#step-6">步骤 6：按定位结果恢复使用</a></li><li><a href="#result">完成后怎么判断</a></li><li><a href="#sources">官方资料与进一步核对</a></li></ul></nav></details></aside>
+      <div class="article-content faq-body">
+        <section id="why"><h2>为什么要了解这个问题？</h2><p>timeout 表示一次测试或连接没有在规定时间内完成，不能单凭这一个词判断机场跑路。分清是一个节点、所有节点还是实际网页失败，才知道该检查哪里。</p>
+        <div class="faq-answer"><strong>直接回答</strong><p>先确认实际访问和超时范围，再核对测试地址、订阅、节点日志与网络环境。只处理单节点故障时不必重置全部配置；全部失败则优先检查共同条件。</p></div></section>
+        <section id="how"><h2>如何处理这个问题？</h2><p>按下面的顺序操作，每完成一步再进入下一步；已经确认的条件可以直接通过目录跳到对应环节。</p><section id="step-1" class="faq-step"><h3>步骤 1：记录超时范围</h3><p>记下时间、客户端版本、当前配置、一个或全部节点，以及测试时的网络。截图时遮住订阅 URL 和账号。只一个节点失败，与所有节点同时失败的处理路线不同。</p></section><section id="step-2" class="faq-step"><h3>步骤 2：测试真实目标请求</h3><p>选择节点后打开常用网页，并查看连接日志是否走该策略。若网页可用而延迟测试超时，先检查测速地址与规则；此时不应仅凭显示颜色判断连接完全失效。</p></section><section id="step-3" class="faq-step"><h3>步骤 3：核对订阅与套餐状态</h3><p>确认配置更新成功、节点仍存在、流量与有效期正常。更新订阅后重新激活配置；下载或解析出错时先修复订阅问题，不能把空配置当成节点全坏。</p></section><section id="step-4" class="faq-step"><h3>步骤 4：对照其他节点和网络</h3><p>在同一网络测试另一个地区或协议节点，再用本人可用的热点测试原节点。记录哪一种组合正常，以区分单节点、协议路径与本地网络条件。</p></section><section id="step-5" class="faq-step"><h3>步骤 5：从日志定位错误类型</h3><p>区分超时、认证失败、证书错误与 DNS 解析失败。核对服务端地址、配置和本机时间；没有证据时不修改多个参数，不公开带令牌的完整配置。</p></section><section id="step-6" class="faq-step"><h3>步骤 6：按定位结果恢复使用</h3><p>单节点问题换可用节点并报障，共同配置问题修正后再测，服务整体异常则查公告。保留已经正常的配置，连续复现时提供脱敏日志与对照结果。</p></section><aside class="faq-brand-context" aria-label="结合品牌资料继续核对"><p>定位并恢复之后，如需备用候选，可看 <a href="../topic/tuijianjichang/brands/weifeng/index.html">微风网络</a> 的线路资料与 <a href="../topic/tuijianjichang/brands/firefly/index.html">Firefly</a> 的协议说明，比较节点条件和订阅兼容性，再在自己的网络测试。</p><p class="faq-brand-hub"><a href="../topic/tuijianjichang/index.html">查看站长精选主推榜，继续比较其他品牌 →</a></p></aside></section>
+        <section id="result"><h2>完成后怎么判断？</h2><p>能指出超时发生在测试还是连接，以及是单节点、本地网络还是共同配置问题。</p><div class="faq-note"><strong>容易忽略的地方</strong><p>增加超时时间只改变等待时间，不会修复认证、DNS 或节点不可达。</p></div></section>
+        <section id="sources"><h2>官方资料与进一步核对</h2><p>客户端菜单与平台条件可能变化，操作前核对对应开发者或平台说明。</p><ul><li><a href="https://www.clashverge.dev/guide/quickstart.html" target="_blank" rel="noopener noreferrer">Clash Verge Rev 快速入门</a></li></ul></section>
+        <!-- Contextual reading path -->
+<section class="content-paths" id="continue-reading" data-reading-profile="connection" aria-labelledby="continue-reading-title"><p class="content-path-kicker">把这个问题与下一步接起来</p><h2 id="continue-reading-title">从连接问题继续定位到网络层和配置层</h2><p>先保留报错与日志，再做同节点、不同网络或不同应用的对照；一次只改变一个条件。</p><div class="content-path-grid"><div class="content-path-card"><a href="../status.html">对照浏览器连通性与请求耗时 →</a><p>记录目标请求是否完成与耗时，作为对照证据，而不是解锁结论。</p></div><div class="content-path-card"><a href="../topic/cybersecurity/gfw-monitor.html">区分封锁、节点故障与本地问题 →</a><p>判断是否只有特定网络、协议或时段失败，避免把全部超时直接归因于封锁。</p></div><div class="content-path-card"><a href="../api.html">检查配置与测试结果 →</a><p>核对配置结构与订阅格式，区分配置没有加载和节点无法建立连接。</p></div></div></section>
+<!-- End contextual reading path -->
+<section class="faq-reading"><h2>与这个问题相关的文章</h2><ul><li><a href="ClashVergeAllTimeout.html">Clash Verge 全部 timeout、所有节点超时怎么办？</a><p>所有节点都失败时检查共同条件。</p></li><li><a href="ClashTimeoutButCanBrowse.html">Clash 显示 timeout 但能上网，为什么？</a><p>测试超时但网页可用时走另一条排查路线。</p></li><li><a href="ClashRulesVsGlobal.html">Clash 规则模式和全局模式有什么区别？怎么知道流量走哪？</a><p>核对请求实际命中的策略。</p></li></ul><p><a href="../topic/tuijianjichang/faq/index.html">返回全部 FAQ 问题</a></p></section>
+      </div>
+    </div>
+    <nav class="faq-pagination" aria-label="文章翻页"><a href="ClashMacTunNoInternet.html"><small>上一篇</small><span>Mac 开启 Clash TUN 后没网怎么办？</span></a><a href="ClashVergeAllTimeout.html"><small>下一篇</small><span>Clash Verge 全部 timeout、所有节点超时怎么办？</span></a></nav>
+  </article>
+</main>
+<script src="../topic/tuijianjichang/faq/faq-article.js" defer></script>
+<!-- Shared floating navigation -->
+<nav class="site-floating-nav" aria-label="快捷导航">
+  <div class="site-floating-menu" id="site-floating-menu" hidden>
+    <p class="site-floating-title">快速导航</p>
+    <a href="../index.html">返回首页</a><a href="../topic/tuijianjichang/index.html">站长精选机场推荐</a><a href="../topic/tuijianjichang/brands/index.html">机场品牌总库</a><a href="../topic/tuijianjichang/comparison.html">品牌对比</a><a href="../topic/tuijianjichang/faq/index.html">FAQ 知识库</a><a href="../topic/cybersecurity/privacy.html">隐私与防泄漏</a><a href="../topic/cybersecurity/gfw-monitor.html">GFW 与节点故障判断</a>
+  </div>
+  <div class="site-floating-controls">
+    <button type="button" class="site-floating-action" data-floating-back data-home="../index.html" aria-label="返回上一页" title="返回上一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button>
+    <a class="site-floating-action" href="../index.html" aria-label="返回首页" title="返回首页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></a>
+    <button type="button" class="site-floating-toggle" data-floating-toggle aria-controls="site-floating-menu" aria-expanded="false" aria-label="打开快捷导航" title="快捷导航"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+  </div>
+</nav>
+<!-- End shared floating navigation -->
+</body>
+</html>

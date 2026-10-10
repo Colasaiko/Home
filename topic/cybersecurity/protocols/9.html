@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DNS、DoH 与代理路由：理解解析，再定位问题 | Cola 站长</title>
+  <link rel="stylesheet" href="../../../css/style.css">
+  <link rel="stylesheet" href="../../tuijianjichang/catalog.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+      .article-content { padding: 30px; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; margin-top: 20px; line-height: 1.8; color: #ddd; font-size: 1.05rem; backdrop-filter: blur(10px); }
+      .article-content h3 { color: #4facfe; margin-top: 25px; margin-bottom: 15px; border-bottom: 1px dashed rgba(79,172,254,0.3); padding-bottom: 10px; }
+      .source-badge { display: inline-block; padding: 5px 12px; background: rgba(227, 76, 38, 0.2); border-left: 3px solid #e34c26; color: #e34c26; font-size: 0.85rem; border-radius: 4px; margin-bottom: 20px; font-weight: bold; }
+  </style>
+<!-- Contextual reading assets -->
+<link rel="stylesheet" href="../../../css/content-paths.css?v=20261010-3">
+<!-- End contextual reading assets -->
+<!-- Shared floating navigation assets -->
+<link rel="stylesheet" href="../../../css/floating-navigation.css?v=20261010-rings" data-floating-navigation>
+<script src="../../../js/floating-navigation-pages.js?v=20261010-rings" defer data-floating-navigation></script>
+<script src="../../../js/floating-navigation.js?v=20261010-rings" defer data-floating-navigation></script>
+<!-- End shared floating navigation assets -->
+
+
+
+<!-- Protocol navigation assets -->
+<link rel="stylesheet" href="../../../css/protocol-navigation.css?v=20261010-follow">
+<script src="../../../js/protocol-navigation.js?v=20261010-follow" defer></script>
+<!-- End protocol navigation -->
+</head>
+<body>
+  <div id="background"></div>
+  <main class="catalog">
+    <nav aria-label="面包屑"><a href="../protocols.html">返回文章目录</a></nav>
+    <article class="panel reading-guide"><h1>DNS、DoH 与代理路由：理解解析，再定位问题</h1>
+<!-- Protocol navigation toc -->
+<nav id="protocol-toc-top" class="protocol-toc" aria-label="本文目录"><details open><summary>本文目录 <span>第 9 / 10 篇 · 点击标题跳转</span></summary><ul><li class="protocol-toc-level-0"><a href="#protocol-section-1">为什么改成 DoH 后仍可能无法访问？</a></li><li class="protocol-toc-level-0"><a href="#protocol-section-2">如何从 DNS 报错逐步处理？</a></li><li class="protocol-toc-level-0"><a href="#protocol-section-3">结果要怎样与品牌和网络条件对上？</a></li></ul></details></nav>
+<!-- End protocol navigation -->
+
+
+
+<p>DNS 把域名解析为地址；DoH 使用 HTTPS 传送 DNS 请求。解析方式、应用代理路由和访问目标是不同环节。了解它们的分工，才能判断“打不开”发生在哪里。</p>
+<section id="dns-scope"><h2 id="protocol-section-1">为什么改成 DoH 后仍可能无法访问？</h2>
+<p>DoH 保护的是客户端到所选解析服务之间的 DNS 传输。它不会自动把其他应用流量送进代理，也不会隐藏所有连接元数据。解析服务仍要处理查询，解析服务是否可达与返回地址是否适用也需要核对。</p>
+<p>Fake-IP 是部分代理客户端使用的映射机制，不是另一种加密 DNS 协议。DNS、规则、TUN 与浏览器设置互相影响，配置必须按实际客户端版本确认，不能直接复制陌生示例覆盖全部设置。</p></section>
+<section id="dns-check"><h2 id="protocol-section-2">如何从 DNS 报错逐步处理？</h2><ol>
+<li><strong>记录失败目标与原始报错。</strong>区分解析失败、连接超时和平台拒绝，先查看 <a href="../../../FAQ/ClashDNSFailed.html">DNS 排查 FAQ</a>。</li>
+<li><strong>确认当前解析路径。</strong>分别记录系统、浏览器与客户端的 DNS 设置，确定哪个环节处理这个应用的查询。</li>
+<li><strong>确认解析服务可达。</strong>解析器地址写对不等于请求可以到达。结合日志查看上游连接是否失败。</li>
+<li><strong>核对路由与规则。</strong>域名解析成功后仍需连接目标；通过 <a href="../../../FAQ/ClashRulesVsGlobal.html">规则与全局模式说明</a>确认请求走向。</li>
+<li><strong>一次调整一项并复测。</strong>保留原配置，使用同一目标观察变化；需要结构检查时进入 <a href="../../../api.html">配置检测</a>。</li>
+<li><strong>解释外部测试结果。</strong>测试返回解析器信息仅反映当次条件，按照 <a href="../privacy.html">隐私指南</a>核对浏览器与客户端范围。</li>
+</ol></section>
+<section id="dns-next"><h2 id="protocol-section-3">结果要怎样与品牌和网络条件对上？</h2>
+<p>解析正常但连接失败时，继续做 <a href="../gfw-monitor.html">网络和节点对照</a>。需要调整服务时回到 <a href="../../tuijianjichang/index.html">品牌比较</a>核对订阅、客户端和线路条件，换套餐不能自动修复设备上的 DNS 设置。</p>
+<p>协议与隐私范围可进一步核对 <a href="https://www.rfc-editor.org/rfc/rfc8484" target="_blank" rel="noopener noreferrer">IETF RFC 8484：DNS over HTTPS</a> 与 <a href="https://www.rfc-editor.org/rfc/rfc9076.html" target="_blank" rel="noopener noreferrer">RFC 9076：DNS 隐私考虑</a>。</p></section><!-- Contextual reading path -->
+<section class="content-paths" id="continue-reading" data-reading-profile="dns" aria-labelledby="continue-reading-title"><p class="content-path-kicker">把这个问题与下一步接起来</p><h2 id="continue-reading-title">DNS 排查完成后，还需要验证哪些地方？</h2><p>域名解析、代理路由和浏览器设置是不同环节，修改一项以后还要复测原来的任务。</p><div class="content-path-grid"><div class="content-path-card"><a href="../protocols.html">看懂协议与线路的区别 →</a><p>理解 DNS、DoH 与代理协议的分工，知道加密解析解决哪一段问题。</p></div><div class="content-path-card"><a href="../privacy.html">理解订阅、DNS 与浏览器隐私 →</a><p>核对解析器和 WebRTC 候选地址，避免把单次测试当作全部应用的隐私保证。</p></div><div class="content-path-card"><a href="../../../status.html">对照浏览器连通性与请求耗时 →</a><p>复测同一目标，保留修改前后的结果。</p></div></div></section>
+<!-- End contextual reading path -->
+
+
+
+<!-- Protocol navigation chapters -->
+<nav class="protocol-chapters" aria-label="协议文章连续阅读"><div class="protocol-chapters-heading"><h2>继续阅读协议系列</h2><a href="../protocols.html">全部 10 篇目录 →</a></div><div class="protocol-chapters-grid"><a class="protocol-chapter" href="8.html" rel="prev"><span>← 上一篇 · 第 8 篇</span><strong>机场审计规则揭秘：为什么不让你看某功？</strong></a><a class="protocol-chapter" href="10.html" rel="next"><span>下一篇 → · 第 10 篇</span><strong>中转节点 vs 直连节点：速度、安全与成本的权衡</strong></a></div><a class="protocol-back-toc" href="#protocol-toc-top">↑ 返回本文目录</a></nav>
+<!-- End protocol navigation -->
+</article>
+  </main>
+<!-- Shared floating navigation -->
+<nav class="site-floating-nav" aria-label="快捷导航">
+  <div class="site-floating-menu" id="site-floating-menu" hidden>
+    <p class="site-floating-title">快速导航</p>
+    <a href="../../../index.html">返回首页</a><a href="../../tuijianjichang/index.html">站长精选机场推荐</a><a href="../../tuijianjichang/brands/index.html">机场品牌总库</a><a href="../../tuijianjichang/comparison.html">品牌对比</a><a href="../../tuijianjichang/faq/index.html">FAQ 知识库</a><a href="../privacy.html">隐私与防泄漏</a><a href="../gfw-monitor.html">GFW 与节点故障判断</a>
+  </div>
+  <div class="site-floating-controls">
+    <button type="button" class="site-floating-action" data-floating-back data-home="../../../index.html" aria-label="返回上一页" title="返回上一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button>
+    <a class="site-floating-action" href="../../../index.html" aria-label="返回首页" title="返回首页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></a>
+    <button type="button" class="site-floating-toggle" data-floating-toggle aria-controls="site-floating-menu" aria-expanded="false" aria-label="打开快捷导航" title="快捷导航"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+  </div>
+</nav>
+<!-- End shared floating navigation -->
+</body>
+</html>
+
+

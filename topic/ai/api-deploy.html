@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>API 中转池搭建与本地开源大模型部署指南 | Cola 站长 AI 极客教程</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../tuijianjichang/catalog.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .article-content { max-width: 900px; margin: 40px auto; background: rgba(20,20,20,0.8); padding: 40px; border-radius: 15px; border: 1px solid rgba(155, 89, 182, 0.3); color: #d0d0d0; line-height: 1.8; font-size: 1.05rem; }
+    .article-content h2 { color: #e056fd; font-size: 1.8rem; margin-top: 30px; margin-bottom: 20px; border-bottom: 1px solid rgba(224, 86, 253, 0.2); padding-bottom: 10px; }
+    .article-content h3 { color: #fff; font-size: 1.3rem; margin-top: 25px; margin-bottom: 15px; }
+    .article-content p { margin-bottom: 15px; }
+    .article-content ul, .article-content ol { margin-bottom: 20px; padding-left: 20px; }
+    .article-content li { margin-bottom: 10px; }
+    .article-content strong { color: #fff; }
+    .promo-box { background: rgba(243, 156, 18, 0.1); border-left: 4px solid #f39c12; padding: 20px; margin: 30px 0; border-radius: 0 8px 8px 0; }
+    .promo-box a { color: #f39c12; font-weight: bold; text-decoration: underline; }
+
+
+
+
+
+</style>
+<!-- Shared floating navigation assets -->
+<link rel="stylesheet" href="../../css/floating-navigation.css?v=20261010-rings" data-floating-navigation>
+<script src="../../js/floating-navigation-pages.js?v=20261010-rings" defer data-floating-navigation></script>
+<script src="../../js/floating-navigation.js?v=20261010-rings" defer data-floating-navigation></script>
+<!-- End shared floating navigation assets -->
+
+<!-- Mobile reading assets -->
+<link rel="stylesheet" href="../../css/mobile-reading.css?v=20261010-1">
+<script src="../../js/mobile-reading.js?v=20261010-1" defer></script>
+<!-- End mobile reading assets -->
+</head>
+<body>
+  <div id="background"></div>
+  <main class="catalog">
+    <nav aria-label="面包屑"><a href="index.html" class="back-pill"><i class="fa-solid fa-arrow-left"></i> 返回 AI 教程库</a></nav>
+    <div class="article-content">
+        <h1>API 中转池搭建与本地开源大模型部署指南</h1>
+
+<h2>告别昂贵的官方 API：开源与中转的力量</h2>
+<p>如果你是一名独立开发者或者想在自己的 App 中接入 AI 能力，直接使用 OpenAI 官方的 API 往往面临两个巨大的难题：一是价格极其昂贵（尤其是 GPT-4），二是网络连接要求极高（服务器必须在海外）。</p>
+<h2>一、搭建 OneAPI 聚合分发池</h2>
+<p>OneAPI 是目前开源社区中最强大的大模型接口管理工具。它可以将 OpenAI、Anthropic、百度文心、阿里通义千问等国内外上百种模型的 API，全部统一包装成标准的 OpenAI 格式进行分发。</p>
+<ul>
+    <li><strong>优势 1：</strong>你可以去网络上寻找极其便宜的第三方中转商家（俗称“逆向池”），填入 OneAPI，瞬间实现 API 调用成本降级 90%。</li>
+    <li><strong>优势 2：</strong>实现负载均衡。填入多个商家的 Key，当某一家宕机时，OneAPI 会自动切换，保证你的业务永不掉线。</li>
+</ul>
+<p><strong>部署要求：</strong> 一台海外的廉价 VPS（例如 Vultr 或搬瓦工），配合 Docker 即可一键跑起来。如果你在内网环境拉取 Docker 镜像极慢，请给你的服务器配置代理。若对线路质量要求苛刻，可参阅 <a href="../tuijianjichang/index.html">站长主推榜</a> 了解市面上的顶级海外线路架构原理。</p>
+<h2>二、本地运行开源模型：Ollama + Llama 3</h2>
+<p>对于数据极度敏感（不能传到云端）的业务，或者想在断网环境下使用的极客，本地部署开源大模型是最佳方案。</p>
+<p><strong>Ollama</strong> 是一款让本地跑模型变得像运行普通软件一样简单的神器。只需要在终端输入一行命令 <code>ollama run llama3</code>，哪怕是普通轻薄本（只要有 8GB 以上内存），也能流畅地与 AI 对话。</p>
+<p>结合 <strong>Open-WebUI</strong>，你甚至可以在自己的内网上搭建一个拥有漂亮界面的“私有版 ChatGPT”。这才是属于极客的终极浪漫！</p>
+
+    </div>
+  </main>
+  
+  
+<!-- Shared floating navigation -->
+<nav class="site-floating-nav" aria-label="快捷导航">
+  <div class="site-floating-menu" id="site-floating-menu" hidden>
+    <p class="site-floating-title">快速导航</p>
+    <a href="../../index.html">返回首页</a><a href="../tuijianjichang/index.html">站长精选机场推荐</a><a href="../tuijianjichang/brands/index.html">机场品牌总库</a><a href="../tuijianjichang/comparison.html">品牌对比</a><a href="../tuijianjichang/faq/index.html">FAQ 知识库</a><a href="../cybersecurity/privacy.html">隐私与防泄漏</a><a href="../cybersecurity/gfw-monitor.html">GFW 与节点故障判断</a>
+  </div>
+  <div class="site-floating-controls">
+    <button type="button" class="site-floating-action" data-floating-back data-home="../../index.html" aria-label="返回上一页" title="返回上一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button>
+    <a class="site-floating-action" href="../../index.html" aria-label="返回首页" title="返回首页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></a>
+    <button type="button" class="site-floating-toggle" data-floating-toggle aria-controls="site-floating-menu" aria-expanded="false" aria-label="打开快捷导航" title="快捷导航"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+  </div>
+</nav>
+<!-- End shared floating navigation -->
+</body>
+</html>

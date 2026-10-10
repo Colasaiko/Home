@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -43,6 +43,19 @@
             .left-col { position: sticky; top: 4vh; }
         }
     </style>
+<!-- Contextual reading assets -->
+<link rel="stylesheet" href="css/content-paths.css?v=20261010-3">
+<!-- End contextual reading assets -->
+<!-- Shared floating navigation assets -->
+<link rel="stylesheet" href="css/floating-navigation.css?v=20261010-rings" data-floating-navigation>
+<script src="js/floating-navigation-pages.js?v=20261010-rings" defer data-floating-navigation></script>
+<script src="js/floating-navigation.js?v=20261010-rings" defer data-floating-navigation></script>
+<!-- End shared floating navigation assets -->
+
+<!-- Mobile reading assets -->
+<link rel="stylesheet" href="css/mobile-reading.css?v=20261010-1">
+<script src="js/mobile-reading.js?v=20261010-1" defer></script>
+<!-- End mobile reading assets -->
 </head>
 <body>
     <div id="background"></div>
@@ -61,7 +74,10 @@
                 <p>无论您是追踪 ChatGPT 的最新迭代，还是等待 Netflix、Steam 上的最新神作，掌握全球第一手资讯是极客玩家的必修课。本页面通过纯前端技术为您实时抓取聚合了全网最新的极客、AI 与游戏大事件。</p>
                 <p><strong>⚠️ 极客提示：</strong> 绝大多数改变世界的科技大事件（如 OpenAI 发布会、外网最新开源项目）都发生在海外。如果您在阅读右侧资讯时，发现某些原链接无法打开或图片加载缓慢，说明您的网络环境受到了限制。</p>
                 <a href="brands.html" class="btn" style="display: block; text-align: center; background: #ff9800; color: #fff; padding: 12px; border-radius: 8px; font-weight: bold; text-decoration: none; margin-top: 15px; transition: 0.3s; box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);">🚀 解决网络限制？点击获取高速机场专线</a>
-            </article>
+            <!-- Contextual reading path -->
+<section class="content-paths" id="continue-reading" data-reading-profile="overview" aria-labelledby="continue-reading-title"><p class="content-path-kicker">把这个问题与下一步接起来</p><h2 id="continue-reading-title">从需求开始，把选购、配置与验证接起来</h2><p>先明确设备和用途，再核对套餐；能够连接以后，还需要确认隐私设置与实际任务表现。</p><div class="content-path-grid"><div class="content-path-card"><a href="topic/tuijianjichang/index.html">按用途比较主推品牌 →</a><p>先比较流量、计费周期与线路资料，再决定哪一项值得进一步核对。</p></div><div class="content-path-card"><a href="clients.html">选择适合设备的客户端 →</a><p>品牌提供订阅，客户端负责读取配置，两者需要匹配。</p></div><div class="content-path-card"><a href="topic/cybersecurity/privacy.html">理解订阅、DNS 与浏览器隐私 →</a><p>连接成功之后，继续检查订阅保管、DNS 和浏览器的暴露范围。</p></div></div></section>
+<!-- End contextual reading path -->
+</article>
         </div>
 
         <div class="right-col">
@@ -184,5 +200,18 @@
 
         document.addEventListener('DOMContentLoaded', fetchNews);
     </script>
+<!-- Shared floating navigation -->
+<nav class="site-floating-nav" aria-label="快捷导航">
+  <div class="site-floating-menu" id="site-floating-menu" hidden>
+    <p class="site-floating-title">快速导航</p>
+    <a href="index.html">返回首页</a><a href="topic/tuijianjichang/index.html">站长精选机场推荐</a><a href="topic/tuijianjichang/brands/index.html">机场品牌总库</a><a href="topic/tuijianjichang/comparison.html">品牌对比</a><a href="topic/tuijianjichang/faq/index.html">FAQ 知识库</a><a href="topic/cybersecurity/privacy.html">隐私与防泄漏</a><a href="topic/cybersecurity/gfw-monitor.html">GFW 与节点故障判断</a>
+  </div>
+  <div class="site-floating-controls">
+    <button type="button" class="site-floating-action" data-floating-back data-home="index.html" aria-label="返回上一页" title="返回上一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button>
+    <a class="site-floating-action" href="index.html" aria-label="返回首页" title="返回首页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></a>
+    <button type="button" class="site-floating-toggle" data-floating-toggle aria-controls="site-floating-menu" aria-expanded="false" aria-label="打开快捷导航" title="快捷导航"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+  </div>
+</nav>
+<!-- End shared floating navigation -->
 </body>
 </html>

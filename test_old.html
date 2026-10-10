@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>推荐机场品牌库</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+<!-- Shared floating navigation assets -->
+<link rel="stylesheet" href="css/floating-navigation.css?v=20261010-rings" data-floating-navigation>
+<script src="js/floating-navigation-pages.js?v=20261010-rings" defer data-floating-navigation></script>
+<script src="js/floating-navigation.js?v=20261010-rings" defer data-floating-navigation></script>
+<!-- End shared floating navigation assets -->
+
+<!-- Mobile reading assets -->
+<link rel="stylesheet" href="css/mobile-reading.css?v=20261010-1">
+<script src="js/mobile-reading.js?v=20261010-1" defer></script>
+<!-- End mobile reading assets -->
+</head>
+<body>
+    <div id="background" style="background: url('../../assets/bg7.jpg') no-repeat center center; background-size: cover; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; filter: brightness(0.6);"></div>
+
+    <div class="main-container">
+        <a href="../index.html" style="color: #4facfe; text-decoration: none; display: inline-block; margin-bottom: 20px; font-weight: bold; font-size: 1.1rem;"><i class="fa-solid fa-arrow-left"></i> 返回专题库</a>
+        
+        <header class="profile-section" style="text-align: center; margin-bottom: 40px; background: rgba(0,0,0,0.5); padding: 40px 20px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
+            <h1 class="welcome-title" style="font-size: 2.5rem; margin-bottom: 10px;">🌟 推荐<span>机场</span>品牌库</h1>
+            <p style="color: #ccc; font-size: 1.1rem; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                这里收录了我主推的几十家海外优质网络服务商（机场）的硬核测评报告。<br>
+                <span style="color:#e34c26; font-size: 0.9rem;">(已自动净化：去除所有敏感引流链接与时效性优惠码，纯净技术评测)</span>
+            </p>
+        </header>
+
+        <section class="section">
+            <div class="hot-news-container" id="brandsContainer" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <!-- 动态渲染品牌卡片 -->
+                <p style="color: #fff; text-align: center;">加载中...</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- 引入刚刚生成的品牌数据 -->
+    <script src="./brands_data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('brandsContainer');
+            if (typeof brandListData === 'undefined') {
+                container.innerHTML = '<p style="color:red; text-align:center;">无法加载品牌数据。</p>';
+                return;
+            }
+
+            let html = '';
+            brandListData.forEach(brand => {
+                // 如果没有正常提取到 title，就拿文件名做美化
+                let displayTitle = brand.title;
+                if(displayTitle === brand.id) {
+                    displayTitle = brand.id.charAt(0).toUpperCase() + brand.id.slice(1) + " 测评报告";
+                }
+
+                html += `
+                    <a href="brand.html?id=${brand.id}" class="hot-card" style="text-decoration:none; display:flex; flex-direction:column; justify-content:space-between; transition: 0.3s; cursor: pointer;">
+                        <div>
+                            <div class="hot-header" style="color: #4facfe; border-bottom: none; margin-bottom: 5px;">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <h3 style="font-size: 1.2rem; font-weight: bold; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${displayTitle}</h3>
+                            </div>
+                            <p style="color:#aaa; font-size:0.9rem; margin-top:10px;">点击查看此品牌的去引流版纯净测评与技术参数解析。</p>
+                        </div>
+                        <div style="margin-top:20px; display:flex; justify-content:flex-end;">
+                            <span style="background: rgba(79, 172, 254, 0.2); color: #4facfe; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">查看详情 <i class="fa-solid fa-angle-right"></i></span>
+                        </div>
+                    </a>
+                `;
+            });
+
+            container.innerHTML = html;
+        });
+    </script>
+<!-- Shared floating navigation -->
+<nav class="site-floating-nav" aria-label="快捷导航">
+  <div class="site-floating-menu" id="site-floating-menu" hidden>
+    <p class="site-floating-title">快速导航</p>
+    <a href="index.html">返回首页</a><a href="topic/tuijianjichang/index.html">站长精选机场推荐</a><a href="topic/tuijianjichang/brands/index.html">机场品牌总库</a><a href="topic/tuijianjichang/comparison.html">品牌对比</a><a href="topic/tuijianjichang/faq/index.html">FAQ 知识库</a><a href="topic/cybersecurity/privacy.html">隐私与防泄漏</a><a href="topic/cybersecurity/gfw-monitor.html">GFW 与节点故障判断</a>
+  </div>
+  <div class="site-floating-controls">
+    <button type="button" class="site-floating-action" data-floating-back data-home="index.html" aria-label="返回上一页" title="返回上一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button>
+    <a class="site-floating-action" href="index.html" aria-label="返回首页" title="返回首页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></a>
+    <button type="button" class="site-floating-toggle" data-floating-toggle aria-controls="site-floating-menu" aria-expanded="false" aria-label="打开快捷导航" title="快捷导航"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+  </div>
+</nav>
+<!-- End shared floating navigation -->
+</body>
+</html>

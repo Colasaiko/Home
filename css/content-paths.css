@@ -1,0 +1,12 @@
+.content-paths{box-sizing:border-box;width:100%;max-width:1200px;margin:32px auto;padding:24px;border:1px solid #465463;border-radius:14px;background:#15202c;color:#e6edf3;line-height:1.8;text-align:left;clear:both}
+.content-paths h2{color:#fff!important;font-size:1.35rem!important;line-height:1.5;margin:0 0 12px!important;border:0!important;padding:0!important}
+.content-paths>p{color:#cbd6e2!important;margin:0 0 16px!important}
+.content-paths .content-path-kicker{font-size:.85rem;color:#9ed5ff!important;margin-bottom:8px!important}
+.content-path-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px}
+.content-path-card{padding:16px;background:#0e1722;border:1px solid #344456;border-radius:9px;min-width:0}
+.content-path-card a{display:block;color:#9ed5ff!important;font-weight:650;text-decoration:underline!important;text-underline-offset:4px;line-height:1.6;overflow-wrap:anywhere}
+.content-path-card p{color:#cbd6e2!important;font-size:.94rem;margin:10px 0 0!important;line-height:1.75}
+.content-paths a:focus-visible{outline:3px solid #ffd479;outline-offset:4px}
+.reading-guide{line-height:1.9;color:#d4dce5}.reading-guide h2{color:#fff}.reading-guide a{display:inline-block;max-width:100%;color:#9ed5ff;text-decoration:underline}.reading-guide li{margin:8px 0}.reading-guide label{display:block;margin:12px 0}.reading-guide table{width:100%;border-collapse:collapse}.reading-guide td,.reading-guide th{padding:12px;border:1px solid #445365;text-align:left}.reading-guide .table-scroll{overflow-x:auto}.reading-guide .guide-note{padding:16px;border-left:4px solid #9ed5ff;background:#15202c;margin:20px 0}
+@media(max-width:600px){.content-paths{padding:18px;margin:24px auto}.content-path-grid{grid-template-columns:1fr}.reading-guide .table-scroll table{min-width:560px}}
+@media(max-width:900px){main[data-brand-reading] article.panel>div[style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr)!important;gap:24px!important}main[data-brand-reading] article.panel>div[style*="grid-template-columns"]>div{min-width:0!important;padding:20px 16px!important;position:static!important;max-height:none!important;overflow:visible!important}main[data-brand-reading] .table-wrap{max-width:100%;overflow-x:auto}}

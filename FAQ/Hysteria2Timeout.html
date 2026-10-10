@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hysteria 2 连接超时怎么办？Hy2 节点为什么不能用？ | 原因与解决步骤 | Cola FAQ</title>
+  <meta name="description" content="先核对客户端支持和后台配置，再分辨解析、UDP 路径、认证与证书错误。换本人可用网络作对照，确认原因后修正配置或向服务方报障。">
+  <link rel="canonical" href="Hysteria2Timeout.html">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../topic/tuijianjichang/catalog.css">
+  <link rel="stylesheet" href="../topic/tuijianjichang/faq/faq-article.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Hysteria 2 连接超时怎么办？Hy2 节点为什么不能用？", "description": "先核对客户端支持和后台配置，再分辨解析、UDP 路径、认证与证书错误。换本人可用网络作对照，确认原因后修正配置或向服务方报障。", "inLanguage": "zh-CN", "dateModified": "2026-10-10"}</script>
+<!-- Contextual reading assets -->
+<link rel="stylesheet" href="../css/content-paths.css?v=20261010-3">
+<!-- End contextual reading assets -->
+<!-- Shared floating navigation assets -->
+<link rel="stylesheet" href="../css/floating-navigation.css?v=20261010-rings" data-floating-navigation>
+<script src="../js/floating-navigation-pages.js?v=20261010-rings" defer data-floating-navigation></script>
+<script src="../js/floating-navigation.js?v=20261010-rings" defer data-floating-navigation></script>
+<!-- End shared floating navigation assets -->
+
+<!-- Mobile reading assets -->
+<link rel="stylesheet" href="../css/mobile-reading.css?v=20261010-1">
+<script src="../js/mobile-reading.js?v=20261010-1" defer></script>
+<!-- End mobile reading assets -->
+</head>
+<body>
+<div id="background"></div>
+<main class="catalog faq-page">
+  <nav aria-label="面包屑"><a href="../topic/tuijianjichang/index.html">推荐机场</a> / <a href="../topic/tuijianjichang/faq/index.html">FAQ 知识库</a></nav>
+  <article class="panel">
+    <header class="faq-heading"><h1>Hysteria 2 连接超时怎么办？Hy2 节点为什么不能用？</h1><p class="faq-meta">更新：2026-10-10 · 原因说明与 6 个讲解与处理环节</p></header>
+    <div class="faq-layout">
+      <aside class="faq-directory"><details open><summary>文章目录</summary><nav aria-label="文章目录"><ul><li><a href="#why">为什么要了解这个问题</a></li><li><a href="#how">如何处理这个问题</a></li><li class="toc-step"><a href="#step-1">步骤 1：确认确实是 Hysteria 2</a></li><li class="toc-step"><a href="#step-2">步骤 2：检查配置来源与关键字段</a></li><li class="toc-step"><a href="#step-3">步骤 3：读取具体握手错误</a></li><li class="toc-step"><a href="#step-4">步骤 4：比较 UDP 路径</a></li><li class="toc-step"><a href="#step-5">步骤 5：对照其他协议节点</a></li><li class="toc-step"><a href="#step-6">步骤 6：修复后测试持续使用</a></li><li><a href="#result">完成后怎么判断</a></li><li><a href="#sources">官方资料与进一步核对</a></li></ul></nav></details></aside>
+      <div class="article-content faq-body">
+        <section id="why"><h2>为什么要了解这个问题？</h2><p>Hy2 使用基于 UDP 的 QUIC 路径，普通网页能打开不能证明这条路径可用。配置版本、认证与 TLS 也会影响连接，要按日志逐项检查。</p>
+        <div class="faq-answer"><strong>直接回答</strong><p>先核对客户端支持和后台配置，再分辨解析、UDP 路径、认证与证书错误。换本人可用网络作对照，确认原因后修正配置或向服务方报障。</p></div></section>
+        <section id="how"><h2>如何处理这个问题？</h2><p>按下面的顺序操作，每完成一步再进入下一步；已经确认的条件可以直接通过目录跳到对应环节。</p><section id="step-1" class="faq-step"><h3>步骤 1：确认确实是 Hysteria 2</h3><p>核对后台协议和客户端内核，不把 Hysteria 1 配置直接当成 Hy2。记录版本与节点详情，检查使用的导入格式是否保留了所需字段。</p></section><section id="step-2" class="faq-step"><h3>步骤 2：检查配置来源与关键字段</h3><p>更新本人后台配置，核对服务地址、端口、认证、TLS 名称和可选混淆。以服务端实际配置为准，不混用来自不同教程或账号的字段。</p></section><section id="step-3" class="faq-step"><h3>步骤 3：读取具体握手错误</h3><p>区分域名解析、等待超时、认证失败和证书校验失败。认证错误回到账号配置，证书错误核对名称、本机时间与服务说明，不能用跳过验证掩盖问题。</p></section><section id="step-4" class="faq-step"><h3>步骤 4：比较 UDP 路径</h3><p>在本人可用的另一网络测试同一节点。若只某网络失败，记录网络条件并询问支持；TCP 请求正常不足以排除 UDP 路径限制或丢包。</p></section><section id="step-5" class="faq-step"><h3>步骤 5：对照其他协议节点</h3><p>在相同设备和网络测试服务提供的另一协议，确认差异是否集中在 Hy2。另一个节点成功只能提供定位线索，不能证明具体的 Hy2 配置一定正确。</p></section><section id="step-6" class="faq-step"><h3>步骤 6：修复后测试持续使用</h3><p>修改已定位问题再验证网页、下载与常用任务，记录时段与连接中断情况。仍失败时提交脱敏日志给服务方，保留可用备用配置。</p></section><aside class="faq-brand-context" aria-label="结合品牌资料继续核对"><p>确认需要其他协议备用时，可以看 <a href="../topic/tuijianjichang/brands/firefly/index.html">Firefly</a> 的 VLESS 资料与 <a href="../topic/tuijianjichang/brands/weifeng/index.html">微风网络</a> 的线路说明，先核对候选配置。这是比较替代条件，不意味着它们一定提供 Hy2 节点。</p><p class="faq-brand-hub"><a href="../topic/tuijianjichang/index.html">查看站长精选主推榜，继续比较其他品牌 →</a></p></aside></section>
+        <section id="result"><h2>完成后怎么判断？</h2><p>能定位到配置、账号、TLS 或网络路径，并验证 Hy2 握手与实际任务恢复。</p><div class="faq-note"><strong>容易忽略的地方</strong><p>带宽填写过高、混淆字段随意填写或关闭证书验证，都不能作为通用的超时修复。</p></div></section>
+        <section id="sources"><h2>官方资料与进一步核对</h2><p>客户端菜单与平台条件可能变化，操作前核对对应开发者或平台说明。</p><ul><li><a href="https://v2.hysteria.network/docs/advanced/Full-Client-Config/" target="_blank" rel="noopener noreferrer">Hysteria 2 客户端配置</a></li><li><a href="https://wiki.metacubex.one/config/proxies/hysteria2/" target="_blank" rel="noopener noreferrer">Mihomo Hysteria 2 配置</a></li></ul></section>
+        <!-- Contextual reading path -->
+<section class="content-paths" id="continue-reading" data-reading-profile="connection" aria-labelledby="continue-reading-title"><p class="content-path-kicker">把这个问题与下一步接起来</p><h2 id="continue-reading-title">从连接问题继续定位到网络层和配置层</h2><p>先保留报错与日志，再做同节点、不同网络或不同应用的对照；一次只改变一个条件。</p><div class="content-path-grid"><div class="content-path-card"><a href="../status.html">对照浏览器连通性与请求耗时 →</a><p>记录目标请求是否完成与耗时，作为对照证据，而不是解锁结论。</p></div><div class="content-path-card"><a href="../topic/cybersecurity/gfw-monitor.html">区分封锁、节点故障与本地问题 →</a><p>判断是否只有特定网络、协议或时段失败，避免把全部超时直接归因于封锁。</p></div><div class="content-path-card"><a href="../api.html">检查配置与测试结果 →</a><p>核对配置结构与订阅格式，区分配置没有加载和节点无法建立连接。</p></div></div></section>
+<!-- End contextual reading path -->
+<section class="faq-reading"><h2>与这个问题相关的文章</h2><ul><li><a href="WhatIsHysteria2.html">Hysteria 2 是什么？和机场、Clash 有什么关系？</a><p>补齐 Hy2 与 QUIC、UDP 的基础概念。</p></li><li><a href="ClashNodeTimeout.html">Clash 节点超时或显示 timeout 是什么原因？</a><p>用通用节点排查方法做范围对照。</p></li><li><a href="SingBoxTunNoInternet.html">sing-box 开启 TUN 后不能上网怎么办？</a><p>TUN 模式失败时分开核对流量入口。</p></li></ul><p><a href="../topic/tuijianjichang/faq/index.html">返回全部 FAQ 问题</a></p></section>
+      </div>
+    </div>
+    <nav class="faq-pagination" aria-label="文章翻页"><a href="ClashRulesVsGlobal.html"><small>上一篇</small><span>Clash 规则模式和全局模式有什么区别？怎么知道流量走哪？</span></a><span></span></nav>
+  </article>
+</main>
+<script src="../topic/tuijianjichang/faq/faq-article.js" defer></script>
+<!-- Shared floating navigation -->
+<nav class="site-floating-nav" aria-label="快捷导航">
+  <div class="site-floating-menu" id="site-floating-menu" hidden>
+    <p class="site-floating-title">快速导航</p>
+    <a href="../index.html">返回首页</a><a href="../topic/tuijianjichang/index.html">站长精选机场推荐</a><a href="../topic/tuijianjichang/brands/index.html">机场品牌总库</a><a href="../topic/tuijianjichang/comparison.html">品牌对比</a><a href="../topic/tuijianjichang/faq/index.html">FAQ 知识库</a><a href="../topic/cybersecurity/privacy.html">隐私与防泄漏</a><a href="../topic/cybersecurity/gfw-monitor.html">GFW 与节点故障判断</a>
+  </div>
+  <div class="site-floating-controls">
+    <button type="button" class="site-floating-action" data-floating-back data-home="../index.html" aria-label="返回上一页" title="返回上一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button>
+    <a class="site-floating-action" href="../index.html" aria-label="返回首页" title="返回首页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></a>
+    <button type="button" class="site-floating-toggle" data-floating-toggle aria-controls="site-floating-menu" aria-expanded="false" aria-label="打开快捷导航" title="快捷导航"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+  </div>
+</nav>
+<!-- End shared floating navigation -->
+</body>
+</html>

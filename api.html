@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>智能订阅转换 API - 节点分流规则定制</title>
-    <meta name="description" content="免费好用的全能节点订阅转换工具。一键将 V2Ray, SSR, Trojan 节点转换为 Clash, Surge 智能分流订阅链接，自带最新去广告与国内直连规则。">
+    <title>配置检查与订阅转换 - API 工具及测试说明</title>
+    <meta name="description" content="订阅格式、配置结构与隐私测试说明，连接客户端、故障排查和品牌资料。">
     <link rel="stylesheet" href="./css/style.css">
     <style>
         .page-hero { text-align: center; padding: 40px 20px; background: rgba(0,0,0,0.4); border-radius: 20px; margin-bottom: 20px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
@@ -38,6 +38,20 @@
             .left-col { position: sticky; top: 4vh; }
         }
     </style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Contextual reading assets -->
+<link rel="stylesheet" href="css/content-paths.css?v=20261010-3">
+<!-- End contextual reading assets -->
+<!-- Shared floating navigation assets -->
+<link rel="stylesheet" href="css/floating-navigation.css?v=20261010-rings" data-floating-navigation>
+<script src="js/floating-navigation-pages.js?v=20261010-rings" defer data-floating-navigation></script>
+<script src="js/floating-navigation.js?v=20261010-rings" defer data-floating-navigation></script>
+<!-- End shared floating navigation assets -->
+
+<!-- Mobile reading assets -->
+<link rel="stylesheet" href="css/mobile-reading.css?v=20261010-1">
+<script src="js/mobile-reading.js?v=20261010-1" defer></script>
+<!-- End mobile reading assets -->
 </head>
 <body>
     <div id="background"></div>
@@ -48,21 +62,14 @@
             <a href="index.html" class="back-btn">← 返回主页</a>
             
             <div class="page-hero">
-                <h1 class="page-title">硬核节点体检中心</h1>
-                <p class="page-subtitle">🛡️ 纯前端运行，全面评估与武装您的科学上网环境</p>
+                <h1 class="page-title">配置与隐私检测中心</h1>
+                <p class="page-subtitle">配置检查、订阅转换与隐私测试入口</p>
             </div>
 
-            <article class="seo-article">
-                <h2>劣质节点在这里无所遁形</h2>
-                <p>很多新手买了机场后，只会“一键导入”，殊不知自己的网速被糟糕的路由规则拖累，甚至真实的物理 IP 正在后台疯狂泄漏。</p>
-                <p>为了让您彻底掌控自己的网络，本页面集成了一套顶级的 <strong>极客网络体检方案</strong>：<br>
-                从【节点订阅转换分流】，到纯本地的【Clash 配置文件除错】，再到深度的【WebRTC 与 DNS 安全测漏】。一套完整的体检做下来，您的机场节点质量到底如何，立刻见分晓。</p>
-                <div style="margin-top: 30px; padding: 20px; background: rgba(227, 76, 38, 0.1); border-left: 4px solid #e34c26; border-radius: 8px;">
-                    <h3 style="color:#e34c26; margin-top:0; font-size: 1.2rem;">⚠️ 测出泄漏？速度太卡？</h3>
-                    <p style="color:#ccc; font-size:0.95rem; line-height:1.6;">如果您在这套硬核测试中频频报红，或者转换节点后流媒体依然卡顿，说明您的机场使用的是极其廉价的“万人骑”绕路节点，隐私毫无保障。</p>
-                    <a href="brands.html" style="display:inline-block; background:#e34c26; color:#fff; padding:10px 20px; border-radius:20px; text-decoration:none; font-weight:bold; margin-top:10px; transition:0.3s;" onmouseover="this.style.background='#ff5733'" onmouseout="this.style.background='#e34c26'">不要将就，点此获取安全的高速 IPLC 专线 →</a>
-                </div>
-            </article>
+            <article class="seo-article reading-guide"><h2>先检查配置，再解释连接与隐私结果</h2><p>这里提供订阅转换链接生成、浏览器内 YAML 检查、WebRTC 候选地址收集和外部 DNS 测试入口。它们解决不同问题，不能合并为一个品牌安全分数。</p><ol><li>优先使用品牌提供的原生订阅，格式不兼容时先核对 <a href="clients.html">客户端支持</a>。</li><li>使用 YAML 检查确认基础结构；解析通过不保证版本兼容、节点可用或全部规则正确。</li><li>在 <a href="topic/cybersecurity/privacy.html">隐私指南</a>了解测试的数据流向，再选择 DNS 或 WebRTC 检查。</li><li>配置正常但仍失败时，按 <a href="topic/cybersecurity/gfw-monitor.html">故障对照流程</a>定位原因。</li></ol><p>确认服务条件不合适后，再回到 <a href="topic/tuijianjichang/index.html">主推品牌资料</a>比较线路和套餐。</p><!-- Contextual reading path -->
+<section class="content-paths" id="continue-reading" data-reading-profile="api" aria-labelledby="continue-reading-title"><p class="content-path-kicker">把这个问题与下一步接起来</p><h2 id="continue-reading-title">配置与测试做完，如何解释结果？</h2><p>工具负责收集有限的证据。没有收集到候选地址、YAML 能解析或网页请求完成，都不等于所有隐私与连接问题已经解决。</p><div class="content-path-grid"><div class="content-path-card"><a href="topic/cybersecurity/privacy.html">理解订阅、DNS 与浏览器隐私 →</a><p>先确认订阅凭据、第三方服务与测试地址的暴露范围。</p></div><div class="content-path-card"><a href="clients.html">选择适合设备的客户端 →</a><p>格式正确仍无法导入时，核对平台、内核版本与协议支持。</p></div><div class="content-path-card"><a href="topic/cybersecurity/gfw-monitor.html">区分封锁、节点故障与本地问题 →</a><p>格式正常但连接失败时，继续做网络、节点与时段对照。</p></div><div class="content-path-card"><a href="topic/tuijianjichang/index.html">按用途比较主推品牌 →</a><p>确认需要调整服务后，再比较实际线路与套餐条件。</p></div></div></section>
+<!-- End contextual reading path -->
+</article>
         </div>
 
         <!-- 右侧区域：转换工具交互面板 -->
@@ -70,7 +77,7 @@
             <div class="tool-card">
                 <div class="input-group">
                     <label>📝 原始订阅链接 / 节点分享链接 (支持多行)</label>
-                    <textarea id="subInput" placeholder="在此粘贴您的机场订阅链接，或者诸如 vmess://、trojan:// 等节点链接（一行一个）..."></textarea>
+                    <p style="color:#d5dfeb;line-height:1.7">优先使用原生订阅。点击生成只构造 URL；打开或导入生成的转换链接时，原订阅会传给第三方 api.v1.mk。不要使用公开分享的凭据。</p><textarea id="subInput" placeholder="在此粘贴您的机场订阅链接，或者诸如 vmess://、trojan:// 等节点链接（一行一个）..."></textarea>
                 </div>
 
                 <div class="input-group">
@@ -107,16 +114,16 @@
             </div>
 
             <div class="tool-card" style="margin-top: 30px;">
-                <h2 style="color: #fff; margin-top: 0; margin-bottom: 20px; font-size: 1.5rem; display: flex; align-items: center; gap: 10px;">🛡️ WebRTC 真实 IP 泄漏探测</h2>
-                <p style="color: #ccc; margin-bottom: 20px; line-height: 1.6;">即便您开启了全局代理，浏览器的 WebRTC 技术仍可能绕过代理直接暴露您的真实物理 IP 地址。点击下方按钮进行本地深层刺探，如发现您真实宽带的 IP，说明您的代理配置存在隐私漏洞。</p>
+                <h2 style="color: #fff; margin-top: 0; margin-bottom: 20px; font-size: 1.5rem; display: flex; align-items: center; gap: 10px;">🛡️ WebRTC 候选地址与隐私检查</h2>
+                <p style="color: #ccc; margin-bottom: 20px; line-height: 1.6;">此测试收集 WebRTC 候选地址，并会联系配置的 STUN 服务。请区分私有地址、代理出口与已知的公网地址；空结果不是无泄漏证明。</p>
                 <button class="btn-generate" onclick="checkWebRTC()" style="background: #3949ab; color: #fff;">🕵️ 立即探测本地 WebRTC 接口</button>
                 <div id="webrtcResult" style="margin-top: 20px; padding: 15px; border-radius: 8px; display: none; line-height: 1.6;"></div>
             </div>
 
             <div class="tool-card" style="margin-top: 30px;">
                 <h2 style="color: #fff; margin-top: 0; margin-bottom: 20px; font-size: 1.5rem; display: flex; align-items: center; gap: 10px;">🌐 深度 DNS 解析泄漏测试</h2>
-                <p style="color: #ccc; margin-bottom: 20px; line-height: 1.6;">真正的 DNS 泄漏探测需要分布式的根服务器集群来捕获您的 DNS 请求路径，这是评估一个机场节点和代理规则是否安全的终极标准。</p>
-                <p style="color: #ccc; margin-bottom: 20px; line-height: 1.6;">由于该测试需要庞大的后端算力，我们为您直接对接了全球最权威的两大安全探测机构：</p>
+                <p style="color: #ccc; margin-bottom: 20px; line-height: 1.6;">外部 DNS 测试可帮助观察解析器，但需结合浏览器和客户端设置解释，不能单独证明品牌安全。</p>
+                <p style="color: #ccc; margin-bottom: 20px; line-height: 1.6;">以下测试由第三方服务提供。打开后会向其发起网络请求，请先了解其数据收集说明：</p>
                 <div style="display: flex; flex-direction: column; gap: 15px;">
                     <a href="https://ipleak.net/" target="_blank" class="btn-generate" style="background: #11B04E; color: #fff; text-align: center; text-decoration: none; display: block; box-sizing: border-box;">🛡️ 前往 IPLeak.net 进行深度测漏</a>
                     <a href="https://bash.ws/dnsleak" target="_blank" class="btn-generate" style="background: #f1e05a; color: #121212; text-align: center; text-decoration: none; display: block; box-sizing: border-box;">📊 前往 Bash.ws 进行安全综合评估</a>
@@ -252,7 +259,7 @@
                         if (ips.size === 0) {
                             rtcBox.style.background = 'rgba(17, 176, 78, 0.1)';
                             rtcBox.style.borderLeft = '4px solid #11B04E';
-                            rtcBox.innerHTML = '<span style="color:#11B04E; font-weight:bold;">✅ 安全：</span>您的浏览器禁用了 WebRTC 或未发生泄漏，代理受到完美保护。';
+                            rtcBox.innerHTML = '<span style="color:#11B04E; font-weight:bold;">检查结果：</span>这次未收集到候选地址，不能据此证明没有泄漏。';
                         } else {
                             const ipList = Array.from(ips).join('<br>👉 ');
                             rtcBox.style.background = 'rgba(227, 76, 38, 0.1)';
@@ -271,7 +278,7 @@
                         if (ips.size === 0) {
                             rtcBox.style.background = 'rgba(17, 176, 78, 0.1)';
                             rtcBox.style.borderLeft = '4px solid #11B04E';
-                            rtcBox.innerHTML = '<span style="color:#11B04E; font-weight:bold;">✅ 安全：</span>探测超时，未发现 WebRTC 泄漏。';
+                            rtcBox.innerHTML = '<span style="color:#11B04E; font-weight:bold;">检查结果：</span>探测超时，未完成验证；不能据此判断是否泄漏。';
                         }
                     }
                 }, 3000);
@@ -280,5 +287,18 @@
     </script>
 
 
+<!-- Shared floating navigation -->
+<nav class="site-floating-nav" aria-label="快捷导航">
+  <div class="site-floating-menu" id="site-floating-menu" hidden>
+    <p class="site-floating-title">快速导航</p>
+    <a href="index.html">返回首页</a><a href="topic/tuijianjichang/index.html">站长精选机场推荐</a><a href="topic/tuijianjichang/brands/index.html">机场品牌总库</a><a href="topic/tuijianjichang/comparison.html">品牌对比</a><a href="topic/tuijianjichang/faq/index.html">FAQ 知识库</a><a href="topic/cybersecurity/privacy.html">隐私与防泄漏</a><a href="topic/cybersecurity/gfw-monitor.html">GFW 与节点故障判断</a>
+  </div>
+  <div class="site-floating-controls">
+    <button type="button" class="site-floating-action" data-floating-back data-home="index.html" aria-label="返回上一页" title="返回上一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button>
+    <a class="site-floating-action" href="index.html" aria-label="返回首页" title="返回首页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></a>
+    <button type="button" class="site-floating-toggle" data-floating-toggle aria-controls="site-floating-menu" aria-expanded="false" aria-label="打开快捷导航" title="快捷导航"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+  </div>
+</nav>
+<!-- End shared floating navigation -->
 </body>
 </html>

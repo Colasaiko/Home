@@ -1,0 +1,24 @@
+.comparison { max-width: 1440px; }
+.eyebrow { color: #83caff; font-weight: 700; }
+.filters { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+.filters label { display: grid; gap: 8px; font-weight: 600; }
+.filters input, .filters select, .actions button { font: inherit; color: #e2e8f0; background: #14283e; border: 1px solid #68829b; border-radius: 8px; padding: 10px 12px; min-width: 0; }
+.filters select { width: 100%; }
+.actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.actions button { cursor: pointer; }
+.actions button:disabled { opacity: .55; cursor: default; }
+.comparison-toolbar { position: sticky; top: 10px; z-index: 5; padding: 16px; background: #102234; border: 1px solid #68829b; border-radius: 12px; margin: 16px 0; box-shadow: 0 4px 16px #0006; }
+.comparison-toolbar p { margin: 8px 0; }
+.comparison tr.is-picked td { background: #163650; }
+.actions button[aria-pressed="true"] { background: #255071; border-color: #83caff; }
+.comparison :is(input, select, button, .table-wrap):focus-visible { outline: 3px solid #83caff; outline-offset: 3px; }
+.comparison table { min-width: 1300px; }
+.comparison td { vertical-align: top; }
+.comparison td small { display: block; margin-top: 8px; color: #c5d2e2; line-height: 1.7; }
+.comparison td h3 { font-size: 1rem; margin: 12px 0; }
+.comparison .badge { display: inline-block; background: #1b4665; color: #cdeaff; padding: 2px 8px; border-radius: 6px; font-size: .8rem; }
+.comparison tr[hidden], #compare-empty[hidden] { display: none; }
+.comparison .table-wrap { scrollbar-color: #83caff #14283e; }
+.comparison ol { padding-left: 24px; }
+.comparison li { margin-bottom: 12px; }
+@media (max-width: 650px) { .filters { grid-template-columns: 1fr; } .comparison { padding: 20px 12px 100px; } .comparison .panel { padding: 20px 16px; } }

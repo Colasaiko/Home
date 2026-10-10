@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>极客工具箱 - 纯前端安全网络工具</title>
-    <meta name="description" content="提供纯前端、零日志的极客网络工具箱。支持安全的 IP 归属地精准查询、机场订阅链接 Base64 本地解析，绝对保护您的隐私与节点安全。">
+    <title>极客工具箱 - IP 查询与 Base64 编解码</title>
+    <meta name="description" content="Base64 本地编解码与第三方出口 IP 查询，解释数据流向和结果边界。">
     <link rel="stylesheet" href="./css/style.css">
     <style>
         .page-hero { text-align: center; padding: 40px 20px; background: rgba(0,0,0,0.4); border-radius: 20px; margin-bottom: 20px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
@@ -40,6 +40,20 @@
             .left-col { position: sticky; top: 4vh; }
         }
     </style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Contextual reading assets -->
+<link rel="stylesheet" href="css/content-paths.css?v=20261010-3">
+<!-- End contextual reading assets -->
+<!-- Shared floating navigation assets -->
+<link rel="stylesheet" href="css/floating-navigation.css?v=20261010-rings" data-floating-navigation>
+<script src="js/floating-navigation-pages.js?v=20261010-rings" defer data-floating-navigation></script>
+<script src="js/floating-navigation.js?v=20261010-rings" defer data-floating-navigation></script>
+<!-- End shared floating navigation assets -->
+
+<!-- Mobile reading assets -->
+<link rel="stylesheet" href="css/mobile-reading.css?v=20261010-1">
+<script src="js/mobile-reading.js?v=20261010-1" defer></script>
+<!-- End mobile reading assets -->
 </head>
 <body>
     <div id="background"></div>
@@ -51,19 +65,13 @@
             
             <div class="page-hero">
                 <h1 class="page-title">极客工具箱</h1>
-                <p class="page-subtitle">🔒 化繁为简的实用网络工具箱 (纯前端实现，拒绝隐私泄露)</p>
+                <p class="page-subtitle">🔒 化繁为简的实用网络工具箱 (本地编解码与第三方 IP 查询)</p>
             </div>
 
-            <article class="seo-article">
-                <h2>为什么您可以 100% 信任极客工具箱？</h2>
-                <p>在网络安全形势日益复杂的今天，很多用户在第三方网站检测 IP 或解析机场订阅链接时，都会担忧：<strong>我的真实 IP 会不会被记录？我花钱买的机场节点订阅会不会被不良网站后台“偷偷留存”？</strong></p>
-                <p>这些顾虑非常合理！为了彻底解决这种信任危机，本页面的极客工具箱采用了极其严苛的<strong>无后端（Serverless）与零日志（Zero-Log）</strong>架构，为您提供绝对安全的网络测试环境：</p>
-                <ul>
-                    <li><strong>🛡️ 100% 纯本地前端解析：</strong> 我们的 Base64 订阅加解密工具完全依靠您自己电脑浏览器中的 JavaScript 引擎运行。所有解码与生成过程都在您的设备本地内存中瞬间完成，<strong>绝对不会</strong>向任何远端服务器发送您的节点配置和订阅密码。</li>
-                    <li><strong>🌐 隐私无痕 IP 查询：</strong> 归属地查询功能直接由您的浏览器向国际知名的公开只读数据库发起请求。我们不记录、也无法接触到您的任何访问日志，真正做到“用完即走，痕迹全无”。</li>
-                </ul>
-                <p style="margin-bottom:0; color:#4facfe;">您可以放心地在这里调试您的网络节点配置，我们致力于为您提供最纯粹的极客体验。</p>
-            </article>
+            <article class="seo-article reading-guide"><h2>先知道工具处理什么信息</h2><p>Base64 编解码在当前页面的浏览器脚本内完成。Base64 是编码，不是编码；解码后的节点地址、UUID 或密码仍需保管。</p><p>IP 查询会由浏览器向 <code>ipwho.is</code> 发起请求，服务方会收到查询与网络请求信息。归属查询不能证明匿名，也不代表目标平台会采用同一地区或 IP 类型判定。</p><ol><li>查询出口后，结合 <a href="topic/cybersecurity/privacy.html">隐私与 DNS 检查</a>理解结果。</li><li>解析订阅内容后，进入 <a href="api.html">配置结构检查</a>；不公开含凭据的内容。</li><li>比较服务时，回到 <a href="topic/tuijianjichang/brands/index.html">品牌资料库</a>核对条件，并用实际任务测试。</li></ol><p><a href="https://developer.mozilla.org/en-US/docs/Glossary/Base64" target="_blank" rel="noopener noreferrer">MDN：Base64 编码说明</a></p><!-- Contextual reading path -->
+<section class="content-paths" id="continue-reading" data-reading-profile="tools" aria-labelledby="continue-reading-title"><p class="content-path-kicker">把这个问题与下一步接起来</p><h2 id="continue-reading-title">知道数据含义以后，再用结果定位问题</h2><p>Base64 是编码；IP 归属查询是第三方返回的信息。两者都不能单独证明节点安全或目标平台可用。</p><div class="content-path-grid"><div class="content-path-card"><a href="topic/cybersecurity/privacy.html">理解订阅、DNS 与浏览器隐私 →</a><p>了解查询服务收到的信息，保管好解码后的节点凭据。</p></div><div class="content-path-card"><a href="api.html">检查配置与测试结果 →</a><p>从编码内容继续核对配置结构，优先使用品牌提供的原生订阅。</p></div><div class="content-path-card"><a href="topic/tuijianjichang/index.html">按用途比较主推品牌 →</a><p>把出口和使用需求带回品牌资料，核对服务条件。</p></div></div></section>
+<!-- End contextual reading path -->
+</article>
         </div>
 
         <!-- 右侧：工具卡片 -->
@@ -80,11 +88,11 @@
 
             <!-- Base64 解码工具 -->
             <div class="tool-card">
-                <h2>🔗 订阅链接 Base64 加/解密</h2>
-                <p style="color:#aaa; font-size:1rem; margin-top: 10px; line-height: 1.6;">一键将加密的机场 Base64 订阅链接进行解码提取明文，或将明文打包为 Base64。</p>
-                <textarea id="base64Input" placeholder="在此输入 Base64 密文 或 需要加密的普通文本..."></textarea>
-                <button onclick="decodeBase64()">解锁密文 (Decode)</button>
-                <button onclick="encodeBase64()" style="background: #11B04E;">加密文本 (Encode)</button>
+                <h2>🔗 订阅链接 Base64 加/解码</h2>
+                <p style="color:#aaa; font-size:1rem; margin-top: 10px; line-height: 1.6;">一键将编码的机场 Base64 订阅链接进行解码提取明文，或将明文打包为 Base64。</p>
+                <textarea id="base64Input" placeholder="在此输入 Base64 编码文本 或 需要编码的普通文本..."></textarea>
+                <button onclick="decodeBase64()">解码文本 (Decode)</button>
+                <button onclick="encodeBase64()" style="background: #11B04E;">编码文本 (Encode)</button>
                 <div id="base64Result" class="result-box"></div>
             </div>
         </div>
@@ -150,7 +158,7 @@
                 const decoded = decodeURIComponent(escape(atob(input)));
                 resultBox.style.display = 'block';
                 resultBox.style.borderLeftColor = '#4facfe';
-                resultBox.innerHTML = '<strong style="color:#4facfe;">解码成功：</strong>\n\n' + decoded;
+                resultBox.textContent = '解码成功：\n\n' + decoded;
             } catch (e) {
                 resultBox.style.display = 'block';
                 resultBox.style.borderLeftColor = '#e34c26';
@@ -173,13 +181,26 @@
                 const encoded = btoa(unescape(encodeURIComponent(input)));
                 resultBox.style.display = 'block';
                 resultBox.style.borderLeftColor = '#11B04E';
-                resultBox.innerHTML = '<strong style="color:#11B04E;">加密成功：</strong>\n\n' + encoded;
+                resultBox.innerHTML = '<strong style="color:#11B04E;">编码成功：</strong>\n\n' + encoded;
             } catch (e) {
                 resultBox.style.display = 'block';
                 resultBox.style.borderLeftColor = '#e34c26';
-                resultBox.innerHTML = '<strong style="color:#e34c26;">加密失败：</strong>\n' + e.message;
+                resultBox.innerHTML = '<strong style="color:#e34c26;">编码失败：</strong>\n' + e.message;
             }
         }
     </script>
+<!-- Shared floating navigation -->
+<nav class="site-floating-nav" aria-label="快捷导航">
+  <div class="site-floating-menu" id="site-floating-menu" hidden>
+    <p class="site-floating-title">快速导航</p>
+    <a href="index.html">返回首页</a><a href="topic/tuijianjichang/index.html">站长精选机场推荐</a><a href="topic/tuijianjichang/brands/index.html">机场品牌总库</a><a href="topic/tuijianjichang/comparison.html">品牌对比</a><a href="topic/tuijianjichang/faq/index.html">FAQ 知识库</a><a href="topic/cybersecurity/privacy.html">隐私与防泄漏</a><a href="topic/cybersecurity/gfw-monitor.html">GFW 与节点故障判断</a>
+  </div>
+  <div class="site-floating-controls">
+    <button type="button" class="site-floating-action" data-floating-back data-home="index.html" aria-label="返回上一页" title="返回上一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button>
+    <a class="site-floating-action" href="index.html" aria-label="返回首页" title="返回首页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></a>
+    <button type="button" class="site-floating-toggle" data-floating-toggle aria-controls="site-floating-menu" aria-expanded="false" aria-label="打开快捷导航" title="快捷导航"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+  </div>
+</nav>
+<!-- End shared floating navigation -->
 </body>
 </html>

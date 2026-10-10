@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>机场订阅链接怎么导入 sing-box？ | 原因与解决步骤 | Cola FAQ</title>
+  <meta name="description" content="sing-box 通常使用 JSON 运行配置；若使用带订阅管理的图形客户端，先核对它接受什么订阅格式再导入。">
+  <link rel="canonical" href="jichang-dingyue-lianjie-zenme-daoru-sing-box.html">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <link rel="stylesheet" href="../catalog.css">
+  <link rel="stylesheet" href="faq-article.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "机场订阅链接怎么导入 sing-box？", "description": "sing-box 通常使用 JSON 运行配置；若使用带订阅管理的图形客户端，先核对它接受什么订阅格式再导入。", "inLanguage": "zh-CN", "dateModified": "2026-10-10"}</script>
+<!-- Contextual reading assets -->
+<link rel="stylesheet" href="../../../css/content-paths.css?v=20261010-3">
+<!-- End contextual reading assets -->
+<!-- Shared floating navigation assets -->
+<link rel="stylesheet" href="../../../css/floating-navigation.css?v=20261010-rings" data-floating-navigation>
+<script src="../../../js/floating-navigation-pages.js?v=20261010-rings" defer data-floating-navigation></script>
+<script src="../../../js/floating-navigation.js?v=20261010-rings" defer data-floating-navigation></script>
+<!-- End shared floating navigation assets -->
+
+<!-- Mobile reading assets -->
+<link rel="stylesheet" href="../../../css/mobile-reading.css?v=20261010-1">
+<script src="../../../js/mobile-reading.js?v=20261010-1" defer></script>
+<!-- End mobile reading assets -->
+</head>
+<body>
+<div id="background"></div>
+<main class="catalog faq-page">
+  <nav aria-label="面包屑"><a href="../index.html">推荐机场</a> / <a href="index.html">FAQ 知识库</a></nav>
+  <article class="panel">
+    <header class="faq-heading"><h1>机场订阅链接怎么导入 sing-box？</h1><p class="faq-meta">更新：2026-10-10 · 原因说明与 4 个讲解与处理环节</p></header>
+    <div class="faq-layout">
+      <aside class="faq-directory"><details open><summary>文章目录</summary><nav aria-label="文章目录"><ul><li><a href="#why">为什么要了解这个问题</a></li><li><a href="#how">如何处理这个问题</a></li><li class="toc-step"><a href="#step-1">步骤 1：确认使用核心还是图形客户端</a></li><li class="toc-step"><a href="#step-2">步骤 2：获取与当前版本匹配的 JSON</a></li><li class="toc-step"><a href="#step-3">步骤 3：检查配置并启用所需入口</a></li><li class="toc-step"><a href="#step-4">步骤 4：验证请求路径和更新方式</a></li><li><a href="#result">完成后怎么判断</a></li><li><a href="#sources">官方资料与进一步核对</a></li></ul></nav></details></aside>
+      <div class="article-content faq-body">
+        <section id="why"><h2>为什么要了解这个问题？</h2><p>核心的配置格式与图形应用的订阅导入功能不能混为一谈，改后缀不会完成转换。</p><p>导入失败往往是配置格式和客户端不匹配，而非服务商所有节点都坏了。按获取、导入、激活、验证四个环节操作，可以发现配置尚未启用或系统流量没有进入客户端的问题。</p>
+        <div class="faq-answer"><strong>直接回答</strong><p>sing-box 通常使用 JSON 运行配置；若使用带订阅管理的图形客户端，先核对它接受什么订阅格式再导入。</p></div></section>
+        <section id="how"><h2>如何处理这个问题？</h2><p>按下面的顺序操作，每完成一步再进入下一步；已经确认的条件可以直接通过目录跳到对应环节。</p><section id="step-1" class="faq-step"><h3>步骤 1：确认使用核心还是图形客户端</h3><p>先区分自己直接运行 sing-box 核心，还是在手机或电脑上使用带订阅功能的图形应用。核心读取 JSON 配置；图形客户端能导入哪些订阅，应以该应用的说明为准。</p></section><section id="step-2" class="faq-step"><h3>步骤 2：获取与当前版本匹配的 JSON</h3><p>优先使用本人后台明确提供的 sing-box 配置，或由自己控制的工具转换。核对配置版本、出站协议、DNS 和路由，不把 Clash YAML 改成 .json 就当成转换完成。</p></section><aside class="faq-brand-context" aria-label="结合品牌资料继续核对"><p>选好客户端后，再核对品牌提供的配置。例如 <a href="../brands/firefly/index.html">Firefly</a> 的资料涉及 VLESS，可用来检查客户端的协议支持；<a href="../brands/wuyou/index.html">无忧</a> 的介绍提到自研客户端，可继续查看安装入口与系统要求。以实际拿到的订阅格式为准。</p><p class="faq-brand-hub"><a href="../index.html">查看站长精选主推榜，继续比较其他品牌 →</a></p></aside><section id="step-3" class="faq-step"><h3>步骤 3：检查配置并启用所需入口</h3><p>直接使用核心时，可按官方文档运行 sing-box check -c config.json 检查配置。图形应用则选择并激活配置，确认 VPN 或系统代理权限；先保留原有可用配置再切换。</p></section><section id="step-4" class="faq-step"><h3>步骤 4：验证请求路径和更新方式</h3><p>启动后用真实网页检查连接与规则，再确认后续由哪个应用或流程负责更新节点。解析错误按文档核对字段，连接错误检查日志；不要用不明在线转换器处理私人链接。</p></section></section>
+        <section id="result"><h2>完成后怎么判断？</h2><p>sing-box 可以更新节点列表，当前配置已激活，目标请求在连接日志中走到预期节点。</p><div class="faq-note"><strong>容易忽略的地方</strong><p>sing-box 通常使用 JSON 配置；兼容客户端提供的订阅功能不等于核心能直接解析任何订阅 URL。</p></div></section>
+        <section id="sources"><h2>官方资料与进一步核对</h2><p>客户端菜单与平台条件可能变化，操作前核对对应开发者或平台说明。</p><ul><li><a href="https://sing-box.sagernet.org/configuration/" target="_blank" rel="noopener noreferrer">sing-box 配置文档</a></li></ul></section>
+        <!-- Contextual reading path -->
+<section class="content-paths" id="continue-reading" data-reading-profile="client" aria-labelledby="continue-reading-title"><p class="content-path-kicker">把这个问题与下一步接起来</p><h2 id="continue-reading-title">软件装好之后，继续核对配置、分流和隐私</h2><p>客户端安装成功不代表订阅能够解析，也不代表所有应用已经经过代理。</p><div class="content-path-grid"><div class="content-path-card"><a href="../../../api.html">检查配置与测试结果 →</a><p>用配置检查区分 YAML 结构错误与运行时连接失败。</p></div><div class="content-path-card"><a href="../../../FAQ/ClashRulesVsGlobal.html">规则模式与全局模式怎么选择 →</a><p>先理解规则与全局模式，按应用任务验证实际出口。</p></div><div class="content-path-card"><a href="../../cybersecurity/privacy.html">理解订阅、DNS 与浏览器隐私 →</a><p>系统代理和 TUN 的覆盖范围不同，要结合 DNS 与浏览器实测。</p></div><div class="content-path-card"><a href="../index.html">按用途比较主推品牌 →</a><p>客户端不是节点服务；需要订阅时按格式与用途核对品牌资料。</p></div></div></section>
+<!-- End contextual reading path -->
+<section class="faq-reading"><h2>与这个问题相关的文章</h2><ul><li><a href="jichang-shi-sing-box.html">机场是否支持 sing-box？</a><p>sing-box 使用 JSON 配置且字段随版本演进，服务需提供适配内容；图形客户端额外支持什么订阅另行确认。</p></li><li><a href="jichang-shi-hiddify.html">机场是否支持 Hiddify？</a><p>Hiddify 的格式与协议支持要按当前项目说明和所用平台核对，再导入服务订阅测试。</p></li><li><a href="jichang-dingyue-lianjie-zenme.html">机场订阅链接失效怎么办？</a><p>先确认套餐和完整 URL，核对官方入口是否变动；令牌失效或泄露时在后台重置并更新设备。</p></li></ul><p><a href="index.html">返回全部 FAQ 问题</a></p></section>
+      </div>
+    </div>
+    <nav class="faq-pagination" aria-label="文章翻页"><a href="jichang-dingyue-lianjie-zenme-daoru-quantumultx.html"><small>上一篇</small><span>机场订阅链接怎么导入 Quantumult X？</span></a><a href="clashjichang-tuijian-zenme.html"><small>下一篇</small><span>Clash 机场推荐怎么选？</span></a></nav>
+  </article>
+</main>
+<script src="faq-article.js" defer></script>
+<!-- Shared floating navigation -->
+<nav class="site-floating-nav" aria-label="快捷导航">
+  <div class="site-floating-menu" id="site-floating-menu" hidden>
+    <p class="site-floating-title">快速导航</p>
+    <a href="../../../index.html">返回首页</a><a href="../index.html">站长精选机场推荐</a><a href="../brands/index.html">机场品牌总库</a><a href="../comparison.html">品牌对比</a><a href="index.html">FAQ 知识库</a><a href="../../cybersecurity/privacy.html">隐私与防泄漏</a><a href="../../cybersecurity/gfw-monitor.html">GFW 与节点故障判断</a>
+  </div>
+  <div class="site-floating-controls">
+    <button type="button" class="site-floating-action" data-floating-back data-home="../../../index.html" aria-label="返回上一页" title="返回上一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button>
+    <a class="site-floating-action" href="../../../index.html" aria-label="返回首页" title="返回首页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></a>
+    <button type="button" class="site-floating-toggle" data-floating-toggle aria-controls="site-floating-menu" aria-expanded="false" aria-label="打开快捷导航" title="快捷导航"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+  </div>
+</nav>
+<!-- End shared floating navigation -->
+</body>
+</html>

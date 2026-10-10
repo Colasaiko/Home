@@ -10,23 +10,23 @@ const projectsData = [
         links: [
             { name: "客户端下载", url: "./clients.html" },
             { name: "极客工具箱", url: "./tools.html" },
-            { name: "节点监控墙", url: "./status.html" },
+            { name: "网页连通性检查", url: "./status.html" },
             { name: "宝藏书签库", url: "./bookmarks.html" }
         ]
     },
 
     { 
-        title: "硬核节点体检中心", 
+        title: "配置与隐私检测工具",
         url: "api.html", 
-        desc: "涵盖智能订阅转换、Clash 语法除错、以及深度的 WebRTC 与 DNS 安全测漏。购买机场后必做的全套网络体检套餐：", 
+        desc: "按需要检查订阅格式、YAML 配置与浏览器测试结果。先了解各工具能说明什么，再回到实际应用验证：",
         tagText: "安全探测", 
         tagColor: "#e34c26",
         icon: "fa-solid fa-shield-halved",
         fullWidth: true,
         links: [
-            { name: "🔀 一键智能订阅转换", url: "api.html" },
+            { name: "🔀 订阅格式转换", url: "api.html" },
             { name: "🛠️ Clash 语法查错", url: "api.html" },
-            { name: "🛡️ WebRTC 测漏", url: "api.html" },
+            { name: "🛡️ WebRTC 候选地址检查", url: "api.html" },
             { name: "🌐 DNS 解析评估", url: "api.html" }
         ]
     },

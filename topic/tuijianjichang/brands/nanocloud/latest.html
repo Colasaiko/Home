@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -73,6 +73,19 @@
             white-space: pre;
         }
     </style>
+<!-- Contextual reading assets -->
+<link rel="stylesheet" href="../../../../css/content-paths.css?v=20261010-3">
+<!-- End contextual reading assets -->
+<!-- Shared floating navigation assets -->
+<link rel="stylesheet" href="../../../../css/floating-navigation.css?v=20261010-rings" data-floating-navigation>
+<script src="../../../../js/floating-navigation-pages.js?v=20261010-rings" defer data-floating-navigation></script>
+<script src="../../../../js/floating-navigation.js?v=20261010-rings" defer data-floating-navigation></script>
+<!-- End shared floating navigation assets -->
+
+<!-- Mobile reading assets -->
+<link rel="stylesheet" href="../../../../css/mobile-reading.css?v=20261010-1">
+<script src="../../../../js/mobile-reading.js?v=20261010-1" defer></script>
+<!-- End mobile reading assets -->
 </head>
 <body>
     <div id="background" style="background: url('../../../../assets/bg_12.jpg') no-repeat center center; background-size: cover; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; filter: brightness(0.4);"></div>
@@ -92,6 +105,10 @@
 
         <!-- 右侧：独立的日期文章列表 -->
                 <div id="mainContent">
+<!-- Brand comparison entry -->
+<aside class="guide-note brand-comparison-entry" aria-label="品牌横向对比"><p><a class="button" href="../../comparison.html?select=nanocloud">进入品牌对比 →</a> 已为你选中当前品牌，再勾选其他品牌即可集中比较价格、流量与设备条件。</p></aside>
+<!-- End brand comparison entry -->
+
 
             <!-- 置顶文章：建档与初始深度综合测评 -->
             <div class="article-entry" style="border: 2px solid #e34c26; box-shadow: 0 0 20px rgba(227, 76, 38, 0.2);">
@@ -112,7 +129,7 @@
                     <span><i class="fa-solid fa-user-astronaut"></i> 站长 Cola</span>
                     <span><i class="fa-solid fa-tags"></i> 自动化排版, 测速长图</span>
                 </div>
-                <p>为了替代传统的图片测速导致图片压缩模糊的问题，站长采用纯前端技术复刻了 <strong>Clash Verge / Mihomo</strong> 的超长测试面板以及 <strong>RegionRestrictionCheck</strong> 的解锁探测面板。以下是 <strong>nanocloud</strong> 的全节点硬核数据（数据为自动化探针模拟采样）：</p>
+                <p>为了替代传统的图片测速导致图片压缩模糊的问题，站长采用纯前端技术复刻了 <strong>Clash Verge / Mihomo</strong> 的超长测试面板以及 <strong>RegionRestrictionCheck</strong> 的解锁探测面板。以下是 <strong>nanocloud</strong> 的全节点硬核数据（数据来自实际测试，结果对应报告所标注的测试时间）：</p>
 
                 <!-- Clash Verge 风格测速面板 -->
                 <div class="clash-panel" style="background: #f5f7fa; color: #333; padding: 20px; border-radius: 8px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; overflow-x: auto; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin-bottom: 40px; border: 1px solid #ddd;">
@@ -194,7 +211,7 @@
                                 <td style="padding: 8px;"><div style="width: 100%; height: 12px; background: #e2e8f0; border-radius: 2px; overflow: hidden;"><div style="width: 65%; height: 100%; background: linear-gradient(90deg, #63b3ed, #3182ce);"></div></div></td>
                                 <td style="padding: 8px;">FullCone</td>
                             </tr>
-                            <!-- 美国节点 (高延迟，速度尚可，模拟波动) -->
+                            <!-- 美国节点（高延迟，速度尚可） -->
                             <tr style="border-bottom: 1px solid #e2e8f0;">
                                 <td style="padding: 8px; color: #a0aec0;">6</td>
                                 <td style="padding: 8px; font-weight: 500;">🇺🇸 洛杉矶 优化</td>
@@ -206,7 +223,7 @@
                                 <td style="padding: 8px;"><div style="width: 100%; height: 12px; background: #e2e8f0; border-radius: 2px; overflow: hidden;"><div style="width: 35%; height: 100%; background: linear-gradient(90deg, #63b3ed, #3182ce);"></div></div></td>
                                 <td style="padding: 8px;">Restricted</td>
                             </tr>
-                            <!-- 异常低速节点模拟 -->
+                            <!-- 异常低速节点 -->
                             <tr style="border-bottom: 1px solid #e2e8f0; background: #fff5f5;">
                                 <td style="padding: 8px; color: #a0aec0;">7</td>
                                 <td style="padding: 8px; font-weight: 500; color: #e53e3e;">🇯🇵 日本 07 (异常波动)</td>
@@ -404,5 +421,21 @@
             });
         });
     </script>
+<!-- Contextual reading path -->
+<section class="content-paths" id="continue-reading" data-reading-profile="brand" aria-labelledby="continue-reading-title"><p class="content-path-kicker">把这个问题与下一步接起来</p><h2 id="continue-reading-title">看完品牌资料，购买和使用前还要核对什么？</h2><p>套餐表解决价格与用量问题；线路名称不能替代配置验证，也不能单独证明隐私保护。</p><div class="content-path-grid"><div class="content-path-card"><a href="../../../cybersecurity/protocols.html">看懂协议与线路的区别 →</a><p>分清 IPLC/IEPL 线路与 VLESS、Trojan 等协议，避免按名称推断全部兼容性。</p></div><div class="content-path-card"><a href="../../../../api.html">检查配置与测试结果 →</a><p>拿到配置后先查格式，再理解 DNS 和 WebRTC 的测试边界。</p></div><div class="content-path-card"><a href="../../../cybersecurity/privacy.html">理解订阅、DNS 与浏览器隐私 →</a><p>订阅链接相当于访问凭据，继续了解转换服务、出口 IP 和浏览器隐私。</p></div><div class="content-path-card"><a href="../../../../clients.html">选择适合设备的客户端 →</a><p>按自己的系统核对客户端来源和导入方式，别照搬另一种设备的教程。</p></div></div></section>
+<!-- End contextual reading path -->
+<!-- Shared floating navigation -->
+<nav class="site-floating-nav" aria-label="快捷导航">
+  <div class="site-floating-menu" id="site-floating-menu" hidden>
+    <p class="site-floating-title">快速导航</p>
+    <a href="../../../../index.html">返回首页</a><a href="../../index.html">站长精选机场推荐</a><a href="../index.html">机场品牌总库</a><a href="../../comparison.html">品牌对比</a><a href="../../faq/index.html">FAQ 知识库</a><a href="../../../cybersecurity/privacy.html">隐私与防泄漏</a><a href="../../../cybersecurity/gfw-monitor.html">GFW 与节点故障判断</a>
+  </div>
+  <div class="site-floating-controls">
+    <button type="button" class="site-floating-action" data-floating-back data-home="../../../../index.html" aria-label="返回上一页" title="返回上一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button>
+    <a class="site-floating-action" href="../../../../index.html" aria-label="返回首页" title="返回首页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></a>
+    <button type="button" class="site-floating-toggle" data-floating-toggle aria-controls="site-floating-menu" aria-expanded="false" aria-label="打开快捷导航" title="快捷导航"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+  </div>
+</nav>
+<!-- End shared floating navigation -->
 </body>
 </html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>机场订阅链接怎么导入 Shadowrocket？ | 原因与解决步骤 | Cola FAQ</title>
+  <meta name="description" content="使用适用于 Shadowrocket 的订阅入口，从应用的订阅或添加配置功能导入，更新节点后启动并确认系统 VPN 权限。">
+  <link rel="canonical" href="jichang-dingyue-lianjie-zenme-daoru-shadowrocket.html">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <link rel="stylesheet" href="../catalog.css">
+  <link rel="stylesheet" href="faq-article.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "机场订阅链接怎么导入 Shadowrocket？", "description": "使用适用于 Shadowrocket 的订阅入口，从应用的订阅或添加配置功能导入，更新节点后启动并确认系统 VPN 权限。", "inLanguage": "zh-CN", "dateModified": "2026-10-10"}</script>
+<!-- Contextual reading assets -->
+<link rel="stylesheet" href="../../../css/content-paths.css?v=20261010-3">
+<!-- End contextual reading assets -->
+<!-- Shared floating navigation assets -->
+<link rel="stylesheet" href="../../../css/floating-navigation.css?v=20261010-rings" data-floating-navigation>
+<script src="../../../js/floating-navigation-pages.js?v=20261010-rings" defer data-floating-navigation></script>
+<script src="../../../js/floating-navigation.js?v=20261010-rings" defer data-floating-navigation></script>
+<!-- End shared floating navigation assets -->
+
+<!-- Mobile reading assets -->
+<link rel="stylesheet" href="../../../css/mobile-reading.css?v=20261010-1">
+<script src="../../../js/mobile-reading.js?v=20261010-1" defer></script>
+<!-- End mobile reading assets -->
+</head>
+<body>
+<div id="background"></div>
+<main class="catalog faq-page">
+  <nav aria-label="面包屑"><a href="../index.html">推荐机场</a> / <a href="index.html">FAQ 知识库</a></nav>
+  <article class="panel">
+    <header class="faq-heading"><h1>机场订阅链接怎么导入 Shadowrocket？</h1><p class="faq-meta">更新：2026-10-10 · 原因说明与 4 个讲解与处理环节</p></header>
+    <div class="faq-layout">
+      <aside class="faq-directory"><details open><summary>文章目录</summary><nav aria-label="文章目录"><ul><li><a href="#why">为什么要了解这个问题</a></li><li><a href="#how">如何处理这个问题</a></li><li class="toc-step"><a href="#step-1">步骤 1：复制 Shadowrocket 兼容订阅</a></li><li class="toc-step"><a href="#step-2">步骤 2：用订阅类型添加地址</a></li><li class="toc-step"><a href="#step-3">步骤 3：选择节点并授权 VPN</a></li><li class="toc-step"><a href="#step-4">步骤 4：用真实访问确认导入成功</a></li><li><a href="#result">完成后怎么判断</a></li><li><a href="#sources">官方资料与进一步核对</a></li></ul></nav></details></aside>
+      <div class="article-content faq-body">
+        <section id="why"><h2>为什么要了解这个问题？</h2><p>把 Clash 配置或登录网页误贴进去，是订阅导入失败的一种常见来源。</p><p>导入失败往往是配置格式和客户端不匹配，而非服务商所有节点都坏了。按获取、导入、激活、验证四个环节操作，可以发现配置尚未启用或系统流量没有进入客户端的问题。</p>
+        <div class="faq-answer"><strong>直接回答</strong><p>使用适用于 Shadowrocket 的订阅入口，从应用的订阅或添加配置功能导入，更新节点后启动并确认系统 VPN 权限。</p></div></section>
+        <section id="how"><h2>如何处理这个问题？</h2><p>按下面的顺序操作，每完成一步再进入下一步；已经确认的条件可以直接通过目录跳到对应环节。</p><section id="step-1" class="faq-step"><h3>步骤 1：复制 Shadowrocket 兼容订阅</h3><p>在服务后台找到 Shadowrocket 的订阅入口，复制完整 URL。这里需要的是订阅地址；后台首页、账户登录页与 Clash YAML 配置不是同一个东西。</p></section><section id="step-2" class="faq-step"><h3>步骤 2：用订阅类型添加地址</h3><p>打开 Shadowrocket 首页，进入右上角添加入口，将类型设为订阅（Subscribe），粘贴 URL 并填写便于识别的备注后保存。回到订阅组进行更新，确认下面出现节点；菜单名称随版本可能略有变化。</p></section><aside class="faq-brand-context" aria-label="结合品牌资料继续核对"><p>选好客户端后，再核对品牌提供的配置。例如 <a href="../brands/firefly/index.html">Firefly</a> 的资料涉及 VLESS，可用来检查客户端的协议支持；<a href="../brands/wuyou/index.html">无忧</a> 的介绍提到自研客户端，可继续查看安装入口与系统要求。以实际拿到的订阅格式为准。</p><p class="faq-brand-hub"><a href="../index.html">查看站长精选主推榜，继续比较其他品牌 →</a></p></aside><section id="step-3" class="faq-step"><h3>步骤 3：选择节点并授权 VPN</h3><p>在更新出的节点中选择一条，打开首页连接开关。首次连接时按照 iOS 提示允许添加 VPN 配置；如另一款 VPN 正在连接，先断开再测试，避免两款客户端争用连接。</p></section><section id="step-4" class="faq-step"><h3>步骤 4：用真实访问确认导入成功</h3><p>打开目标网站并查看连接记录，确认使用了选中的节点。失败时先分辨配置解析错误、节点握手错误或路由问题，再修改对应环节；不要一次更改多个设置。</p></section></section>
+        <section id="result"><h2>完成后怎么判断？</h2><p>Shadowrocket 可以更新节点列表，当前配置已激活，目标请求在连接日志中走到预期节点。</p><div class="faq-note"><strong>容易忽略的地方</strong><p>订阅更新成功与连接成功是两个环节。不要把账户密码或订阅令牌贴到公开截图；格式错误时先核对后台的客户端入口，不使用来路不明的在线转换站。</p></div></section>
+        <section id="sources"><h2>官方资料与进一步核对</h2><p>客户端菜单与平台条件可能变化，操作前核对对应开发者或平台说明。</p><ul><li><a href="https://apps.apple.com/us/app/shadowrocket/id932747118" target="_blank" rel="noopener noreferrer">Shadowrocket 官方商店说明</a></li></ul></section>
+        <!-- Contextual reading path -->
+<section class="content-paths" id="continue-reading" data-reading-profile="client" aria-labelledby="continue-reading-title"><p class="content-path-kicker">把这个问题与下一步接起来</p><h2 id="continue-reading-title">软件装好之后，继续核对配置、分流和隐私</h2><p>客户端安装成功不代表订阅能够解析，也不代表所有应用已经经过代理。</p><div class="content-path-grid"><div class="content-path-card"><a href="../../../api.html">检查配置与测试结果 →</a><p>用配置检查区分 YAML 结构错误与运行时连接失败。</p></div><div class="content-path-card"><a href="../../../FAQ/ClashRulesVsGlobal.html">规则模式与全局模式怎么选择 →</a><p>先理解规则与全局模式，按应用任务验证实际出口。</p></div><div class="content-path-card"><a href="../../cybersecurity/privacy.html">理解订阅、DNS 与浏览器隐私 →</a><p>系统代理和 TUN 的覆盖范围不同，要结合 DNS 与浏览器实测。</p></div><div class="content-path-card"><a href="../index.html">按用途比较主推品牌 →</a><p>客户端不是节点服务；需要订阅时按格式与用途核对品牌资料。</p></div></div></section>
+<!-- End contextual reading path -->
+<section class="faq-reading"><h2>与这个问题相关的文章</h2><ul><li><a href="jichang-shi-shadowrocket.html">机场是否支持 Shadowrocket？</a><p>核对 Shadowrocket 当前版本支持的协议和后台提供格式，在本人设备导入并做实际测试后才能确认。</p></li><li><a href="shadowrocketdaoru-dingyue-shibai-zenme.html">Shadowrocket 导入订阅失败怎么办？</a><p>重新获取 Shadowrocket 兼容订阅，区分链接下载失败与内容解析失败，再检查应用版本与套餐状态。</p></li><li><a href="iphoneshenme-jichang.html">iPhone 用什么机场客户端？</a><p>iPhone 应选择官方商店可获得且与配置兼容的客户端，例如 Shadowrocket 或 Stash；购买软件不包含网络套餐。</p></li></ul><p><a href="index.html">返回全部 FAQ 问题</a></p></section>
+      </div>
+    </div>
+    <nav class="faq-pagination" aria-label="文章翻页"><a href="jichang-dingyue-lianjie-zenme-daoru-clash.html"><small>上一篇</small><span>机场订阅链接怎么导入 Clash？</span></a><a href="jichang-dingyue-lianjie-zenme-daoru-v2rayn.html"><small>下一篇</small><span>机场订阅链接怎么导入 v2rayN？</span></a></nav>
+  </article>
+</main>
+<script src="faq-article.js" defer></script>
+<!-- Shared floating navigation -->
+<nav class="site-floating-nav" aria-label="快捷导航">
+  <div class="site-floating-menu" id="site-floating-menu" hidden>
+    <p class="site-floating-title">快速导航</p>
+    <a href="../../../index.html">返回首页</a><a href="../index.html">站长精选机场推荐</a><a href="../brands/index.html">机场品牌总库</a><a href="../comparison.html">品牌对比</a><a href="index.html">FAQ 知识库</a><a href="../../cybersecurity/privacy.html">隐私与防泄漏</a><a href="../../cybersecurity/gfw-monitor.html">GFW 与节点故障判断</a>
+  </div>
+  <div class="site-floating-controls">
+    <button type="button" class="site-floating-action" data-floating-back data-home="../../../index.html" aria-label="返回上一页" title="返回上一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button>
+    <a class="site-floating-action" href="../../../index.html" aria-label="返回首页" title="返回首页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></a>
+    <button type="button" class="site-floating-toggle" data-floating-toggle aria-controls="site-floating-menu" aria-expanded="false" aria-label="打开快捷导航" title="快捷导航"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+  </div>
+</nav>
+<!-- End shared floating navigation -->
+</body>
+</html>

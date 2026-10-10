@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -40,6 +40,19 @@
             }
         }
     </style>
+<!-- Contextual reading assets -->
+<link rel="stylesheet" href="css/content-paths.css?v=20261010-3">
+<!-- End contextual reading assets -->
+<!-- Shared floating navigation assets -->
+<link rel="stylesheet" href="css/floating-navigation.css?v=20261010-rings" data-floating-navigation>
+<script src="js/floating-navigation-pages.js?v=20261010-rings" defer data-floating-navigation></script>
+<script src="js/floating-navigation.js?v=20261010-rings" defer data-floating-navigation></script>
+<!-- End shared floating navigation assets -->
+
+<!-- Mobile reading assets -->
+<link rel="stylesheet" href="css/mobile-reading.css?v=20261010-1">
+<script src="js/mobile-reading.js?v=20261010-1" defer></script>
+<!-- End mobile reading assets -->
 </head>
 <body>
     <div id="background"></div>
@@ -58,7 +71,10 @@
                 <p>在如今的网络环境下，一款稳定高效的<strong>机场客户端</strong>（俗称<strong>梯子</strong>或<strong>翻墙软件</strong>）不仅是跨越网络限制、畅游 Google、YouTube 的必备利器，更是保护您个人隐私、加密网络流量的安全护盾。</p>
                 <p>本页面为您汇总了目前在 Windows、Mac、安卓以及苹果 iOS 平台上最受欢迎的<strong>科学上网工具</strong>。无论您是追求“一键导入”的翻墙新手，还是需要复杂分流规则的极客玩家，都能在这里找到最顺手的梯子软件。它们完美兼容目前主流机场提供的 Clash、V2Ray、Trojan 等各种防封锁协议。</p>
                 <p style="margin-bottom: 0;"><strong>安全提示：</strong> 所有下载链接均指向官方 GitHub 仓库或 Apple Store 官方渠道，纯净无毒。请搭配合规、优质的节点使用。</p>
-            </article>
+            <!-- Contextual reading path -->
+<section class="content-paths" id="continue-reading" data-reading-profile="client" aria-labelledby="continue-reading-title"><p class="content-path-kicker">把这个问题与下一步接起来</p><h2 id="continue-reading-title">软件装好之后，继续核对配置、分流和隐私</h2><p>客户端安装成功不代表订阅能够解析，也不代表所有应用已经经过代理。</p><div class="content-path-grid"><div class="content-path-card"><a href="api.html">检查配置与测试结果 →</a><p>用配置检查区分 YAML 结构错误与运行时连接失败。</p></div><div class="content-path-card"><a href="FAQ/ClashRulesVsGlobal.html">规则模式与全局模式怎么选择 →</a><p>先理解规则与全局模式，按应用任务验证实际出口。</p></div><div class="content-path-card"><a href="topic/cybersecurity/privacy.html">理解订阅、DNS 与浏览器隐私 →</a><p>系统代理和 TUN 的覆盖范围不同，要结合 DNS 与浏览器实测。</p></div><div class="content-path-card"><a href="topic/tuijianjichang/index.html">按用途比较主推品牌 →</a><p>客户端不是节点服务；需要订阅时按格式与用途核对品牌资料。</p></div></div></section>
+<!-- End contextual reading path -->
+</article>
         </div>
 
         <!-- 右侧区域：8个下载卡片满屏排列 -->
@@ -128,5 +144,18 @@
     <script src="./data/blogs.js"></script>
     <script src="./data/projects.js"></script>
     <script src="./js/main.js"></script>
+<!-- Shared floating navigation -->
+<nav class="site-floating-nav" aria-label="快捷导航">
+  <div class="site-floating-menu" id="site-floating-menu" hidden>
+    <p class="site-floating-title">快速导航</p>
+    <a href="index.html">返回首页</a><a href="topic/tuijianjichang/index.html">站长精选机场推荐</a><a href="topic/tuijianjichang/brands/index.html">机场品牌总库</a><a href="topic/tuijianjichang/comparison.html">品牌对比</a><a href="topic/tuijianjichang/faq/index.html">FAQ 知识库</a><a href="topic/cybersecurity/privacy.html">隐私与防泄漏</a><a href="topic/cybersecurity/gfw-monitor.html">GFW 与节点故障判断</a>
+  </div>
+  <div class="site-floating-controls">
+    <button type="button" class="site-floating-action" data-floating-back data-home="index.html" aria-label="返回上一页" title="返回上一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button>
+    <a class="site-floating-action" href="index.html" aria-label="返回首页" title="返回首页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></a>
+    <button type="button" class="site-floating-toggle" data-floating-toggle aria-controls="site-floating-menu" aria-expanded="false" aria-label="打开快捷导航" title="快捷导航"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+  </div>
+</nav>
+<!-- End shared floating navigation -->
 </body>
 </html>

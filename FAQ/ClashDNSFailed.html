@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clash 节点正常但网页打不开，是 DNS 问题吗？ | 原因与解决步骤 | Cola FAQ</title>
+  <meta name="description" content="先记录实际错误，再查域名请求、策略与节点握手。确认是解析失败后才核对 DNS 路径、配置版本与网络；每次只改变一个条件并验证结果。">
+  <link rel="canonical" href="ClashDNSFailed.html">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../topic/tuijianjichang/catalog.css">
+  <link rel="stylesheet" href="../topic/tuijianjichang/faq/faq-article.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Clash 节点正常但网页打不开，是 DNS 问题吗？", "description": "先记录实际错误，再查域名请求、策略与节点握手。确认是解析失败后才核对 DNS 路径、配置版本与网络；每次只改变一个条件并验证结果。", "inLanguage": "zh-CN", "dateModified": "2026-10-10"}</script>
+<!-- Contextual reading assets -->
+<link rel="stylesheet" href="../css/content-paths.css?v=20261010-3">
+<!-- End contextual reading assets -->
+<!-- Shared floating navigation assets -->
+<link rel="stylesheet" href="../css/floating-navigation.css?v=20261010-rings" data-floating-navigation>
+<script src="../js/floating-navigation-pages.js?v=20261010-rings" defer data-floating-navigation></script>
+<script src="../js/floating-navigation.js?v=20261010-rings" defer data-floating-navigation></script>
+<!-- End shared floating navigation assets -->
+
+<!-- Mobile reading assets -->
+<link rel="stylesheet" href="../css/mobile-reading.css?v=20261010-1">
+<script src="../js/mobile-reading.js?v=20261010-1" defer></script>
+<!-- End mobile reading assets -->
+</head>
+<body>
+<div id="background"></div>
+<main class="catalog faq-page">
+  <nav aria-label="面包屑"><a href="../topic/tuijianjichang/index.html">推荐机场</a> / <a href="../topic/tuijianjichang/faq/index.html">FAQ 知识库</a></nav>
+  <article class="panel">
+    <header class="faq-heading"><h1>Clash 节点正常但网页打不开，是 DNS 问题吗？</h1><p class="faq-meta">更新：2026-10-10 · 原因说明与 6 个讲解与处理环节</p></header>
+    <div class="faq-layout">
+      <aside class="faq-directory"><details open><summary>文章目录</summary><nav aria-label="文章目录"><ul><li><a href="#why">为什么要了解这个问题</a></li><li><a href="#how">如何处理这个问题</a></li><li class="toc-step"><a href="#step-1">步骤 1：记录网页和日志错误</a></li><li class="toc-step"><a href="#step-2">步骤 2：确认请求命中的策略</a></li><li class="toc-step"><a href="#step-3">步骤 3：验证节点与网络对照</a></li><li class="toc-step"><a href="#step-4">步骤 4：核对当前 DNS 配置</a></li><li class="toc-step"><a href="#step-5">步骤 5：测试应用与缓存差异</a></li><li class="toc-step"><a href="#step-6">步骤 6：确认修复并保存设置</a></li><li><a href="#result">完成后怎么判断</a></li><li><a href="#sources">官方资料与进一步核对</a></li></ul></nav></details></aside>
+      <div class="article-content faq-body">
+        <section id="why"><h2>为什么要了解这个问题？</h2><p>域名解析、节点连接和网页响应是不同环节。节点延迟正常不代表域名一定能解析，网页失败也不一定需要更换 DNS。</p>
+        <div class="faq-answer"><strong>直接回答</strong><p>先记录实际错误，再查域名请求、策略与节点握手。确认是解析失败后才核对 DNS 路径、配置版本与网络；每次只改变一个条件并验证结果。</p></div></section>
+        <section id="how"><h2>如何处理这个问题？</h2><p>按下面的顺序操作，每完成一步再进入下一步；已经确认的条件可以直接通过目录跳到对应环节。</p><section id="step-1" class="faq-step"><h3>步骤 1：记录网页和日志错误</h3><p>选择一个能稳定复现的目标，记录时间、客户端版本与错误内容。区分解析失败、连接超时、TLS 和平台返回错误，不把它们都叫 DNS 异常。</p></section><section id="step-2" class="faq-step"><h3>步骤 2：确认请求命中的策略</h3><p>查看目标域名走直连还是代理，以及是否使用预期节点。规则错误会让目标走不可用路径，先核对策略，不直接用全局模式长期替代诊断。</p></section><section id="step-3" class="faq-step"><h3>步骤 3：验证节点与网络对照</h3><p>固定同一目标，换一条可用节点或本人可用网络作对照。记录哪种组合成功，分辨本地解析、节点解析和目标平台的条件差异。</p></section><section id="step-4" class="faq-step"><h3>步骤 4：核对当前 DNS 配置</h3><p>按核心版本文档检查解析服务器、请求路由与 TUN 相关设置。保留原值，一次只修改已定位的问题；旧字段和整份未知配置可能引入更多故障。</p></section><section id="step-5" class="faq-step"><h3>步骤 5：测试应用与缓存差异</h3><p>浏览器、系统和应用可能使用不同解析设置，分别查其配置并重试同一目标。避免一次清除全部网络状态，先用可恢复的会话或应用对照验证。</p></section><section id="step-6" class="faq-step"><h3>步骤 6：确认修复并保存设置</h3><p>重新测试域名解析、连接与目标功能，记录修改前后差异。仍失败时提交脱敏日志，不使用关闭 TLS 验证来掩盖其他连接错误。</p></section><aside class="faq-brand-context" aria-label="结合品牌资料继续核对"><p>本机路径正常后，再看 <a href="../topic/tuijianjichang/brands/firefly/index.html">Firefly</a> 与 <a href="../topic/tuijianjichang/brands/weifeng/index.html">微风网络</a> 的协议和线路资料比较候选服务。品牌选择与 DNS 修复分开验证，避免买新套餐后仍遇到同一配置问题。</p><p class="faq-brand-hub"><a href="../topic/tuijianjichang/index.html">查看站长精选主推榜，继续比较其他品牌 →</a></p></aside></section>
+        <section id="result"><h2>完成后怎么判断？</h2><p>日志证明失败环节已修复，同一目标在预期规则下正常访问。</p><div class="faq-note"><strong>容易忽略的地方</strong><p>随意换成某个公共 DNS 不是所有网络条件下的通用答案。</p></div></section>
+        <section id="sources"><h2>官方资料与进一步核对</h2><p>客户端菜单与平台条件可能变化，操作前核对对应开发者或平台说明。</p><ul><li><a href="https://www.clashverge.dev/faq/macos.html" target="_blank" rel="noopener noreferrer">Clash Verge Rev macOS 常见问题</a></li><li><a href="https://sing-box.sagernet.org/configuration/inbound/tun/" target="_blank" rel="noopener noreferrer">sing-box TUN 入站配置</a></li></ul></section>
+        <!-- Contextual reading path -->
+<section class="content-paths" id="continue-reading" data-reading-profile="dns" aria-labelledby="continue-reading-title"><p class="content-path-kicker">把这个问题与下一步接起来</p><h2 id="continue-reading-title">DNS 排查完成后，还需要验证哪些地方？</h2><p>域名解析、代理路由和浏览器设置是不同环节，修改一项以后还要复测原来的任务。</p><div class="content-path-grid"><div class="content-path-card"><a href="../topic/cybersecurity/protocols.html">看懂协议与线路的区别 →</a><p>理解 DNS、DoH 与代理协议的分工，知道加密解析解决哪一段问题。</p></div><div class="content-path-card"><a href="../topic/cybersecurity/privacy.html">理解订阅、DNS 与浏览器隐私 →</a><p>核对解析器和 WebRTC 候选地址，避免把单次测试当作全部应用的隐私保证。</p></div><div class="content-path-card"><a href="../status.html">对照浏览器连通性与请求耗时 →</a><p>复测同一目标，保留修改前后的结果。</p></div></div></section>
+<!-- End contextual reading path -->
+<section class="faq-reading"><h2>与这个问题相关的文章</h2><ul><li><a href="ClashRulesVsGlobal.html">Clash 规则模式和全局模式有什么区别？怎么知道流量走哪？</a><p>先确认规则与策略是否正确。</p></li><li><a href="ClashMacTunNoInternet.html">Mac 开启 Clash TUN 后没网怎么办？</a><p>Mac TUN 场景需要额外核对 DNS 行为。</p></li><li><a href="ClashVergeTimeout.html">Clash Verge 显示 timeout 或节点超时怎么办？</a><p>连接超时时继续分辨节点与本地条件。</p></li></ul><p><a href="../topic/tuijianjichang/faq/index.html">返回全部 FAQ 问题</a></p></section>
+      </div>
+    </div>
+    <nav class="faq-pagination" aria-label="文章翻页"><a href="ClashSubscriptionEmpty.html"><small>上一篇</small><span>Clash 导入订阅后没有节点、代理列表空白怎么办？</span></a><a href="ClashRulesVsGlobal.html"><small>下一篇</small><span>Clash 规则模式和全局模式有什么区别？怎么知道流量走哪？</span></a></nav>
+  </article>
+</main>
+<script src="../topic/tuijianjichang/faq/faq-article.js" defer></script>
+<!-- Shared floating navigation -->
+<nav class="site-floating-nav" aria-label="快捷导航">
+  <div class="site-floating-menu" id="site-floating-menu" hidden>
+    <p class="site-floating-title">快速导航</p>
+    <a href="../index.html">返回首页</a><a href="../topic/tuijianjichang/index.html">站长精选机场推荐</a><a href="../topic/tuijianjichang/brands/index.html">机场品牌总库</a><a href="../topic/tuijianjichang/comparison.html">品牌对比</a><a href="../topic/tuijianjichang/faq/index.html">FAQ 知识库</a><a href="../topic/cybersecurity/privacy.html">隐私与防泄漏</a><a href="../topic/cybersecurity/gfw-monitor.html">GFW 与节点故障判断</a>
+  </div>
+  <div class="site-floating-controls">
+    <button type="button" class="site-floating-action" data-floating-back data-home="../index.html" aria-label="返回上一页" title="返回上一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button>
+    <a class="site-floating-action" href="../index.html" aria-label="返回首页" title="返回首页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></a>
+    <button type="button" class="site-floating-toggle" data-floating-toggle aria-controls="site-floating-menu" aria-expanded="false" aria-label="打开快捷导航" title="快捷导航"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+  </div>
+</nav>
+<!-- End shared floating navigation -->
+</body>
+</html>

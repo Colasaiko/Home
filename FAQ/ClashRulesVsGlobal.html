@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clash 规则模式和全局模式有什么区别？怎么知道流量走哪？ | 原因与解决步骤 | Cola FAQ</title>
+  <meta name="description" content="规则模式按匹配规则选择出站；全局模式通常把相关流量交给全局策略，具体行为看配置与内核。应查连接日志确认实际路径，不能仅凭模式名称推断全部应用都被接管。">
+  <link rel="canonical" href="ClashRulesVsGlobal.html">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../topic/tuijianjichang/catalog.css">
+  <link rel="stylesheet" href="../topic/tuijianjichang/faq/faq-article.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Clash 规则模式和全局模式有什么区别？怎么知道流量走哪？", "description": "规则模式按匹配规则选择出站；全局模式通常把相关流量交给全局策略，具体行为看配置与内核。应查连接日志确认实际路径，不能仅凭模式名称推断全部应用都被接管。", "inLanguage": "zh-CN", "dateModified": "2026-10-10"}</script>
+<!-- Contextual reading assets -->
+<link rel="stylesheet" href="../css/content-paths.css?v=20261010-3">
+<!-- End contextual reading assets -->
+<!-- Shared floating navigation assets -->
+<link rel="stylesheet" href="../css/floating-navigation.css?v=20261010-rings" data-floating-navigation>
+<script src="../js/floating-navigation-pages.js?v=20261010-rings" defer data-floating-navigation></script>
+<script src="../js/floating-navigation.js?v=20261010-rings" defer data-floating-navigation></script>
+<!-- End shared floating navigation assets -->
+
+<!-- Mobile reading assets -->
+<link rel="stylesheet" href="../css/mobile-reading.css?v=20261010-1">
+<script src="../js/mobile-reading.js?v=20261010-1" defer></script>
+<!-- End mobile reading assets -->
+</head>
+<body>
+<div id="background"></div>
+<main class="catalog faq-page">
+  <nav aria-label="面包屑"><a href="../topic/tuijianjichang/index.html">推荐机场</a> / <a href="../topic/tuijianjichang/faq/index.html">FAQ 知识库</a></nav>
+  <article class="panel">
+    <header class="faq-heading"><h1>Clash 规则模式和全局模式有什么区别？怎么知道流量走哪？</h1><p class="faq-meta">更新：2026-10-10 · 原因说明与 6 个讲解与处理环节</p></header>
+    <div class="faq-layout">
+      <aside class="faq-directory"><details open><summary>文章目录</summary><nav aria-label="文章目录"><ul><li><a href="#why">为什么要了解这个问题</a></li><li><a href="#how">如何处理这个问题</a></li><li class="toc-step"><a href="#step-1">步骤 1：分清模式与接管方式</a></li><li class="toc-step"><a href="#step-2">步骤 2：查看规则和策略组</a></li><li class="toc-step"><a href="#step-3">步骤 3：用一个目标做模式对照</a></li><li class="toc-step"><a href="#step-4">步骤 4：修正已确认的规则条件</a></li><li class="toc-step"><a href="#step-5">步骤 5：测试应用与局域网</a></li><li class="toc-step"><a href="#step-6">步骤 6：恢复适合日常的模式</a></li><li><a href="#result">完成后怎么判断</a></li><li><a href="#sources">官方资料与进一步核对</a></li></ul></nav></details></aside>
+      <div class="article-content faq-body">
+        <section id="why"><h2>为什么要了解这个问题？</h2><p>切换模式可能改变实际出口，却不会改变套餐本身。理解规则与策略，可以解释为什么同一节点有时能用、有时某个应用仍然失败。</p>
+        <div class="faq-answer"><strong>直接回答</strong><p>规则模式按匹配规则选择出站；全局模式通常把相关流量交给全局策略，具体行为看配置与内核。应查连接日志确认实际路径，不能仅凭模式名称推断全部应用都被接管。</p></div></section>
+        <section id="how"><h2>如何处理这个问题？</h2><p>按下面的顺序操作，每完成一步再进入下一步；已经确认的条件可以直接通过目录跳到对应环节。</p><section id="step-1" class="faq-step"><h3>步骤 1：分清模式与接管方式</h3><p>系统代理或 TUN 决定哪些流量进入客户端，规则或全局决定进入之后怎么处理。未进入客户端的应用不会因为切换全局就自动获得代理。</p></section><section id="step-2" class="faq-step"><h3>步骤 2：查看规则和策略组</h3><p>记录目标域名、匹配规则与所选策略组，检查组里当前节点。自动策略可能变化，需要看实际选中结果而不是只看组的名称。</p></section><section id="step-3" class="faq-step"><h3>步骤 3：用一个目标做模式对照</h3><p>保持节点与网络不变，临时比较同一请求在两种模式下的表现，并记下日志。若全局正常、规则异常，优先检查目标规则及它指向的策略。</p></section><aside class="faq-brand-context" aria-label="结合品牌资料继续核对"><p>清楚流量去向后，可以结合 <a href="../topic/tuijianjichang/brands/firefly/index.html">Firefly</a> 的协议说明和 <a href="../topic/tuijianjichang/brands/weifeng/index.html">微风网络</a> 的线路资料选择候选节点，再用同一规则与任务比较表现。</p><p class="faq-brand-hub"><a href="../topic/tuijianjichang/index.html">查看站长精选主推榜，继续比较其他品牌 →</a></p></aside><section id="step-4" class="faq-step"><h3>步骤 4：修正已确认的规则条件</h3><p>核对域名、进程或其他匹配条件与配置版本，保留原规则。只调整证据指向的部分，未知在线脚本和整份覆写可能改变更多流量行为。</p></section><section id="step-5" class="faq-step"><h3>步骤 5：测试应用与局域网</h3><p>验证目标、普通网页与本地服务是否按预期工作。终端或特殊应用需另查代理入口，不能用浏览器一次成功证明所有程序都已覆盖。</p></section><section id="step-6" class="faq-step"><h3>步骤 6：恢复适合日常的模式</h3><p>完成对照后选择适合任务的规则与入口，保留恢复点。记录异常目标的匹配结果，后续订阅和规则更新后重新检查。</p></section></section>
+        <section id="result"><h2>完成后怎么判断？</h2><p>能从日志说明目标流量经过哪个入口、规则、策略和节点。</p><div class="faq-note"><strong>容易忽略的地方</strong><p>全局模式可用于有限对照，但不是所有规则问题的永久修复。</p></div></section>
+        <section id="sources"><h2>官方资料与进一步核对</h2><p>客户端菜单与平台条件可能变化，操作前核对对应开发者或平台说明。</p><ul><li><a href="https://www.clashverge.dev/guide/quickstart.html" target="_blank" rel="noopener noreferrer">Clash Verge Rev 快速入门</a></li></ul></section>
+        <!-- Contextual reading path -->
+<section class="content-paths" id="continue-reading" data-reading-profile="buy" aria-labelledby="continue-reading-title"><p class="content-path-kicker">把这个问题与下一步接起来</p><h2 id="continue-reading-title">决定套餐之前，把需求与使用成本核对完整</h2><p>价格只是起点。设备兼容、每月流量、测试条件和订阅保管，都会影响购买后的使用体验。</p><div class="content-path-grid"><div class="content-path-card"><a href="MonthlyAirportTraffic.html">每月流量怎么估算 →</a><p>按视频、AI、下载等任务估算流量，结合倍率和重置周期再看套餐。</p></div><div class="content-path-card"><a href="../topic/tuijianjichang/brands/index.html">查看全部品牌资料 →</a><p>回到完整品牌资料，核对套餐条件和实际提供的配置。</p></div><div class="content-path-card"><a href="../topic/cybersecurity/privacy.html">理解订阅、DNS 与浏览器隐私 →</a><p>购买后不要公开订阅链接；了解第三方转换会接触哪些信息。</p></div></div></section>
+<!-- End contextual reading path -->
+<section class="faq-reading"><h2>与这个问题相关的文章</h2><ul><li><a href="ClashTimeoutButCanBrowse.html">Clash 显示 timeout 但能上网，为什么？</a><p>解释测试超时和实际访问不一致。</p></li><li><a href="ClashDNSFailed.html">Clash 节点正常但网页打不开，是 DNS 问题吗？</a><p>域名失败时继续检查 DNS 路径。</p></li><li><a href="WhatIsSingBoxTUN.html">sing-box TUN 是什么？什么时候需要开启？</a><p>需要接管其他应用时了解 TUN。</p></li></ul><p><a href="../topic/tuijianjichang/faq/index.html">返回全部 FAQ 问题</a></p></section>
+      </div>
+    </div>
+    <nav class="faq-pagination" aria-label="文章翻页"><a href="ClashDNSFailed.html"><small>上一篇</small><span>Clash 节点正常但网页打不开，是 DNS 问题吗？</span></a><a href="Hysteria2Timeout.html"><small>下一篇</small><span>Hysteria 2 连接超时怎么办？Hy2 节点为什么不能用？</span></a></nav>
+  </article>
+</main>
+<script src="../topic/tuijianjichang/faq/faq-article.js" defer></script>
+<!-- Shared floating navigation -->
+<nav class="site-floating-nav" aria-label="快捷导航">
+  <div class="site-floating-menu" id="site-floating-menu" hidden>
+    <p class="site-floating-title">快速导航</p>
+    <a href="../index.html">返回首页</a><a href="../topic/tuijianjichang/index.html">站长精选机场推荐</a><a href="../topic/tuijianjichang/brands/index.html">机场品牌总库</a><a href="../topic/tuijianjichang/comparison.html">品牌对比</a><a href="../topic/tuijianjichang/faq/index.html">FAQ 知识库</a><a href="../topic/cybersecurity/privacy.html">隐私与防泄漏</a><a href="../topic/cybersecurity/gfw-monitor.html">GFW 与节点故障判断</a>
+  </div>
+  <div class="site-floating-controls">
+    <button type="button" class="site-floating-action" data-floating-back data-home="../index.html" aria-label="返回上一页" title="返回上一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button>
+    <a class="site-floating-action" href="../index.html" aria-label="返回首页" title="返回首页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></a>
+    <button type="button" class="site-floating-toggle" data-floating-toggle aria-controls="site-floating-menu" aria-expanded="false" aria-label="打开快捷导航" title="快捷导航"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+  </div>
+</nav>
+<!-- End shared floating navigation -->
+</body>
+</html>

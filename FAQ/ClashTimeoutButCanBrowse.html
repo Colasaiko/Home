@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clash 显示 timeout 但能上网，为什么？ | 原因与解决步骤 | Cola FAQ</title>
+  <meta name="description" content="能访问的网页可能走直连或其他节点，也可能只有测速目标不可达。通过连接记录、策略组和可信测试目标对照，才能确定当前节点是否真的可用。">
+  <link rel="canonical" href="ClashTimeoutButCanBrowse.html">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../topic/tuijianjichang/catalog.css">
+  <link rel="stylesheet" href="../topic/tuijianjichang/faq/faq-article.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Clash 显示 timeout 但能上网，为什么？", "description": "能访问的网页可能走直连或其他节点，也可能只有测速目标不可达。通过连接记录、策略组和可信测试目标对照，才能确定当前节点是否真的可用。", "inLanguage": "zh-CN", "dateModified": "2026-10-10"}</script>
+<!-- Contextual reading assets -->
+<link rel="stylesheet" href="../css/content-paths.css?v=20261010-3">
+<!-- End contextual reading assets -->
+<!-- Shared floating navigation assets -->
+<link rel="stylesheet" href="../css/floating-navigation.css?v=20261010-rings" data-floating-navigation>
+<script src="../js/floating-navigation-pages.js?v=20261010-rings" defer data-floating-navigation></script>
+<script src="../js/floating-navigation.js?v=20261010-rings" defer data-floating-navigation></script>
+<!-- End shared floating navigation assets -->
+
+<!-- Mobile reading assets -->
+<link rel="stylesheet" href="../css/mobile-reading.css?v=20261010-1">
+<script src="../js/mobile-reading.js?v=20261010-1" defer></script>
+<!-- End mobile reading assets -->
+</head>
+<body>
+<div id="background"></div>
+<main class="catalog faq-page">
+  <nav aria-label="面包屑"><a href="../topic/tuijianjichang/index.html">推荐机场</a> / <a href="../topic/tuijianjichang/faq/index.html">FAQ 知识库</a></nav>
+  <article class="panel">
+    <header class="faq-heading"><h1>Clash 显示 timeout 但能上网，为什么？</h1><p class="faq-meta">更新：2026-10-10 · 原因说明与 5 个讲解与处理环节</p></header>
+    <div class="faq-layout">
+      <aside class="faq-directory"><details open><summary>文章目录</summary><nav aria-label="文章目录"><ul><li><a href="#why">为什么要了解这个问题</a></li><li><a href="#how">如何处理这个问题</a></li><li class="toc-step"><a href="#step-1">步骤 1：确认网页不是直连访问</a></li><li class="toc-step"><a href="#step-2">步骤 2：核对测试使用的目标</a></li><li class="toc-step"><a href="#step-3">步骤 3：固定同一节点比较</a></li><li class="toc-step"><a href="#step-4">步骤 4：看失败发生在哪个环节</a></li><li class="toc-step"><a href="#step-5">步骤 5：记录可重复的体验指标</a></li><li><a href="#result">完成后怎么判断</a></li><li><a href="#sources">官方资料与进一步核对</a></li></ul></nav></details></aside>
+      <div class="article-content faq-body">
+        <section id="why"><h2>为什么要了解这个问题？</h2><p>延迟测试和你的真实网页可能访问不同目标、命中不同规则。两者不一致时，先证明请求路径，再判断测试指标是否有参考价值。</p>
+        <div class="faq-answer"><strong>直接回答</strong><p>能访问的网页可能走直连或其他节点，也可能只有测速目标不可达。通过连接记录、策略组和可信测试目标对照，才能确定当前节点是否真的可用。</p></div></section>
+        <section id="how"><h2>如何处理这个问题？</h2><p>按下面的顺序操作，每完成一步再进入下一步；已经确认的条件可以直接通过目录跳到对应环节。</p><section id="step-1" class="faq-step"><h3>步骤 1：确认网页不是直连访问</h3><p>打开连接记录，查目标域名命中了什么规则和出口。国内网页正常不能证明代理可用；选择实际需要代理的目标任务，记录它的策略和节点。</p></section><section id="step-2" class="faq-step"><h3>步骤 2：核对测试使用的目标</h3><p>检查延迟检测地址与等待时间。目标站故障、区域限制或规则差异会影响结果，不能仅凭一次测试超时否定所有真实请求。</p></section><section id="step-3" class="faq-step"><h3>步骤 3：固定同一节点比较</h3><p>在不改变其他配置的前提下选定一个节点，用实际网页、下载和延迟测试分别观察。自动策略切换会让不同测试用到不同出口，比较时要记录最终选择。</p></section><aside class="faq-brand-context" aria-label="结合品牌资料继续核对"><p>比较体验时，可用 <a href="../topic/tuijianjichang/brands/feimao/index.html">飞猫云</a> 的大流量资料和 <a href="../topic/tuijianjichang/brands/weifeng/index.html">微风网络</a> 的线路介绍列出测试任务，再以自己的日志和访问结果判断，避免只按一个测速数字选择品牌。</p><p class="faq-brand-hub"><a href="../topic/tuijianjichang/index.html">查看站长精选主推榜，继续比较其他品牌 →</a></p></aside><section id="step-4" class="faq-step"><h3>步骤 4：看失败发生在哪个环节</h3><p>从日志区分 DNS、连接、TLS 与 HTTP 响应。修改一个已确认有问题的设置后重新验证；实际访问正常时不急着重装客户端或重置订阅。</p></section><section id="step-5" class="faq-step"><h3>步骤 5：记录可重复的体验指标</h3><p>记录成功率、加载耗时、下载速度与发生时段。继续用真实任务判断可用性，把延迟当辅助指标，并保留当前正常配置作为恢复点。</p></section></section>
+        <section id="result"><h2>完成后怎么判断？</h2><p>确认真实请求经过预期节点，并能解释延迟检测与实际任务不一致的原因。</p><div class="faq-note"><strong>容易忽略的地方</strong><p>浏览器缓存、直连规则和自动策略都可能制造“节点可用”的错觉，应查实际连接记录。</p></div></section>
+        <section id="sources"><h2>官方资料与进一步核对</h2><p>客户端菜单与平台条件可能变化，操作前核对对应开发者或平台说明。</p><ul><li><a href="https://www.clashverge.dev/guide/quickstart.html" target="_blank" rel="noopener noreferrer">Clash Verge Rev 快速入门</a></li></ul></section>
+        <!-- Contextual reading path -->
+<section class="content-paths" id="continue-reading" data-reading-profile="connection" aria-labelledby="continue-reading-title"><p class="content-path-kicker">把这个问题与下一步接起来</p><h2 id="continue-reading-title">从连接问题继续定位到网络层和配置层</h2><p>先保留报错与日志，再做同节点、不同网络或不同应用的对照；一次只改变一个条件。</p><div class="content-path-grid"><div class="content-path-card"><a href="../status.html">对照浏览器连通性与请求耗时 →</a><p>记录目标请求是否完成与耗时，作为对照证据，而不是解锁结论。</p></div><div class="content-path-card"><a href="../topic/cybersecurity/gfw-monitor.html">区分封锁、节点故障与本地问题 →</a><p>判断是否只有特定网络、协议或时段失败，避免把全部超时直接归因于封锁。</p></div><div class="content-path-card"><a href="../api.html">检查配置与测试结果 →</a><p>核对配置结构与订阅格式，区分配置没有加载和节点无法建立连接。</p></div></div></section>
+<!-- End contextual reading path -->
+<section class="faq-reading"><h2>与这个问题相关的文章</h2><ul><li><a href="ClashRulesVsGlobal.html">Clash 规则模式和全局模式有什么区别？怎么知道流量走哪？</a><p>检查实际请求命中的分流规则。</p></li><li><a href="../topic/tuijianjichang/faq/jichang-zenme-160.html">机场测速怎么看才准确？</a><p>让测速过程具有可比性。</p></li><li><a href="../topic/tuijianjichang/faq/jichang-weishenme-162.html">机场测速结果和实际体验为什么不一样？</a><p>理解测速与真实体验的差异。</p></li></ul><p><a href="../topic/tuijianjichang/faq/index.html">返回全部 FAQ 问题</a></p></section>
+      </div>
+    </div>
+    <nav class="faq-pagination" aria-label="文章翻页"><a href="ClashNodeTimeout.html"><small>上一篇</small><span>Clash 节点超时或显示 timeout 是什么原因？</span></a><a href="WhatIsProxySoftware.html"><small>下一篇</small><span>代理软件是什么？和机场订阅有什么区别？</span></a></nav>
+  </article>
+</main>
+<script src="../topic/tuijianjichang/faq/faq-article.js" defer></script>
+<!-- Shared floating navigation -->
+<nav class="site-floating-nav" aria-label="快捷导航">
+  <div class="site-floating-menu" id="site-floating-menu" hidden>
+    <p class="site-floating-title">快速导航</p>
+    <a href="../index.html">返回首页</a><a href="../topic/tuijianjichang/index.html">站长精选机场推荐</a><a href="../topic/tuijianjichang/brands/index.html">机场品牌总库</a><a href="../topic/tuijianjichang/comparison.html">品牌对比</a><a href="../topic/tuijianjichang/faq/index.html">FAQ 知识库</a><a href="../topic/cybersecurity/privacy.html">隐私与防泄漏</a><a href="../topic/cybersecurity/gfw-monitor.html">GFW 与节点故障判断</a>
+  </div>
+  <div class="site-floating-controls">
+    <button type="button" class="site-floating-action" data-floating-back data-home="../index.html" aria-label="返回上一页" title="返回上一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button>
+    <a class="site-floating-action" href="../index.html" aria-label="返回首页" title="返回首页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></a>
+    <button type="button" class="site-floating-toggle" data-floating-toggle aria-controls="site-floating-menu" aria-expanded="false" aria-label="打开快捷导航" title="快捷导航"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+  </div>
+</nav>
+<!-- End shared floating navigation -->
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sing-box TUN 是什么？什么时候需要开启？ | 原因与解决步骤 | Cola FAQ</title>
+  <meta name="description" content="TUN 通过虚拟网络接口让流量进入 sing-box，配合路由与 DNS 处理工作。它不是新节点协议，也不等于天然更快；系统代理可覆盖任务时未必需要它。">
+  <link rel="canonical" href="WhatIsSingBoxTUN.html">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../topic/tuijianjichang/catalog.css">
+  <link rel="stylesheet" href="../topic/tuijianjichang/faq/faq-article.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "sing-box TUN 是什么？什么时候需要开启？", "description": "TUN 通过虚拟网络接口让流量进入 sing-box，配合路由与 DNS 处理工作。它不是新节点协议，也不等于天然更快；系统代理可覆盖任务时未必需要它。", "inLanguage": "zh-CN", "dateModified": "2026-10-10"}</script>
+<!-- Contextual reading assets -->
+<link rel="stylesheet" href="../css/content-paths.css?v=20261010-3">
+<!-- End contextual reading assets -->
+<!-- Shared floating navigation assets -->
+<link rel="stylesheet" href="../css/floating-navigation.css?v=20261010-rings" data-floating-navigation>
+<script src="../js/floating-navigation-pages.js?v=20261010-rings" defer data-floating-navigation></script>
+<script src="../js/floating-navigation.js?v=20261010-rings" defer data-floating-navigation></script>
+<!-- End shared floating navigation assets -->
+
+<!-- Mobile reading assets -->
+<link rel="stylesheet" href="../css/mobile-reading.css?v=20261010-1">
+<script src="../js/mobile-reading.js?v=20261010-1" defer></script>
+<!-- End mobile reading assets -->
+</head>
+<body>
+<div id="background"></div>
+<main class="catalog faq-page">
+  <nav aria-label="面包屑"><a href="../topic/tuijianjichang/index.html">推荐机场</a> / <a href="../topic/tuijianjichang/faq/index.html">FAQ 知识库</a></nav>
+  <article class="panel">
+    <header class="faq-heading"><h1>sing-box TUN 是什么？什么时候需要开启？</h1><p class="faq-meta">更新：2026-10-10 · 原因说明与 6 个讲解与处理环节</p></header>
+    <div class="faq-layout">
+      <aside class="faq-directory"><details open><summary>文章目录</summary><nav aria-label="文章目录"><ul><li><a href="#why">为什么要了解这个问题</a></li><li><a href="#how">如何处理这个问题</a></li><li class="toc-step"><a href="#step-1">步骤 1：区分入站和出站</a></li><li class="toc-step"><a href="#step-2">步骤 2：确认实际需要接管的应用</a></li><li class="toc-step"><a href="#step-3">步骤 3：核对系统与版本条件</a></li><li class="toc-step"><a href="#step-4">步骤 4：理解路由与 DNS 配合</a></li><li class="toc-step"><a href="#step-5">步骤 5：分阶段启用并测试</a></li><li class="toc-step"><a href="#step-6">步骤 6：确认退出与网络恢复</a></li><li><a href="#result">完成后怎么判断</a></li><li><a href="#sources">官方资料与进一步核对</a></li></ul></nav></details></aside>
+      <div class="article-content faq-body">
+        <section id="why"><h2>为什么要了解这个问题？</h2><p>软件能连接节点，但部分应用仍不走代理时，常会看到 TUN 建议。先知道它改变的是流量入口，才能避免把路由问题当成套餐问题。</p>
+        <div class="faq-answer"><strong>直接回答</strong><p>TUN 通过虚拟网络接口让流量进入 sing-box，配合路由与 DNS 处理工作。它不是新节点协议，也不等于天然更快；系统代理可覆盖任务时未必需要它。</p></div></section>
+        <section id="how"><h2>如何处理这个问题？</h2><p>按下面的顺序操作，每完成一步再进入下一步；已经确认的条件可以直接通过目录跳到对应环节。</p><section id="step-1" class="faq-step"><h3>步骤 1：区分入站和出站</h3><p>TUN 属于流量进入客户端的入口，节点协议是客户端向外连接的方式。开启 TUN 不会自动新增服务器，也不能修复已经无效的节点认证。</p></section><section id="step-2" class="faq-step"><h3>步骤 2：确认实际需要接管的应用</h3><p>先用已有代理方式测试浏览器，再列出未经过代理的程序。应用能设置 HTTP 或 SOCKS 代理时，可先用其设置验证，再决定是否需要统一接管。</p></section><section id="step-3" class="faq-step"><h3>步骤 3：核对系统与版本条件</h3><p>查当前 sing-box 或图形客户端的 TUN 支持、系统权限与配置格式。不同版本的路由、地址和 DNS 字段会变化，不将旧配置整段贴入新版。</p></section><aside class="faq-brand-context" aria-label="结合品牌资料继续核对"><p>节点与入口分清后，可看 <a href="../topic/tuijianjichang/brands/firefly/index.html">Firefly</a> 的协议介绍或 <a href="../topic/tuijianjichang/brands/wuyou/index.html">无忧</a> 的客户端资料，核对你要用的配置。品牌资料帮助选择服务，TUN 是否需要则由应用的流量路径决定。</p><p class="faq-brand-hub"><a href="../topic/tuijianjichang/index.html">查看站长精选主推榜，继续比较其他品牌 →</a></p></aside><section id="step-4" class="faq-step"><h3>步骤 4：理解路由与 DNS 配合</h3><p>自动路由决定哪些流量进入 TUN，DNS 设置决定域名如何解析。需要同时考虑本地网、目标连接与 DNS 请求路径，不能只打开 TUN 后忽略其他配置。</p></section><section id="step-5" class="faq-step"><h3>步骤 5：分阶段启用并测试</h3><p>先保存正常配置，按官方示例核对语法与权限，再逐项验证目标应用。观察启动和连接日志；出现异常时恢复上一个可用状态，避免多款 VPN 同时接管。</p></section><section id="step-6" class="faq-step"><h3>步骤 6：确认退出与网络恢复</h3><p>关闭连接后测试普通网络与局域网，确认接口和 DNS 行为恢复。记录系统、客户端版本和成功设置，方便更新后重测和故障时恢复。</p></section></section>
+        <section id="result"><h2>完成后怎么判断？</h2><p>能解释 TUN 的作用、适用任务与路由依赖，并验证启停后的网络行为。</p><div class="faq-note"><strong>容易忽略的地方</strong><p>不要把 TUN 当成速度优化开关；性能仍取决于节点、本地网络和实际任务。</p></div></section>
+        <section id="sources"><h2>官方资料与进一步核对</h2><p>客户端菜单与平台条件可能变化，操作前核对对应开发者或平台说明。</p><ul><li><a href="https://sing-box.sagernet.org/configuration/inbound/tun/" target="_blank" rel="noopener noreferrer">sing-box TUN 入站配置</a></li><li><a href="https://sing-box.sagernet.org/configuration/" target="_blank" rel="noopener noreferrer">sing-box 配置文档</a></li></ul></section>
+        <!-- Contextual reading path -->
+<section class="content-paths" id="continue-reading" data-reading-profile="client" aria-labelledby="continue-reading-title"><p class="content-path-kicker">把这个问题与下一步接起来</p><h2 id="continue-reading-title">软件装好之后，继续核对配置、分流和隐私</h2><p>客户端安装成功不代表订阅能够解析，也不代表所有应用已经经过代理。</p><div class="content-path-grid"><div class="content-path-card"><a href="../api.html">检查配置与测试结果 →</a><p>用配置检查区分 YAML 结构错误与运行时连接失败。</p></div><div class="content-path-card"><a href="ClashRulesVsGlobal.html">规则模式与全局模式怎么选择 →</a><p>先理解规则与全局模式，按应用任务验证实际出口。</p></div><div class="content-path-card"><a href="../topic/cybersecurity/privacy.html">理解订阅、DNS 与浏览器隐私 →</a><p>系统代理和 TUN 的覆盖范围不同，要结合 DNS 与浏览器实测。</p></div><div class="content-path-card"><a href="../topic/tuijianjichang/index.html">按用途比较主推品牌 →</a><p>客户端不是节点服务；需要订阅时按格式与用途核对品牌资料。</p></div></div></section>
+<!-- End contextual reading path -->
+<section class="faq-reading"><h2>与这个问题相关的文章</h2><ul><li><a href="SingBoxTunNoInternet.html">sing-box 开启 TUN 后不能上网怎么办？</a><p>开启后没网时分层排查。</p></li><li><a href="../topic/tuijianjichang/faq/jichang-dingyue-lianjie-zenme-daoru-sing-box.html">机场订阅链接怎么导入 sing-box？</a><p>核对 sing-box 配置导入方式。</p></li><li><a href="ClashRulesVsGlobal.html">Clash 规则模式和全局模式有什么区别？怎么知道流量走哪？</a><p>理解规则如何决定目标流量去向。</p></li></ul><p><a href="../topic/tuijianjichang/faq/index.html">返回全部 FAQ 问题</a></p></section>
+      </div>
+    </div>
+    <nav class="faq-pagination" aria-label="文章翻页"><a href="WhatIsProxySoftware.html"><small>上一篇</small><span>代理软件是什么？和机场订阅有什么区别？</span></a><a href="SingBoxTunNoInternet.html"><small>下一篇</small><span>sing-box 开启 TUN 后不能上网怎么办？</span></a></nav>
+  </article>
+</main>
+<script src="../topic/tuijianjichang/faq/faq-article.js" defer></script>
+<!-- Shared floating navigation -->
+<nav class="site-floating-nav" aria-label="快捷导航">
+  <div class="site-floating-menu" id="site-floating-menu" hidden>
+    <p class="site-floating-title">快速导航</p>
+    <a href="../index.html">返回首页</a><a href="../topic/tuijianjichang/index.html">站长精选机场推荐</a><a href="../topic/tuijianjichang/brands/index.html">机场品牌总库</a><a href="../topic/tuijianjichang/comparison.html">品牌对比</a><a href="../topic/tuijianjichang/faq/index.html">FAQ 知识库</a><a href="../topic/cybersecurity/privacy.html">隐私与防泄漏</a><a href="../topic/cybersecurity/gfw-monitor.html">GFW 与节点故障判断</a>
+  </div>
+  <div class="site-floating-controls">
+    <button type="button" class="site-floating-action" data-floating-back data-home="../index.html" aria-label="返回上一页" title="返回上一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button>
+    <a class="site-floating-action" href="../index.html" aria-label="返回首页" title="返回首页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></a>
+    <button type="button" class="site-floating-toggle" data-floating-toggle aria-controls="site-floating-menu" aria-expanded="false" aria-label="打开快捷导航" title="快捷导航"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+  </div>
+</nav>
+<!-- End shared floating navigation -->
+</body>
+</html>
