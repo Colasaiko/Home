@@ -702,7 +702,147 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 </script>
+<script>
+// 将右侧品牌列表页分为双栏，注意右侧“提交机场”表单
+document.addEventListener('DOMContentLoaded', () => {
+    const main = document.querySelector('main.catalog');
+    if (!main) return;
+
+    const panels = main.querySelectorAll('.panel'); 
+    const brandGrid = main.querySelector('.brand-grid');
+    if (panels.length === 0 || !brandGrid) return;
+
+    main.style.maxWidth = '1500px';
+    main.style.display = 'block';
+
+    const gridContainer = document.createElement('div');
+    gridContainer.style.display = 'grid';
+    gridContainer.style.marginTop = '20px';
+    
+    if (window.innerWidth > 900) {
+        gridContainer.style.gridTemplateColumns = '1fr 350px';
+        gridContainer.style.gap = '40px';
+        gridContainer.style.alignItems = 'start';
+    } else {
+        gridContainer.style.gridTemplateColumns = '1fr';
+        gridContainer.style.gap = '20px';
+    }
+
+    const leftCol = document.createElement('div');
+    if (panels[0]) leftCol.appendChild(panels[0]);
+    leftCol.appendChild(brandGrid);
+    if (panels[1]) {
+        panels[1].style.marginTop = '40px';
+        leftCol.appendChild(panels[1]);
+    }
+
+    brandGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(280px, 1fr))';
+
+    const rightCol = document.createElement('div');
+    rightCol.className = 'submit-airport-col';
+    rightCol.style.position = 'sticky';
+    rightCol.style.top = '40px';
+    rightCol.style.background = 'rgba(0,0,0,0.6)';
+    rightCol.style.padding = '30px';
+    rightCol.style.borderRadius = '20px';
+    rightCol.style.backdropFilter = 'blur(15px)';
+    rightCol.style.border = '1px solid rgba(79, 172, 254, 0.2)';
+    rightCol.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+
+    rightCol.innerHTML = 
+        <h3 style="color: #fff; font-size: 1.4rem; margin-top: 0; margin-bottom: 10px; border-bottom: 2px solid rgba(79, 172, 254, 0.3); padding-bottom: 10px;">
+            <i class="fa-solid fa-paper-plane" style="color: #4facfe;"></i> 没找到想看的？
+        </h3>
+        <p style="color: #aaa; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6;">
+            <strong>🎯 粉丝荐服：</strong> 如果没找到你想了解的机场，请在此提交，呼声高的机场 Cola 将自费购买并建立深度追踪档案！<br><br>
+            <strong>💼 商务合作：</strong> 欢迎机场主毛遂自荐，但请注意：本站<strong>仅接受一口价收费推广模式，坚决不接任何形式的 CPA / 充值返佣模式</strong>，以免与用户产生利益冲突。
+        </p>
+        
+        <form id="airportSubmitForm" style="display: flex; flex-direction: column; gap: 15px;">
+            <div>
+                <label style="display: block; color: #ddd; margin-bottom: 8px; font-size: 0.9rem;">机场名称 (必填)</label>
+                <input type="text" name="机场名称" required placeholder="如：微风网络" style="width: 100%; box-sizing: border-box; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.5); color: #fff; outline: none;">
+            </div>
+            <div>
+                <label style="display: block; color: #ddd; margin-bottom: 8px; font-size: 0.9rem;">官网/链接</label>
+                <input type="url" name="官网链接" placeholder="https://" style="width: 100%; box-sizing: border-box; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.5); color: #fff; outline: none;">
+            </div>
+            <div>
+                <label style="display: block; color: #ddd; margin-bottom: 8px; font-size: 0.9rem;">推荐理由 (选填)</label>
+                <textarea name="推荐理由" rows="4" placeholder="比如：这家晚高峰特别稳，或者性价比很高..." style="width: 100%; box-sizing: border-box; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.5); color: #fff; outline: none; resize: vertical;"></textarea>
+            </div>
+            <button type="submit" id="submitBtn" style="margin-top: 10px; background: linear-gradient(135deg, #4facfe, #00f2fe); color: #fff; border: none; padding: 15px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; transition: 0.3s; box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);">
+                <span id="btnText">提交品牌推荐</span>
+            </button>
+            <p style="font-size: 0.8rem; color: #666; text-align: center; margin-top: 5px;">提交数据加密直达站长后台</p>
+        </form>
+        <div id="submitSuccessMsg" style="display: none; margin-top: 15px; padding: 12px; background: rgba(46, 204, 113, 0.1); border: 1px solid rgba(46, 204, 113, 0.4); border-radius: 8px; color: #2ecc71; text-align: center; font-weight: bold;">
+            <i class="fa-solid fa-check-circle"></i> 提交成功！感谢您的推荐。
+        </div>
+    ;
+
+    gridContainer.appendChild(leftCol);
+    gridContainer.appendChild(rightCol);
+    main.appendChild(gridContainer);
+    
+    const inputs = rightCol.querySelectorAll('input, textarea');
+    inputs.forEach(input => {
+        input.addEventListener('focus', () => { input.style.border = '1px solid #4facfe'; });
+        input.addEventListener('blur', () => { input.style.border = '1px solid rgba(255,255,255,0.1)'; });
+    });
+});
+
+// 独家唯一的提交事件拦截器 (挂载在 document 上)
+document.addEventListener('submit', function(e) {
+    if (e.target && e.target.id === 'airportSubmitForm') {
+        e.preventDefault(); 
+        try {
+            const btn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            const successMsg = document.getElementById('submitSuccessMsg');
+            
+            // 防连击处理
+            if(btn && btn.disabled) return;
+            
+            if(btnText) btnText.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 正在发送...';
+            if(btn) { btn.disabled = true; btn.style.opacity = '0.7'; }
+            
+            const formData = new FormData(e.target);
+            const data = {};
+            formData.forEach((value, key) => data[key] = value);
+            data["_captcha"] = "false";
+            
+            fetch("https://formsubmit.co/ajax/colasaiko15@gmail.com", {
+                method: "POST",
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                return response.text().then(text => {
+                    let json;
+                    try { json = JSON.parse(text); } catch(err) { throw new Error("解析失败: " + text.substring(0,50)); }
+                    if (!response.ok || json.success === 'false' || json.success === false) { throw new Error(json.message || "请求被拒绝"); }
+                    return json;
+                });
+            })
+            .then(data => {
+                e.target.style.display = 'none';
+                if(successMsg) successMsg.style.display = 'block';
+            })
+            .catch(error => {
+                if(btn) btn.disabled = false;
+                if(btnText) btnText.innerHTML = '发送失败，点此重试';
+                if(btn) btn.style.background = '#e74c3c';
+                alert("提交遇到错误: " + error.message);
+            });
+        } catch (err) {
+            alert("JS 严重错误: " + err.message);
+        }
+    }
+});
+</script>
 </body>
 </html>
+
 
 
