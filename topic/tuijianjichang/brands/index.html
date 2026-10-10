@@ -749,7 +749,7 @@ document.addEventListener('DOMContentLoaded', () => {
     rightCol.style.border = '1px solid rgba(79, 172, 254, 0.2)';
     rightCol.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
 
-    rightCol.innerHTML = 
+    rightCol.innerHTML = `
         <h3 style="color: #fff; font-size: 1.4rem; margin-top: 0; margin-bottom: 10px; border-bottom: 2px solid rgba(79, 172, 254, 0.3); padding-bottom: 10px;">
             <i class="fa-solid fa-paper-plane" style="color: #4facfe;"></i> 没找到想看的？
         </h3>
@@ -779,7 +779,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div id="submitSuccessMsg" style="display: none; margin-top: 15px; padding: 12px; background: rgba(46, 204, 113, 0.1); border: 1px solid rgba(46, 204, 113, 0.4); border-radius: 8px; color: #2ecc71; text-align: center; font-weight: bold;">
             <i class="fa-solid fa-check-circle"></i> 提交成功！感谢您的推荐。
         </div>
-    ;
+    `;
 
     gridContainer.appendChild(leftCol);
     gridContainer.appendChild(rightCol);
@@ -843,6 +843,8 @@ document.addEventListener('submit', function(e) {
 </script>
 </body>
 </html>
+</html>
+
 
 
 
