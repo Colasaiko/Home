@@ -40,9 +40,9 @@ def add_navigation(text, path, *, include_content=True):
     def link(relative):
         return html.escape(Path(os.path.relpath(ROOT / relative, path.parent)).as_posix(), quote=True)
     assets = f'''{HEAD_MARKER}
-<link rel="stylesheet" href="{link('css/floating-navigation.css')}?v=20261010-rings" data-floating-navigation>
-<script src="{link('js/floating-navigation-pages.js')}?v=20261010-rings" defer data-floating-navigation></script>
-<script src="{link('js/floating-navigation.js')}?v=20261010-rings" defer data-floating-navigation></script>
+<link rel="stylesheet" href="{link('css/floating-navigation.css')}?v=20261012-radio-icons" data-floating-navigation>
+<script src="{link('js/floating-navigation-pages.js')}?v=20261012-radio-icons" defer data-floating-navigation></script>
+<script src="{link('js/floating-navigation.js')}?v=20261012-radio-icons" defer data-floating-navigation></script>
 <!-- End shared floating navigation assets -->
 '''
     destinations = [
@@ -77,7 +77,11 @@ def add_navigation(text, path, *, include_content=True):
         from .mobile_reading import add_mobile_reading
     except ImportError:
         from mobile_reading import add_mobile_reading
-    return add_mobile_reading(text, path)
+    try:
+        from .site_radio import add_radio
+    except ImportError:
+        from site_radio import add_radio
+    return add_radio(add_mobile_reading(text, path), path)
 
 
 def main():

@@ -31,3 +31,13 @@
 @keyframes fab-center-pop { from { opacity: 0; transform: translate(-50%, -50%) scale(.35); } to { opacity: 1; transform: translate(-50%, -50%) scale(1); } }
 @media (max-width: 600px), (max-height: 600px) { .site-floating-nav { right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); } .site-floating-nav .site-floating-toggle { width: 60px; height: 60px; } .site-floating-nav .site-floating-bubble { --bubble-size: 72px; } .site-floating-title { top: -18px; } .site-floating-bubble-inner { font-size: 11px; gap: 3px; } .site-floating-bubble-icon { font-size: 23px; } .site-floating-close { width: 76px; height: 76px; } .site-floating-hint { top: calc(50% + 43px); } }
 @media (prefers-reduced-motion: reduce) { .site-floating-toggle, .site-floating-bubble, .site-floating-bubble-inner, .site-floating-close { animation: none !important; } }
+
+.site-floating-bubble-icon{display:grid;place-items:center;color:var(--bubble-icon-color,#c4f3ff)}
+.site-floating-bubble-icon svg{width:29px;height:29px;filter:drop-shadow(0 0 5px currentColor)}
+.site-floating-bubble[data-tone="brands"]{--bubble-icon-color:#ffbb9e}
+.site-floating-bubble[data-tone="tools"]{--bubble-icon-color:#93efd3}
+.site-floating-bubble[data-tone="security"]{--bubble-icon-color:#a8d8ff}
+.site-floating-bubble[data-tone="ai"]{--bubble-icon-color:#e8b9ff}
+.site-floating-bubble[data-tone="resources"]{--bubble-icon-color:#ffe49a}
+.site-floating-bubble[data-tone="faq"]{--bubble-icon-color:#ffb9d9}
+@media(max-width:600px),(max-height:600px){.site-floating-bubble-icon svg{width:24px;height:24px}}

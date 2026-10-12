@@ -1,0 +1,31 @@
+body.site-radio-ready{padding-top:68px}
+.site-radio{position:fixed;top:max(16px,env(safe-area-inset-top));right:calc(max(16px,env(safe-area-inset-right)) + var(--radio-gutter,0px));z-index:10000;color:#eef3ff;font:14px/1.6 'Segoe UI',sans-serif;overflow-wrap:anywhere}
+.site-radio button,.site-radio select,.site-radio input{font:inherit;box-sizing:border-box}
+.site-radio-toggle{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;border:1px solid #c6b1ff;background:linear-gradient(145deg,#744cc4,#362660);color:#fff;cursor:pointer;box-shadow:0 0 18px #9765ee66}
+.site-radio-toggle svg{width:25px;height:25px}
+.site-radio.is-playing .site-radio-toggle{border-color:#efdcff;box-shadow:0 0 24px #ac75efbb}
+.site-radio-panel{position:absolute;right:0;top:58px;width:320px;max-width:calc(100vw - 32px);max-height:calc(100dvh - 110px);overflow-y:auto;overscroll-behavior:contain;padding:20px;border:1px solid #9a7abd;border-radius:16px;background:#191627;box-shadow:0 14px 40px #0009}
+.site-radio [hidden]{display:none!important}
+.site-radio-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.site-radio-heading h2{font-size:1rem;margin:0;color:#fff}
+.site-radio-close{background:transparent;border:1px solid #80699c;color:#eadfff;padding:4px 10px;border-radius:7px;cursor:pointer}
+.site-radio-title{font-size:1.05rem;font-weight:700;margin:0;color:#fff}
+.site-radio-artist{margin:4px 0 16px;color:#c2b5d5;font-size:.9rem}
+.site-radio-controls{display:flex;align-items:center;justify-content:center;gap:18px;margin:12px 0}
+.site-radio-controls button{display:grid;place-items:center;min-width:44px;min-height:44px;border:1px solid #9575bd;border-radius:50%;background:#352548;color:#fff;cursor:pointer}
+.site-radio-controls .site-radio-play{background:#7951b4}
+.site-radio-controls svg{width:20px;height:20px}
+.site-radio-field{display:block;margin:14px 0 6px;color:#e1d2f3;font-size:.9rem}
+.site-radio select{width:100%;padding:10px;border:1px solid #8d72ac;border-radius:8px;color:#f3eeff;background:#292137;min-width:0}
+.site-radio input[type="range"]{display:block;width:100%;max-width:none;min-width:0;padding:0;margin:10px 0;accent-color:#bc87ff;cursor:pointer}
+.site-radio-time{display:flex;justify-content:space-between;color:#cbbbdc;font-size:.85rem}
+.site-radio-note,.site-radio-status{font-size:.82rem;color:#c2b5d5;margin:14px 0 0;line-height:1.7}
+.site-radio-status{color:#ffccad}
+.site-radio button:focus-visible,.site-radio select:focus-visible,.site-radio input:focus-visible{outline:3px solid #f2d790;outline-offset:3px}
+@media(min-width:1001px){body.site-radio-ready .protocol-toc-follow{top:84px}body.site-radio-ready .protocol-toc-follow ul{max-height:calc(100dvh - 215px)}}
+@media(max-width:600px){.site-radio-panel{padding:16px}.site-radio{top:max(12px,env(safe-area-inset-top));right:calc(max(12px,env(safe-area-inset-right)) + var(--radio-gutter,0px))}.homepage-radio-main{flex-wrap:wrap}.homepage-radio-track{flex:1 1 120px}.homepage-radio-main #mTitle{white-space:normal!important;overflow:visible!important}}
+
+.site-radio[hidden]{display:none!important}
+html[data-site-radio-embedded="true"] .site-radio{display:none!important}
+body.site-radio-shell{padding:0!important;overflow:hidden!important}
+.site-radio-frame-view{position:fixed;inset:0;width:100vw;height:100%;border:0;background:#101722;z-index:1}

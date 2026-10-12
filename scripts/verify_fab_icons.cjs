@@ -1,0 +1,23 @@
+const fs = require('node:fs');
+const path = require('node:path');
+const {chromium} = require(process.argv[2]+'/playwright');
+(async()=>{
+ const browser=await chromium.launch({channel:'chrome',headless:true});const page=await browser.newPage({viewport:{width:1280,height:800},reducedMotion:'reduce'});
+ await page.route('**/*',r=>new URL(r.request().url()).hostname==='127.0.0.1'?r.continue():r.abort());
+ await page.goto('http://127.0.0.1:8765/topic/index.html');
+ await page.locator('[data-floating-toggle]').click();
+ await page.locator('.site-floating-dialog[open]').waitFor();
+ const info=await page.locator('.site-floating-bubble').evaluateAll(es=>es.map(e=>({label:e.getAttribute('aria-label'),svg:e.querySelectorAll('.site-floating-bubble-icon svg').length,tone:e.dataset.tone})));
+ if(info.length!==8||info.some(i=>i.svg!==1))throw new Error(JSON.stringify(info));
+ fs.mkdirSync('data/mobile-previews',{recursive:true});
+ await page.screenshot({path:'data/mobile-previews/fab-icons-desktop.png'});
+ await page.getByRole('button',{name:'品牌与选购，展开分类',exact:true}).click();
+ await page.getByRole('button',{name:'全部品牌，展开分类',exact:true}).click();
+ await page.screenshot({path:'data/mobile-previews/fab-brand-icons.png'});
+ await page.setViewportSize({width:390,height:844});
+ await page.screenshot({path:'data/mobile-previews/fab-icons-mobile.png'});
+ await page.getByRole('button',{name:'关闭快捷导航',exact:true}).click();
+ await page.waitForFunction(()=>document.body.style.position!=='fixed');
+ console.log(JSON.stringify({bubbles:info,modalClose:'passed'}));
+ await browser.close();
+})();

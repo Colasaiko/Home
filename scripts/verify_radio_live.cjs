@@ -1,0 +1,25 @@
+const assert=require('node:assert/strict');
+const {chromium}=require(process.argv[2]+'/playwright');
+(async()=>{
+ const browser=await chromium.launch({headless:true,channel:'chrome'});
+ const page=await browser.newPage({viewport:{width:1280,height:900},reducedMotion:'reduce'});
+ await page.route('**/*',route=>new URL(route.request().url()).hostname==='127.0.0.1'||route.request().resourceType()==='media'?route.continue():route.abort());
+ await page.goto('http://127.0.0.1:8765/index.html');
+ await page.locator('.site-radio-toggle').click();await page.locator('.site-radio-play').click();
+ await page.waitForFunction(()=>window.siteRadio.state().playing&&window.siteRadio.state().duration>0,{},{timeout:20000});
+ await page.waitForFunction(()=>!!document.querySelector('iframe')?.contentDocument.querySelector('h1')&&!document.getElementById('site-radio-original'));
+ await page.evaluate(()=>window.liveAudio=document.getElementById('site-radio-audio'));
+ await page.locator('.site-radio-close').click();
+ const content=()=>page.frameLocator('iframe[data-site-radio-frame]');
+ await content().locator('a[href="./topic/tuijianjichang/index.html"]').click();await page.waitForURL('**/topic/tuijianjichang/index.html');
+ await content().locator('a[href="../../api.html"]').first().click();await page.waitForURL('**/api.html');
+ await content().locator('a[href="topic/cybersecurity/privacy.html"]').first().click();await page.waitForURL('**/topic/cybersecurity/privacy.html');
+ await content().locator('#privacy-record').waitFor();
+ await page.waitForFunction(()=>window.siteRadio.state().time>.5);
+ const result=await page.evaluate(()=>({playing:window.siteRadio.state().playing,time:window.siteRadio.state().time,duration:Math.round(window.siteRadio.state().duration),sameAudio:window.liveAudio===document.getElementById('site-radio-audio'),songs:document.querySelectorAll('#site-radio-song option').length}));
+ assert.equal(result.sameAudio,true);assert.equal(result.playing,true);
+ await page.locator('.site-radio-toggle').click();
+ await page.screenshot({path:'data/mobile-previews/site-radio-live-desktop.png'});
+ await page.setViewportSize({width:390,height:844});await page.screenshot({path:'data/mobile-previews/site-radio-live-mobile.png'});
+ console.log(JSON.stringify(result));await browser.close();
+})();

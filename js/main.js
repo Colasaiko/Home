@@ -180,21 +180,71 @@ function renderData() {
 // =======================
 // 音乐播放器全局核心逻辑
 // =======================
-const playlist = [
-    { title: "【华语】起风了", artist: "买辣椒也用券", url: "https://api.injahow.cn/meting/?server=netease&type=url&id=1330348068" }, // 0
-    { title: "【欧美】Faded", artist: "Alan Walker", url: "https://api.injahow.cn/meting/?server=netease&type=url&id=36990266" }, // 1
-    { title: "【日语】Lemon", artist: "米津玄师", url: "https://api.injahow.cn/meting/?server=netease&type=url&id=536622304" }, // 2
-    { title: "【韩语】LOSER (占位)", artist: "BIGBANG", url: "https://api.injahow.cn/meting/?server=netease&type=url&id=29829683" }, // 3
-    { title: "【华语】平凡之路", artist: "朴树", url: "https://api.injahow.cn/meting/?server=netease&type=url&id=28815250" }, // 4
-    { title: "【欧美】Shape of You", artist: "Ed Sheeran", url: "https://api.injahow.cn/meting/?server=netease&type=url&id=29829683" }, // 5 占位
-    { title: "【日语】打上花火", artist: "DAOKO / 米津玄师", url: "https://api.injahow.cn/meting/?server=netease&type=url&id=496869422" }, // 6
-    { title: "【韩语】STAY (占位)", artist: "BLACKPINK", url: "https://api.injahow.cn/meting/?server=netease&type=url&id=29829683" } // 7 占位
+const playlist = (window.radioPlaylist && window.radioPlaylist.length > 0) ? window.radioPlaylist : [
+    { title: "【华语】起风了", artist: "买辣椒也用券", url: "https://api.injahow.cn/meting/?server=netease&type=url&id=1330348068" }
 ];
 window.currentMusicIdx = 0;
 
+
+// 格式化时间辅助函数 (分:秒)
+function formatTime(seconds) {
+    if (isNaN(seconds) || seconds < 0) return "00:00";
+    const m = Math.floor(seconds / 60);
+    const s = Math.floor(seconds % 60);
+    return (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+}
+
+window.isSeeking = false;
+window.updateSeekTime = function(percent) {
+    const audio = document.getElementById('h5Player');
+    const curTimeEl = document.getElementById('currentTime');
+    if (audio && audio.duration && curTimeEl) {
+        const previewTime = (percent / 100) * audio.duration;
+        curTimeEl.innerText = formatTime(previewTime);
+    }
+};
+
+window.commitSeek = function(percent) {
+    const audio = document.getElementById('h5Player');
+    if (audio && audio.duration) {
+        audio.currentTime = (percent / 100) * audio.duration;
+    }
+    window.isSeeking = false;
+};
+
 function initMusicPlayer() {
+    // The shared radio owns playback, including the homepage controls.
+    if (document.querySelector('script[src*="js/site-radio.js"]')) return;
     const audio = document.getElementById('h5Player');
     if (!audio) return;
+    
+    // 监听播放进度与时间更新
+    audio.addEventListener('timeupdate', () => {
+        if (!audio.duration) return;
+        const progress = document.getElementById('progressBar');
+        const curTimeEl = document.getElementById('currentTime');
+        const durEl = document.getElementById('totalDuration');
+        
+        if (!window.isSeeking && progress) {
+            progress.value = (audio.currentTime / audio.duration) * 100;
+        }
+        if (curTimeEl) curTimeEl.innerText = formatTime(audio.currentTime);
+        if (durEl) durEl.innerText = formatTime(audio.duration);
+    });
+    
+    // 监听总时长加载
+    audio.addEventListener('loadedmetadata', () => {
+        const durEl = document.getElementById('totalDuration');
+        if (durEl && audio.duration) durEl.innerText = formatTime(audio.duration);
+    });
+    
+    audio.addEventListener('durationchange', () => {
+        const durEl = document.getElementById('totalDuration');
+        if (durEl && audio.duration) durEl.innerText = formatTime(audio.duration);
+    });
+
+    audio.addEventListener('ended', window.nextMusic);
+
     window.loadMusic(0);
     // 初始化音量 (根据 range input 默认值 70)
     const vol = document.getElementById('volSlider');
@@ -210,6 +260,7 @@ window.updatePlaylistUI = function() {
                 el.style.fontWeight = 'bold';
                 el.style.borderLeft = '3px solid #9b59b6';
                 el.style.paddingLeft = '5px';
+                el.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
             } else {
                 el.style.color = '#ccc';
                 el.style.fontWeight = 'normal';
@@ -228,6 +279,14 @@ window.loadMusic = function(idx) {
     document.getElementById('mArtist').innerText = playlist[idx].artist;
     audio.src = playlist[idx].url;
     
+    // 重置进度条与时间显示
+    const progress = document.getElementById('progressBar');
+    if (progress) progress.value = 0;
+    const curTimeEl = document.getElementById('currentTime');
+    if (curTimeEl) curTimeEl.innerText = "00:00";
+    const durEl = document.getElementById('totalDuration');
+    if (durEl) durEl.innerText = "00:00";
+
     document.getElementById('recordCover').classList.add('paused');
     document.getElementById('playBtn').innerHTML = '<i class="fa-solid fa-play"></i>';
     
@@ -286,13 +345,4 @@ window.setVolume = function(val) {
     }
 };
 
-// 当歌曲播放完毕自动切换下一首
-document.addEventListener('DOMContentLoaded', () => {
-    // 因为 renderData 会重写 DOM，所以在这里使用事件委托或等待 audio 元素生成
-    setTimeout(() => {
-        const audio = document.getElementById('h5Player');
-        if(audio) {
-            audio.addEventListener('ended', window.nextMusic);
-        }
-    }, 1000);
-});
+
