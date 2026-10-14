@@ -1,4 +1,4 @@
-# ==============================================================================
+﻿# ==============================================================================
 # IndexNow Batch Submit Script (Windows PowerShell Native)
 # ==============================================================================
 [CmdletBinding()]
@@ -51,8 +51,11 @@ $htmlFiles = Get-ChildItem -Path $currentDir -Recurse -Filter *.html | Where-Obj
     $_.FullName -notmatch '[\\/]\.git[\\/]' -and
     $_.FullName -notmatch '[\\/]node_modules[\\/]' -and
     $_.FullName -notmatch '[\\/]\.gemini[\\/]' -and
-    $_.FullName -notmatch '[\\/]scratch[\\/]'
+    $_.FullName -notmatch '[\\/]scratch[\\/]' -and
+    $_.FullName -notmatch '[\\/]scripts[\\/]' -and
+    $_.Name -notmatch '^test'
 }
+
 
 $urlList = [System.Collections.Generic.List[string]]::new()
 
