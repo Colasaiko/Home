@@ -31,10 +31,19 @@
         /* 剔除 API 返回的图片，保持界面清爽 */
         .news-content img, .news-content figure { display: none !important; }
 
-        .news-tag { padding: 3px 10px; border-radius: 5px; font-size: 0.8rem; color: #fff; white-space: nowrap; }
+        .news-tag { padding: 3px 10px; border-radius: 5px; font-size: 0.8rem; color: #fff; white-space: nowrap; font-weight: 500; }
         .tag-sspai { background: #d32f2f; }
         .tag-ithome { background: #d81b60; }
         .tag-gcores { background: #3949ab; }
+        .tag-github { background: #238636; }
+        .tag-ai { background: #8e24aa; }
+        .tag-network { background: #0288d1; }
+        .tag-security { background: #e65100; }
+
+        .badge-live { display: inline-flex; align-items: center; gap: 5px; background: rgba(79, 172, 254, 0.15); color: #4facfe; border: 1px solid rgba(79, 172, 254, 0.4); font-size: 0.75rem; padding: 2px 8px; border-radius: 12px; margin-left: 10px; vertical-align: middle; }
+        .sync-bar { display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.04); padding: 12px 18px; border-radius: 12px; margin-bottom: 24px; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(8px); }
+        .sync-bar-left { display: flex; align-items: center; gap: 8px; color: #4facfe; font-weight: 600; }
+        .sync-bar-right { color: #888; font-size: 0.82rem; }
 
         .loading-text { color: #4facfe; font-size: 1.2rem; font-weight: bold; text-align: center; padding: 50px; }
 
@@ -95,95 +104,75 @@
     
     <script src="./data/profile.js"></script>
     <script src="./js/main.js?v=20261012-radio"></script>
+    <script src="./data/news-data.js?v=20261015"></script>
     <script>
-        // 核心极客与科学上网资讯源配置
-        const feeds = [
-            { name: "Clash 更新", tagClass: "tag-ithome", url: "https://github.com/clash-verge-rev/clash-verge-rev/releases.atom" },
-            { name: "v2rayN 更新", tagClass: "tag-ithome", url: "https://github.com/2dust/v2rayN/releases.atom" },
-            { name: "V2EX 极客社区", tagClass: "tag-gcores", url: "https://www.v2ex.com/index.xml" },
-            { name: "少数派软件", tagClass: "tag-sspai", url: "https://sspai.com/feed" }
+        // 核心客户端 GitHub 官方仓库 (支持原生 CORS，直连拉取最新发布)
+        const githubRepos = [
+            { name: "Clash Verge Rev", repo: "clash-verge-rev/clash-verge-rev" },
+            { name: "v2rayN 官方", repo: "2dust/v2rayN" },
+            { name: "Mihomo 核心内核", repo: "MetaCubeX/mihomo" },
+            { name: "Sing-Box 官方", repo: "SagerNet/sing-box" }
         ];
 
-        // 严格过滤器：只保留与翻墙、网络、AI、极客工具高度相关的内容
-        const allowedKeywords = ['网络', '代理', 'VPN', '宽带', 'AI', 'ChatGPT', '客户端', '隐私', '开源', 'GitHub', '节点', '规则', '分流', '翻墙', '梯子', '科学上网', 'v2ray', 'clash', '软路由', 'NAS', '服务器'];
+        // 关键词检测：如果新闻标题包含这些词，说明极可能需要加速
+        const vpnKeywords = ['AI', 'ChatGPT', 'OpenAI', 'Google', '谷歌', 'Netflix', 'YouTube', 'Twitter', 'X', 'Steam', '苹果', 'Apple', '海外', '外媒', '开源', 'GitHub', 'IPLC', 'IEPL', '专线'];
 
-        async function fetchNews() {
-            let allNews = [];
-            
-            // 并发请求所有 RSS
-            const requests = feeds.map(async (feed) => {
-                try {
-                    const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feed.url));
-                    const data = await res.json();
-                    if(data.status === 'ok' && data.items) {
-                        // 获取最新的 15 条新闻进行严格过滤
-                        let items = data.items.slice(0, 15).filter(item => {
-                            // 如果是 GitHub 的 release (如 Clash/v2rayN)，不用过滤，肯定是刚需更新
-                            if (feed.url.includes('github.com')) return true;
-                            // 否则必须包含极客/网络相关的核心词汇
-                            const textToSearch = (item.title + ' ' + item.description).toLowerCase();
-                            return allowedKeywords.some(kw => textToSearch.includes(kw.toLowerCase()));
-                        });
+        function cleanMarkdownBody(body) {
+            if (!body) return "官方发布了最新版本与多项性能优化及协议兼容性改进。";
+            let clean = body
+                .replace(/<details>[\s\S]*?<\/details>/gi, '')
+                .replace(/<[^>]+>/g, '')
+                .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+                .replace(/[#*`_~\r]/g, '')
+                .replace(/\n+/g, ' ')
+                .trim();
+            return clean.length > 170 ? clean.substring(0, 170) + '...' : clean;
+        }
 
-                        // 如果过滤后太多，只取前 4 条，保证各信源均衡
-                        items = items.slice(0, 4).map(item => ({
-                            source: feed.name,
-                            tagClass: feed.tagClass,
-                            title: item.title,
-                            link: item.link,
-                            pubDate: new Date(item.pubDate),
-                            description: item.description.replace(/<[^>]+>/g, '').trim()
-                        }));
-                        allNews = allNews.concat(items);
-                    }
-                } catch(e) {
-                    console.error("加载失败:", feed.name, e);
-                }
-            });
-
-            await Promise.all(requests);
-
-            // 按时间倒序排序
-            allNews.sort((a, b) => b.pubDate - a.pubDate);
-
-            // 渲染到页面
+        function renderTimeline(allNews, statusMessage) {
             const timeline = document.getElementById('newsTimeline');
-            
-            if(allNews.length === 0) {
-                timeline.innerHTML = '<div class="loading-text" style="color:#e34c26;">情报拉取失败，请检查网络或稍后刷新重试。</div>';
-                return;
-            }
+            if (!timeline) return;
 
-            let html = '';
-            
-            // 关键词检测：如果新闻标题包含这些词，说明极可能需要翻墙
-            const vpnKeywords = ['AI', 'ChatGPT', 'OpenAI', 'Google', '谷歌', 'Netflix', 'YouTube', 'Twitter', 'X', 'Steam', '苹果', 'Apple', '海外', '外媒', '开源'];
+            let html = `
+                <div class="sync-bar">
+                    <div class="sync-bar-left">
+                        <i class="fa-solid fa-satellite-dish"></i>
+                        <span>${statusMessage || '全天候前沿情报站'}</span>
+                    </div>
+                    <div class="sync-bar-right">
+                        <span>共收录 ${allNews.length} 条高价值情报</span>
+                    </div>
+                </div>
+            `;
 
             allNews.forEach((news, index) => {
-                const month = news.pubDate.getMonth() + 1;
-                const date = news.pubDate.getDate();
-                const hours = news.pubDate.getHours().toString().padStart(2, '0');
-                const minutes = news.pubDate.getMinutes().toString().padStart(2, '0');
-                const timeStr = month + '月' + date + '日 ' + hours + ':' + minutes;
+                const dateObj = new Date(news.pubDate);
+                const month = isNaN(dateObj) ? '' : (dateObj.getMonth() + 1);
+                const date = isNaN(dateObj) ? '' : dateObj.getDate();
+                const hours = isNaN(dateObj) ? '' : dateObj.getHours().toString().padStart(2, '0');
+                const minutes = isNaN(dateObj) ? '' : dateObj.getMinutes().toString().padStart(2, '0');
+                const timeStr = isNaN(dateObj) ? '最新发布' : (month + '月' + date + '日 ' + hours + ':' + minutes);
+
+                const liveBadge = news.isLive ? '<span class="badge-live"><i class="fa-solid fa-circle-dot fa-fade"></i> 官方发布</span>' : '';
 
                 // 判断是否包含海外敏感关键词
-                let needsVpn = vpnKeywords.some(kw => news.title.includes(kw) || news.description.includes(kw));
+                let needsVpn = vpnKeywords.some(kw => (news.title + ' ' + (news.description || '')).includes(kw));
                 let vpnBadge = '';
                 if(needsVpn) {
                     vpnBadge = '<div style="margin-top: 15px;"><a href="brands.html" style="display:inline-block; background:rgba(255,152,0,0.1); color:#ff9800; border:1px solid #ff9800; padding:5px 15px; border-radius:15px; text-decoration:none; font-size:0.85rem; transition:0.3s;" onmouseover="this.style.background=\'#ff9800\'; this.style.color=\'#fff\'" onmouseout="this.style.background=\'rgba(255,152,0,0.1)\'; this.style.color=\'#ff9800\'">⚡ 畅享此海外服务？点此配置高速加速器 →</a></div>';
                 }
 
                 html += '<div class="news-card">' +
-                            '<div class="news-date">' + timeStr + '</div>' +
+                            '<div class="news-date">' + timeStr + liveBadge + '</div>' +
                             '<div class="news-title">' +
-                                '<span class="news-tag ' + news.tagClass + '">' + news.source + '</span>' +
+                                '<span class="news-tag ' + (news.tagClass || 'tag-github') + '">' + news.source + '</span>' +
                                 '<a href="' + news.link + '" target="_blank">' + news.title + '</a>' +
                             '</div>' +
-                            '<div class="news-content">' + news.description + '</div>' +
+                            '<div class="news-content">' + (news.description || '') + '</div>' +
                             vpnBadge + 
                         '</div>';
 
-                // 【商业变现核心】在第 2 条和第 6 条新闻后，强行插入“广告推荐卡片”
+                // 【商业变现核心】在第 2 条和第 6 条新闻后，插入专属赞助推荐
                 if (index === 1 || index === 5) {
                     html += '<div class="news-card" style="border-color: #ff9800; background: rgba(255, 152, 0, 0.05);">' +
                                 '<div class="news-date" style="background:#ff9800; color:#fff; border:none;">🎉 本站专属赞助推荐</div>' +
@@ -204,7 +193,50 @@
             timeline.innerHTML = html;
         }
 
-        document.addEventListener('DOMContentLoaded', fetchNews);
+        async function initNewsHub() {
+            // 1. 本地精选情报即时渲染，保证 0 延时秒开，永不白屏报错
+            let masterNews = (typeof curatedNewsData !== 'undefined') ? [...curatedNewsData] : [];
+            renderTimeline(masterNews, "正在连接 GitHub 官方节点检测最新版本...");
+
+            // 2. 并行拉取 GitHub 官方 Releases (免代理、支持原生 CORS)
+            try {
+                const releaseRequests = githubRepos.map(async (item) => {
+                    try {
+                        const resp = await fetch('https://api.github.com/repos/' + item.repo + '/releases?per_page=2', {
+                            headers: { 'Accept': 'application/vnd.github.v3+json' }
+                        });
+                        if (!resp.ok) return [];
+                        const releases = await resp.json();
+                        return releases.map(rel => ({
+                            source: item.name,
+                            tagClass: "tag-github",
+                            title: item.name + ' 重大版本发布: ' + (rel.name || rel.tag_name),
+                            link: rel.html_url,
+                            pubDate: rel.published_at || rel.created_at,
+                            description: cleanMarkdownBody(rel.body),
+                            isLive: true
+                        }));
+                    } catch (e) {
+                        return [];
+                    }
+                });
+
+                const releaseResults = await Promise.all(releaseRequests);
+                const liveItems = releaseResults.flat();
+
+                if (liveItems.length > 0) {
+                    masterNews = [...liveItems, ...masterNews];
+                    masterNews.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+                    renderTimeline(masterNews, "已同步全球最新客户端发布与极客情报");
+                } else {
+                    renderTimeline(masterNews, "已载入精选极客情报库 (官方通道备用就绪)");
+                }
+            } catch (err) {
+                renderTimeline(masterNews, "已载入精选极客情报库 (本地高可用)");
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', initNewsHub);
     </script>
 <!-- Shared floating navigation -->
 <nav class="site-floating-nav" aria-label="快捷导航">
