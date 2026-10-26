@@ -2,37 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://colasaiko.github.io/Home/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/comparison.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/faq/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/baoyun/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -157,12 +157,6 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/baoyun/baoyunFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/baoyun/latest.html</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -176,7 +170,7 @@
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/bitznet/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -295,12 +289,6 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/bitznet/bitznetFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/bitznet/latest.html</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -314,7 +302,13 @@
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/dalao/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/dalao/offer/</loc>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -403,12 +397,6 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/dalao/dalaoFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/dalao/latest.html</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -416,7 +404,7 @@
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/edge/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -469,12 +457,6 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/edge/edgeFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/edge/latest.html</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -488,19 +470,13 @@
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/ermao/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/ermao/FAQ23/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/ermao/FAQ23/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -518,7 +494,7 @@
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/feimao/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -613,12 +589,6 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/feimao/feimaoFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/feimao/latest.html</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -632,7 +602,7 @@
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/feiv/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -685,12 +655,6 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/feiv/feivFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/feiv/latest.html</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -704,7 +668,7 @@
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/firefly/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -829,12 +793,6 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/firefly/fireflyFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/firefly/latest.html</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -848,19 +806,13 @@
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/guangnian/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/guangnian/FAQ20/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/guangnian/FAQ20/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -878,7 +830,7 @@
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/guangsu/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -949,12 +901,6 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/guangsu/guangsuFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/guangsu/latest.html</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -968,7 +914,7 @@
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/invisible/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -1045,12 +991,6 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/invisible/invisibleFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/invisible/latest.html</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -1064,19 +1004,13 @@
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/jilian/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/jilian/FAQ19/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/jilian/FAQ19/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -1094,7 +1028,7 @@
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/jiuyun/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -1207,12 +1141,6 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/jiuyun/jiuyunFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/jiuyun/latest.html</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -1226,19 +1154,13 @@
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/kexin/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/kexin/FAQ14/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/kexin/FAQ14/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -1256,7 +1178,7 @@
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/kuaili/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -1309,12 +1231,6 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/kuaili/kuailiFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/kuaili/latest.html</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -1328,7 +1244,7 @@
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/kuajie/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -1453,12 +1369,6 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/kuajie/kuajieFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/kuajie/latest.html</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -1472,7 +1382,7 @@
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/lingdong/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -1549,12 +1459,6 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/lingdong/lingdongFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/lingdong/offer/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -1562,7 +1466,7 @@
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/lingmao/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -1693,12 +1597,6 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/lingmao/lingmaoFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/lingmao/offer/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -1706,7 +1604,7 @@
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/muguang/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -1849,12 +1747,6 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/muguang/muguangFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/muguang/offer/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -1862,7 +1754,7 @@
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/nanocloud/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -1927,12 +1819,6 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/nanocloud/nanocloudFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/nanocloud/offer/</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -1940,7 +1826,7 @@
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/phantom/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -2005,14 +1891,8 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/phantom/phantomFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/quanqiuyun/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -2101,14 +1981,8 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/quanqiuyun/quanqiuyunFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/shanyue/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -2203,14 +2077,8 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/shanyue/shanyueFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/shenxing/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -2353,14 +2221,8 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/shenxing/shenxingFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/sogo/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -2497,14 +2359,8 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/sogo/sogoFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/sujie/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -2557,14 +2413,8 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/sujie/sujieFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/tizi/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -2641,26 +2491,14 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/tizi/tiziFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/u1s1/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/u1s1/FAQ18/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/u1s1/FAQ18/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -2678,7 +2516,7 @@
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/wavenet/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -2755,14 +2593,8 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/wavenet/wavenetFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/weifeng/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -2863,14 +2695,8 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/weifeng/weifengFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/weitu/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -3043,14 +2869,8 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/weitu/weituFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/wuyou/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -3175,14 +2995,8 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/wuyou/wuyouFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/xingdaomeng/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -3337,26 +3151,14 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/xingdaomeng/xingdaomengFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/yifan/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/yifan/FAQ21/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/yifan/FAQ21/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -3374,7 +3176,7 @@
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/yuzhouyun/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -3463,12 +3265,6 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/brands/yuzhouyun/yuzhouyunFAQ/latest.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/faq/2026jichang-tuijian-naxie.html</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -3523,25 +3319,7 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/faq/disney_content.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/faq/gemini_content.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/faq/iepljichang-shi-shenme-yisi.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://colasaiko.github.io/Home/topic/tuijianjichang/faq/ip_content.html</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -4622,25 +4400,25 @@
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/api.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/bookmarks.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/brands.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/clients.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4802,31 +4580,31 @@
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/news.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/status.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/tools.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/ai/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4862,7 +4640,7 @@
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/topic/cybersecurity/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4946,7 +4724,7 @@
   </url>
   <url>
     <loc>https://colasaiko.github.io/Home/warning.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
