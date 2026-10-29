@@ -1,9 +1,12 @@
 (() => {
  if(window.__siteRadioInitialized)return;window.__siteRadioInitialized=true;
+ // Links point at folders (xxx/) for crawlers; a file:// preview has no server to serve index.html, so add it on click.
+ const localIndex=value=>{const url=new URL(value,location.href);if(url.protocol==='file:'&&url.pathname.endsWith('/'))url.pathname+='index.html';return url.href;};
+ if(location.protocol==='file:')window.addEventListener('click',event=>{const a=event.target.closest?.('a[href]');if(!a)return;const fixed=localIndex(a.href);if(fixed!==a.href)a.href=fixed;},true);
  const library=window.siteRadioLibrary||[],songs=library.flatMap(c=>c.songs.map(s=>({...s,category:c.name})));
  if(!songs.length)return;
  const format=seconds=>Number.isFinite(seconds)?`${Math.floor(seconds/60).toString().padStart(2,'0')}:${Math.floor(seconds%60).toString().padStart(2,'0')}`:'00:00';
- const homeURL=new URL('../index.html',document.querySelector('script[src*="js/site-radio.js"]').src).href;
+ const homeURL=localIndex(new URL('../',document.querySelector('script[src*="js/site-radio.js"]').src).href);
  const embedded=window.parent!==window&&window.name==='__site_radio_content__';
  function connectLinks(controller){
  document.addEventListener('click',event=>{
@@ -119,7 +122,7 @@
 
 
  function navigate(value,push=true){
-  const url=new URL(value,location.href);if(url.origin!==location.origin)return;
+  const url=new URL(localIndex(value));if(url.origin!==location.origin)return;
   if(!frame)activateShell();
   if(push&&url.href!==location.href){try{history.pushState({siteRadio:true},'',url.href);}catch(_){}}
   frame.src=url.href;

@@ -48,7 +48,7 @@
 <body>
   <div id="background"></div>
   <main class="catalog">
-    <nav aria-label="面包屑"><a href="index.html">返回安全研究</a></nav>
+    <nav aria-label="面包屑"><a href="./">返回安全研究</a></nav>
         <article class="panel reading-guide">
 <h1>机场隐私与防泄漏：从订阅保管到实际验证</h1>
 <p>购买套餐只解决访问服务的条件。订阅凭据、客户端接管范围、域名解析和浏览器通信仍需要分别检查。这里帮助你判断信息流向谁，以及一个测试结果能说明什么。</p>
@@ -74,16 +74,16 @@
 <p>保存系统与客户端版本、模式、目标、错误类型、测试时间和修改前后的结果。向别人求助时隐藏凭据与个人地址。选择下面你还没确认的一项，展开查看检查方法和下一步。本页提供操作指引，不会自动检测设备或给出安全评分。</p>
 <div class="privacy-actions">
 <details class="privacy-action"><summary><span class="privacy-action-number">1</span><span>客户端和订阅能否匹配？<small>先核对来源、版本与格式</small></span></summary><div class="privacy-action-body"><p><strong>怎么检查：</strong>在客户端的“关于”页面记录版本，核对下载来源，再到品牌后台查看它提供的订阅格式。导入失败时，记录具体错误提示。</p><p><strong>看什么结果：</strong>客户端支持所选格式，能正常读取节点。导入成功只说明配置可以读取，还需要继续验证连接。</p><p><strong>有问题时：</strong>先核对客户端与格式；使用配置检查工具时，先阅读其数据处理说明。</p><div class="privacy-action-links"><a href="../../clients.html">查看客户端选择 →</a><a href="../../api.html">查看配置检查工具 →</a></div></div></details>
-<details class="privacy-action"><summary><span class="privacy-action-number">2</span><span>订阅凭据有没有被公开？<small>检查截图、分享链接与转换服务</small></span></summary><div class="privacy-action-body"><p><strong>怎么检查：</strong>回看自己分享过的截图、二维码和链接，确认是否包含完整订阅地址、token 或节点密码；核对曾经使用过的订阅转换服务。</p><p><strong>看什么结果：</strong>公开内容中没有可用凭据。第三方转换服务会接触原订阅，不能只凭“转换成功”判断凭据得到妥善保管。</p><p><strong>有问题时：</strong>进入品牌后台，使用它提供的订阅重置方式，再更新各设备上的订阅；没有重置入口时向服务方确认处理方法。</p><div class="privacy-action-links"><a href="../tuijianjichang/brands/index.html">查找自己的品牌资料 →</a><a href="#data-flow">查看工具的信息流向 ↑</a></div></div></details>
+<details class="privacy-action"><summary><span class="privacy-action-number">2</span><span>订阅凭据有没有被公开？<small>检查截图、分享链接与转换服务</small></span></summary><div class="privacy-action-body"><p><strong>怎么检查：</strong>回看自己分享过的截图、二维码和链接，确认是否包含完整订阅地址、token 或节点密码；核对曾经使用过的订阅转换服务。</p><p><strong>看什么结果：</strong>公开内容中没有可用凭据。第三方转换服务会接触原订阅，不能只凭“转换成功”判断凭据得到妥善保管。</p><p><strong>有问题时：</strong>进入品牌后台，使用它提供的订阅重置方式，再更新各设备上的订阅；没有重置入口时向服务方确认处理方法。</p><div class="privacy-action-links"><a href="../tuijianjichang/brands/">查找自己的品牌资料 →</a><a href="#data-flow">查看工具的信息流向 ↑</a></div></div></details>
 <details class="privacy-action"><summary><span class="privacy-action-number">3</span><span>实际应用的出口和 DNS 对得上吗？<small>分别检查浏览器与正在使用的应用</small></span></summary><div class="privacy-action-body"><p><strong>怎么检查：</strong>记录当前规则模式、系统代理或 TUN 设置，查看应用请求命中的规则；查询浏览器出口 IP，并记录客户端 DNS、浏览器安全 DNS 设置与测试返回的解析器。</p><p><strong>看什么结果：</strong>实际请求走的路径符合你设置的规则。浏览器的 IP 结果只能说明该次浏览器请求的出口，不能代替其他应用的验证；解析器名称不同也不能单独认定泄漏。</p><p><strong>有问题时：</strong>连接失败先看具体日志；DNS 解析失败按 DNS 排查文章逐项对照，每次修改后回到原应用复测。</p><div class="privacy-action-links"><a href="../../tools.html">查询浏览器出口 IP →</a><a href="../../FAQ/ClashDNSFailed.html">按步骤排查 DNS →</a></div></div></details>
 <details class="privacy-action"><summary><span class="privacy-action-number">4</span><span>测试结果能解释、能复现吗？<small>对照修改前后，留下脱敏记录</small></span></summary><div class="privacy-action-body"><p><strong>怎么检查：</strong>记录测试时间、设备、客户端版本、目标、错误提示和修改项，在同一设备与目标上重新测试。WebRTC 结果需要区分私有地址、代理出口和自己已知的公网地址。</p><p><strong>看什么结果：</strong>能说明哪项设置改变了哪次请求的表现。WebRTC 没有收集到地址，也不能据此证明所有通信都没有泄漏。</p><p><strong>有问题时：</strong>把失败定位到 DNS、客户端、节点或目标服务，再选择对应的处理方法。分享记录前遮住订阅、密码和个人地址。</p><div class="privacy-action-links"><a href="../../api.html">查看 WebRTC 测试说明 →</a><a href="gfw-monitor.html">继续判断网络故障 →</a></div></div></details>
 </div>
-<p>如果你正在比较 <a href="../tuijianjichang/brands/weifeng/index.html">微风网络</a> 或 <a href="../tuijianjichang/brands/firefly/index.html">Firefly</a>，可以把套餐和协议资料带入这套检查流程。品牌页描述服务条件，这里的验证解释设备与浏览器行为；两部分需要一起看。</p></section>
+<p>如果你正在比较 <a href="../tuijianjichang/brands/weifeng/">微风网络</a> 或 <a href="../tuijianjichang/brands/firefly/">Firefly</a>，可以把套餐和协议资料带入这套检查流程。品牌页描述服务条件，这里的验证解释设备与浏览器行为；两部分需要一起看。</p></section>
 <h2>继续核对原理</h2><ul>
 <li><a href="https://www.rfc-editor.org/rfc/rfc8446" target="_blank" rel="noopener noreferrer">IETF：TLS 1.3 标准</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate/address" target="_blank" rel="noopener noreferrer">MDN：WebRTC 候选地址与隐私</a></li>
 </ul><!-- Contextual reading path -->
-<section class="content-paths" id="continue-reading" data-reading-profile="privacy" aria-labelledby="continue-reading-title"><p class="content-path-kicker">把这个问题与下一步接起来</p><h2 id="continue-reading-title">隐私检查之后，把配置证据和故障原因对上</h2><p>先知道信息流向谁，再决定使用哪种工具。测试结果应结合当前网络、客户端和浏览器解释。</p><div class="content-path-grid"><div class="content-path-card"><a href="../../api.html">检查配置与测试结果 →</a><p>查看本地配置检查、第三方订阅转换与 WebRTC 测试各自的边界。</p></div><div class="content-path-card"><a href="../../FAQ/ClashDNSFailed.html">DNS 失败如何逐步定位 →</a><p>DNS 解析失败时按步骤查原因，不用“隐私泄漏”代替具体诊断。</p></div><div class="content-path-card"><a href="protocols.html">看懂协议与线路的区别 →</a><p>区分加密传输、线路类型和流量接管，理解各自保护的范围。</p></div><div class="content-path-card"><a href="../tuijianjichang/index.html">按用途比较主推品牌 →</a><p>返回品牌资料核对服务条件；价格和专线标注都不能替代隐私验证。</p></div></div></section>
+<section class="content-paths" id="continue-reading" data-reading-profile="privacy" aria-labelledby="continue-reading-title"><p class="content-path-kicker">把这个问题与下一步接起来</p><h2 id="continue-reading-title">隐私检查之后，把配置证据和故障原因对上</h2><p>先知道信息流向谁，再决定使用哪种工具。测试结果应结合当前网络、客户端和浏览器解释。</p><div class="content-path-grid"><div class="content-path-card"><a href="../../api.html">检查配置与测试结果 →</a><p>查看本地配置检查、第三方订阅转换与 WebRTC 测试各自的边界。</p></div><div class="content-path-card"><a href="../../FAQ/ClashDNSFailed.html">DNS 失败如何逐步定位 →</a><p>DNS 解析失败时按步骤查原因，不用“隐私泄漏”代替具体诊断。</p></div><div class="content-path-card"><a href="protocols.html">看懂协议与线路的区别 →</a><p>区分加密传输、线路类型和流量接管，理解各自保护的范围。</p></div><div class="content-path-card"><a href="../tuijianjichang/">按用途比较主推品牌 →</a><p>返回品牌资料核对服务条件；价格和专线标注都不能替代隐私验证。</p></div></div></section>
 <!-- End contextual reading path -->
 </article>
   </main>
@@ -97,11 +97,11 @@
 <nav class="site-floating-nav" aria-label="快捷导航">
   <div class="site-floating-menu" id="site-floating-menu" hidden>
     <p class="site-floating-title">快速导航</p>
-    <a href="../../index.html">返回首页</a><a href="../tuijianjichang/index.html">站长精选机场推荐</a><a href="../tuijianjichang/brands/index.html">机场品牌总库</a><a href="../tuijianjichang/comparison.html">品牌对比</a><a href="../tuijianjichang/faq/index.html">FAQ 知识库</a><a href="privacy.html">隐私与防泄漏</a><a href="gfw-monitor.html">GFW 与节点故障判断</a>
+    <a href="../../">返回首页</a><a href="../tuijianjichang/">站长精选机场推荐</a><a href="../tuijianjichang/brands/">机场品牌总库</a><a href="../tuijianjichang/comparison.html">品牌对比</a><a href="../tuijianjichang/faq/">FAQ 知识库</a><a href="privacy.html">隐私与防泄漏</a><a href="gfw-monitor.html">GFW 与节点故障判断</a>
   </div>
   <div class="site-floating-controls">
-    <button type="button" class="site-floating-action" data-floating-back data-home="../../index.html" aria-label="返回上一页" title="返回上一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button>
-    <a class="site-floating-action" href="../../index.html" aria-label="返回首页" title="返回首页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></a>
+    <button type="button" class="site-floating-action" data-floating-back data-home="../../" aria-label="返回上一页" title="返回上一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button>
+    <a class="site-floating-action" href="../../" aria-label="返回首页" title="返回首页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></a>
     <button type="button" class="site-floating-toggle" data-floating-toggle aria-controls="site-floating-menu" aria-expanded="false" aria-label="打开快捷导航" title="快捷导航"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
   </div>
 </nav>

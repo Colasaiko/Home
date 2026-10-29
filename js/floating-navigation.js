@@ -175,7 +175,11 @@
     dialog.close(); unlock();
     if (window.siteRadioGoBack) { window.siteRadioGoBack(); return; }
     if (history.length > 1 && (previousPage || document.referrer)) history.back();
-    else location.assign(back.dataset.home);
+    else {
+      const home = new URL(back.dataset.home, location.href);
+      if (home.protocol === 'file:' && home.pathname.endsWith('/')) home.pathname += 'index.html';
+      location.assign(home.href);
+    }
   });
   let drag, dragged = false;
   function position(x, y) {

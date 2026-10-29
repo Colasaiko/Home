@@ -6,7 +6,7 @@ const curatedNewsData = [
         source: "AI前沿情报",
         tagClass: "tag-ai",
         title: "OpenAI GPT-5 及海外大模型 API 访问风控机制收紧，数据中心 IP 遭遇大面积降权",
-        link: "topic/tuijianjichang/index.html",
+        link: "topic/tuijianjichang/",
         pubDate: "2026-10-15T08:30:00Z",
         description: "近期 OpenAI 与 Anthropic 再次升级了客户端登录与 API 调用风控系统。大量廉价公网 VPS 与通用数据中心 IP 出现无法登录、无限循环人机验证（Cloudflare Turnstile）或封号风险。行业专家建议使用纯净原生家庭宽带（Residential IP）或经过 BGP 专线优化的固定出口节点访问以保障账号安全。"
     },

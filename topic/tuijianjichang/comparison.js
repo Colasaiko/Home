@@ -8,7 +8,7 @@
     const initial = new URLSearchParams(location.search).get('select');
     rows.forEach(row => {
         const path = row.querySelector('h3 a').getAttribute('href');
-        if (initial && path === `brands/${initial}/index.html`) row.querySelector('input').checked = true;
+        if (initial && path === `brands/${initial}/`) row.querySelector('input').checked = true;
     });
     function update() {
         const picked = rows.filter(row => row.querySelector('input').checked).length;
