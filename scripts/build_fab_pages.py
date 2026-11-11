@@ -45,7 +45,7 @@ def main():
         entry['label'] = compact.get(p.stem, entry['label'])
         protocols.append(entry)
     groups = [
-        {'label': '品牌与选购', 'icon': '✦', 'children': [page(base+'index.html','主推品牌'), page(base+'brands/index.html','品牌总库'), page(base+'comparison.html','品牌对比','⇄'), page('brands.html','选购指南'), {'label':'全部品牌','icon':'▦','children':brands}]},
+        {'label': '品牌与选购', 'icon': '✦', 'children': [page(base+'index.html','主推品牌'), page(base+'brands/index.html','品牌总库'), page(base+'comparison.html','品牌对比','⇄'), page('brands.html','选购指南'), {'label':'选购商店','path':'https://colasaiko.github.io/jichangbuy/website/dist/','icon':'◈'}, {'label':'全部品牌','icon':'▦','children':brands}]},
         {'label': '客户端工具', 'icon': '⚙', 'children': [page('clients.html','客户端下载'),page('api.html','配置与隐私'),page('tools.html','IP 与编码'),page('status.html','连通性检查')]},
         {'label': '网络与隐私', 'icon': '◇', 'children': [page('topic/cybersecurity/index.html','网络研究'),page('topic/cybersecurity/privacy.html','隐私检查'),page('topic/cybersecurity/gfw-monitor.html','GFW 排查'),page('topic/cybersecurity/protocols.html','协议总览'),{'label':'协议文章','icon':'⌁','children':protocols}]},
         {'label': 'AI 指南', 'icon': '✧', 'children': [page('topic/ai/'+p+'.html',label) for p,label in [('index','AI 入门'),('prompt','提问方法'),('chatgpt','ChatGPT'),('claude','Claude'),('midjourney','图片生成'),('api-deploy','API 部署')]]},

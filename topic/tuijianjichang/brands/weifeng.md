@@ -2,7 +2,7 @@
 name: "微风网络"
 englishName: "Breeze Network"
 slug: "weifeng"
-h1: "微风网络怎么样？Breeze 全 IPLC 专线套餐与 7 折测评"
+h1: "微风网络怎么样？Breeze 全 IPLC 专线套餐与 9 折测评"
 keywords:
   - 微风网络怎么样
   - 微风机场
@@ -41,62 +41,62 @@ pricing:
   - name: "清风 Breeze"
     period: "年付"
     originalPrice: "¥137"
-    discountPrice: "¥95.90"
+    discountPrice: "¥123.30"
     couponEligible: true
   - name: "乘风 Riding"
     period: "月付"
     originalPrice: "¥27"
-    discountPrice: "¥18.90"
+    discountPrice: "¥24.30"
     couponEligible: true
   - name: "乘风 Riding"
     period: "季付"
     originalPrice: "¥72"
-    discountPrice: "¥50.40"
+    discountPrice: "¥64.80"
     couponEligible: true
   - name: "乘风 Riding"
     period: "年付"
     originalPrice: "¥259"
-    discountPrice: "¥181.30"
+    discountPrice: "¥233.10"
     couponEligible: true
   - name: "破风 Breaking"
     period: "月付"
     originalPrice: "¥57"
-    discountPrice: "¥39.90"
+    discountPrice: "¥51.30"
     couponEligible: true
   - name: "破风 Breaking"
     period: "季付"
     originalPrice: "¥153"
-    discountPrice: "¥107.10"
+    discountPrice: "¥137.70"
     couponEligible: true
   - name: "破风 Breaking"
     period: "年付"
     originalPrice: "¥547"
-    discountPrice: "¥382.90"
+    discountPrice: "¥492.30"
     couponEligible: true
   - name: "御风 Mastery"
     period: "月付"
     originalPrice: "¥127"
-    discountPrice: "¥88.90"
+    discountPrice: "¥114.30"
     couponEligible: true
   - name: "御风 Mastery"
     period: "季付"
     originalPrice: "¥342"
-    discountPrice: "¥239.40"
+    discountPrice: "¥307.80"
     couponEligible: true
   - name: "御风 Mastery"
     period: "年付"
     originalPrice: "¥1219"
-    discountPrice: "¥853.30"
+    discountPrice: "¥1097.10"
     couponEligible: true
   - name: "信风·不限时"
     period: "一次性"
     originalPrice: "¥200"
-    discountPrice: "¥140"
+    discountPrice: "¥180"
     couponEligible: true
   - name: "长风·不限时"
     period: "一次性"
     originalPrice: "¥370"
-    discountPrice: "¥259"
+    discountPrice: "¥333"
     couponEligible: true
 purchase:
   label: "快速购买"
@@ -122,35 +122,35 @@ visualData:
     - label: "清风"
       value: 137
       original: 137
-      discounted: 95.90
+      discounted: 123.30
     - label: "乘风"
       value: 259
       original: 259
-      discounted: 181.30
+      discounted: 233.10
     - label: "破风"
       value: 547
       original: 547
-      discounted: 382.90
+      discounted: 492.30
     - label: "御风"
       value: 1219
       original: 1219
-      discounted: 853.30
+      discounted: 1097.10
 
     - label: "信风"
       original: 200
-      discounted: 140
+      discounted: 180
     - label: "长风"
       original: 370
-      discounted: 259
+      discounted: 333
 
   couponExample:
     plan: "清风"
     period: "年付"
     before: 137
-    discount: 41.10
-    after: 95.90
+    discount: 13.70
+    after: 123.30
     coupon: "weifeng90"
-    percent: 30
+    percent: 10
 ---
 
 ## 微风网络适合哪些使用场景？
@@ -205,7 +205,7 @@ visualData:
 
 微风提供了四款按月刷新的主力套餐：
 
-1. **清风**：100GB/月，属于年付套餐，打折后仅需 ¥95.90/年，性价比极高，适合轻度用户。
+1. **清风**：100GB/月，属于年付套餐，打折后仅需 ¥123.30/年，性价比极高，适合轻度用户。
 2. **乘风**：200GB/月，起步月付套餐，适合大部分普通个人用户查阅资料和日常刷剧。
 3. **破风**：500GB/月，流量更加充裕，适合 4K 视频重度用户。
 4. **御风**：1200GB/月，适合重度用户或多设备家庭、小工作室共享。
@@ -218,10 +218,10 @@ visualData:
 
 **“不限时”** 代表购买后不限制使用期限，直到固定总流量耗尽为止。这不是无限流量，也不是每月会自动刷新 270GB。用完即止，非常适合偶尔有翻墙需求或作为备用线路的用户。
 
-## 7 折优惠怎么计算？
+## 9 折优惠怎么计算？
 
 
-举例，清风原价 ¥137/年，使用 `weifeng90` 后价格为 ¥95.90/年，省了 ¥41.10。不过要注意，即使它折合下来约 ¥7.99/月，你在购买时仍然需要一次性支付整年的 ¥95.90。
+举例，清风原价 ¥137/年，使用 `weifeng90` 后价格为 ¥123.30/年，省了 ¥13.70。不过要注意，即使它折合下来约 ¥10.28/月，你在购买时仍然需要一次性支付整年的 ¥123.30。
 
 ## 微风网络的优点
 
@@ -230,12 +230,12 @@ visualData:
 3. **不限设备**：不限制同时在线设备的数量。
 4. **套餐跨度大**：月流量从 100GB 覆盖到 1200GB。
 5. **提供不限时流量包**：对轻度用户和备用需求非常友好。
-6. **全场 7 折**：使用 `weifeng90` 享有极高性价比。
+6. **全场 9 折**：使用 `weifeng90` 享有极高性价比。
 
 ## 微风网络需要注意什么？
 
 ### 清风必须年付，没有月付
-它是 ¥137 年付（7折优惠后 ¥95.90/年），必须一次性支付整年费用。折算出的 ¥7.99 只是为了方便感知，无法真正逐月支付 ¥7.99。
+它是 ¥137 年付（9折优惠后 ¥123.30/年），必须一次性支付整年费用。折算出的 ¥10.28 只是为了方便感知，无法真正逐月支付 ¥10.28。
 
 ### 不限时不是无限流量
 它是固定 270GB 或 570GB 的流量池，一旦消耗完毕套餐即失效。
@@ -247,10 +247,10 @@ visualData:
 
 
 ### 微风网络清风套餐多少钱？
-原价 ¥137/年。使用 7 折优惠后为 ¥95.90/年。
+原价 ¥137/年。使用 9 折优惠后为 ¥123.30/年。
 
 ### 微风网络最低折合一个月多少钱？
-清风套餐使用当前 7 折后约 ¥7.99/月。**必须强调：这是年付折算，不是月付。**
+清风套餐使用当前 9 折后约 ¥10.28/月。**必须强调：这是年付折算，不是月付。**
 
 ### 微风网络有月付套餐吗？
 有。乘风、破风、御风提供月付。但最低档的清风当前仅提供年付。
